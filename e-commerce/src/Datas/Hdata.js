@@ -1,26 +1,27 @@
+import phoneLogo from "../IconsAndPhotos/phone.svg";
+import mailLogo from "../IconsAndPhotos/mail.svg";
+import instagramLogo from "../IconsAndPhotos/instagram.svg";
+import youtubeLogo from "../IconsAndPhotos/youtube.svg";
+import facebookLogo from "../IconsAndPhotos/facebook.svg";
+import twitterLogo from "../IconsAndPhotos/twitter.svg";
+import userLogo from "../IconsAndPhotos/user.svg";
+import searchLogo from "../IconsAndPhotos/search.svg";
+import basketLogo from "../IconsAndPhotos/basket.svg";
+import heartLogo from "../IconsAndPhotos/heart.svg";
+
 export const Hdata = {
   headerArea: {
-    // title: "Profil",
-    // dogumTrh: "30.03.1997",
-    // ikametgah: "İstanbul",
-    // egitim: "Gazi Ünv. Enerji Müh. Lisans, 2019",
-    // rolTercihi: "Full Stack Developer",
-    // hakkimda: "Hakkımda",
+    phoneLogo,
+    mailLogo,
+    instagramLogo,
+    youtubeLogo,
+    facebookLogo,
+    twitterLogo,
+    userLogo,
+    searchLogo,
+    basketLogo,
+    heartLogo,
   },
-  bodyArea: {
-    // title: "Profil",
-    // dogumTrh: "30.03.1997",
-    // ikametgah: "İstanbul",
-    // egitim: "Gazi Ünv. Enerji Müh. Lisans, 2019",
-    // rolTercihi: "Full Stack Developer",
-    // hakkimda: "Hakkımda",
-  },
-  footerArea: {
-    // title: "Profil",
-    // dogumTrh: "30.03.1997",
-    // ikametgah: "İstanbul",
-    // egitim: "Gazi Ünv. Enerji Müh. Lisans, 2019",
-    // rolTercihi: "Full Stack Developer",
-    // hakkimda: "Hakkımda",
-  },
+  bodyArea: {},
+  footerArea: {},
 };
