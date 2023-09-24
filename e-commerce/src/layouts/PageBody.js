@@ -10,27 +10,26 @@ export const PageBody = () => {
       <p>Featured Products</p>
       <p>BESTSELLER PRODUCTS</p>
       <p>Problems trying to resolve the conflict between</p>
-      ********
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        {Hdata.bodyArea.productCarsdArray.map((productCard, index) => {
-          <div key={index}>
+      <div className="flex flex-wrap">
+        {Hdata.bodyArea.productCarsdArray.map((productCard, index) => (
+          <div className="flex-col text-center" key={index}>
             <a href="#">
               <img class="rounded-t-lg" src={productCard.img} alt="" />
             </a>
             <p>{productCard.tittle}</p>
             <p>{productCard.descripton}</p>
-            <div>
+            <div className="flex justify-center">
               <p>{productCard.price1}</p>
               <p>{productCard.price2}</p>
             </div>
-            <div>
-              <p>{productCard.color1}</p>
-              <p>{productCard.color2}</p>
-              <p>{productCard.color3}</p>
-              <p>{productCard.color4}</p>
+            <div className="flex justify-center">
+              <img src={productCard.color1} />
+              <img src={productCard.color2} />
+              <img src={productCard.color3} />
+              <img src={productCard.color4} />
             </div>
-          </div>;
-        })}
+          </div>
+        ))}
       </div>
       <p>Practice Advice</p>
       <p>Featured Posts</p>
