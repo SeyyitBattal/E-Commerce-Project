@@ -8,6 +8,8 @@ import userLogo from "../IconsAndPhotos/user.svg";
 import searchLogo from "../IconsAndPhotos/search.svg";
 import basketLogo from "../IconsAndPhotos/basket.svg";
 import heartLogo from "../IconsAndPhotos/heart.svg";
+import vectorLogo from "../IconsAndPhotos/vector.svg";
+import sliderPhoto1 from "../IconsAndPhotos/sliderPhoto1.jpg";
 
 export const Hdata = {
   headerArea: {
@@ -17,11 +19,14 @@ export const Hdata = {
     youtubeLogo,
     facebookLogo,
     twitterLogo,
+    vectorLogo,
     userLogo,
     searchLogo,
     basketLogo,
     heartLogo,
   },
-  bodyArea: {},
+  bodyArea: {
+    sliderPhoto1,
+  },
   footerArea: {},
 };
