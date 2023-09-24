@@ -10,6 +10,9 @@ import basketLogo from "../IconsAndPhotos/basket.svg";
 import heartLogo from "../IconsAndPhotos/heart.svg";
 import vectorLogo from "../IconsAndPhotos/vector.svg";
 import sliderPhoto1 from "../IconsAndPhotos/sliderPhoto1.jpg";
+import facebookFooter from "../IconsAndPhotos/facebookFooter.svg";
+import instagramFooter from "../IconsAndPhotos/instagramFooter.svg";
+import twitterFooter from "../IconsAndPhotos/twitterFooter.svg";
 
 export const Hdata = {
   headerArea: {
@@ -28,5 +31,9 @@ export const Hdata = {
   bodyArea: {
     sliderPhoto1,
   },
-  footerArea: {},
+  footerArea: {
+    facebookFooter,
+    instagramFooter,
+    twitterFooter,
+  },
 };
