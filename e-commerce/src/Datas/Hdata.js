@@ -19,6 +19,10 @@ import blueCircle from "../IconsAndPhotos/blueCircle.svg";
 import greenCircle from "../IconsAndPhotos/greenCircle.svg";
 import orangeCircle from "../IconsAndPhotos/orangeCircle.svg";
 import blackCircle from "../IconsAndPhotos/blackCircle.svg";
+import editorPicMan from "../IconsAndPhotos/editorPicMan.png";
+import editorPicWoman from "../IconsAndPhotos/editorPicWoman.png";
+import editorPicAccessories from "../IconsAndPhotos/editorPicAccessories.png";
+import editorPicKids from "../IconsAndPhotos/editorPicKids.png";
 
 export const Hdata = {
   headerArea: {
@@ -36,6 +40,10 @@ export const Hdata = {
   },
   bodyArea: {
     sliderPhoto1,
+    editorPicMan,
+    editorPicWoman,
+    editorPicAccessories,
+    editorPicKids,
     productCarsdArray: [
       {
         id: "1",

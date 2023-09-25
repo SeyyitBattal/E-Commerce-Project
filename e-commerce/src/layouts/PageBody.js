@@ -6,7 +6,14 @@ export const PageBody = () => {
       <img src={Hdata.bodyArea.sliderPhoto1} />
       <p>EDITOR’S PICK</p>
       <p>Problems trying to resolve the conflict between</p>
-      BURAYA FOTOLAR
+      <div className="flex">
+        <img src={Hdata.bodyArea.editorPicMan} />
+        <img src={Hdata.bodyArea.editorPicWoman} />
+        <div>
+          <img src={Hdata.bodyArea.editorPicAccessories} />
+          <img src={Hdata.bodyArea.editorPicKids} />
+        </div>
+      </div>
       <p>Featured Products</p>
       <p>BESTSELLER PRODUCTS</p>
       <p>Problems trying to resolve the conflict between</p>
