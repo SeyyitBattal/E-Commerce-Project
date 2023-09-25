@@ -38,6 +38,24 @@ export const PageBody = () => {
           </div>
         ))}
       </div>
+      <div className="flex bg-color bg-emerald-700">
+        <div>
+          <p className="h5">SUMMER 2020</p>
+          <p>Vita Classic Product</p>
+          <p>
+            We know how large objects will act, We know how are objects will
+            act, We know
+          </p>
+          <div className="flex">
+            <p>$16.48</p>
+            <img src={Hdata.bodyArea.addToCardButton} />
+          </div>
+        </div>
+        <div>
+          <img src={Hdata.bodyArea.sliderPhoto2} />
+        </div>
+      </div>
+      YEŞİL ALAN YAZI + FOTO ALAN
       <p>Practice Advice</p>
       <p>Featured Posts</p>
       <p>Problems trying to resolve the conflict between</p>

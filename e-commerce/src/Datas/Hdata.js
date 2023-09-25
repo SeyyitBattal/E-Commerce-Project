@@ -23,6 +23,8 @@ import editorPicMan from "../IconsAndPhotos/editorPicMan.png";
 import editorPicWoman from "../IconsAndPhotos/editorPicWoman.png";
 import editorPicAccessories from "../IconsAndPhotos/editorPicAccessories.png";
 import editorPicKids from "../IconsAndPhotos/editorPicKids.png";
+import sliderPhoto2 from "../IconsAndPhotos/sliderPhoto2.png";
+import addToCardButton from "../IconsAndPhotos/addToCardButton.png";
 
 export const Hdata = {
   headerArea: {
@@ -44,6 +46,8 @@ export const Hdata = {
     editorPicWoman,
     editorPicAccessories,
     editorPicKids,
+    sliderPhoto2,
+    addToCardButton,
     productCarsdArray: [
       {
         id: "1",
