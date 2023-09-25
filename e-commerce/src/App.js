@@ -8,8 +8,8 @@ import { ProductsPage } from "./Components/ProductsPage";
 function App() {
   return (
     <Router>
-      <Link to="/">Home</Link>
-      <Link to="/products">Products Page</Link>
+      <Link to="/">HomeXXXXXX</Link>
+      <Link to="/products">Products PageXXX</Link>
 
       <Switch>
         <Route path="/products">
