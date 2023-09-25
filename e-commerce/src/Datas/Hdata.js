@@ -28,6 +28,10 @@ import addToCardButton from "../IconsAndPhotos/addToCardButton.png";
 import buyNowButton from "../IconsAndPhotos/buyNowButton.png";
 import readMoreButton from "../IconsAndPhotos/readMoreButton.png";
 import parthOfTheNeural from "../IconsAndPhotos/parthOfTheNeural.png";
+import featurePost1 from "../IconsAndPhotos/featurePost1.png";
+import featurePost2 from "../IconsAndPhotos/featurePost2.png";
+import featurePost3 from "../IconsAndPhotos/featurePost3.png";
+import learnMoreArrow from "../IconsAndPhotos/learnMoreArrow.svg";
 
 export const Hdata = {
   headerArea: {
@@ -150,6 +154,38 @@ export const Hdata = {
         color2: greenCircle,
         color3: orangeCircle,
         color4: blackCircle,
+      },
+    ],
+    featureCarsdArray: [
+      {
+        img: featurePost1,
+        tittle: "Loudest à la Madison #1 (L'integral)",
+        descripton:
+          "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+        date: "22 April 2023",
+        comments: "10 comments",
+        learnMore: "Learn More",
+        arrow: learnMoreArrow,
+      },
+      {
+        img: featurePost2,
+        tittle: "Loudest à la Madison #1 (L'integral)",
+        descripton:
+          "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+        date: "22 April 2023",
+        comments: "10 comments",
+        learnMore: "Learn More",
+        arrow: learnMoreArrow,
+      },
+      {
+        img: featurePost3,
+        tittle: "Loudest à la Madison #1 (L'integral)",
+        descripton:
+          "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+        date: "22 April 2023",
+        comments: "10 comments",
+        learnMore: "Learn More",
+        arrow: learnMoreArrow,
       },
     ],
   },

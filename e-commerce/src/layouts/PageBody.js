@@ -71,12 +71,29 @@ export const PageBody = () => {
           </div>
         </div>
       </div>
-      YAZI + FOTO ALAN
       <p>Practice Advice</p>
       <p>Featured Posts</p>
       <p>Problems trying to resolve the conflict between</p>
-      <p>the two major realms of Classical physics: Newtonian mechanics </p>3
-      TANE CARD
+      <p>the two major realms of Classical physics: Newtonian mechanics </p>
+      <div className="flex flex-wrap">
+        {Hdata.bodyArea.featureCarsdArray.map((featureCard, index) => (
+          <div className="flex-col" key={index}>
+            <a href="#">
+              <img class="rounded-t-lg" src={featureCard.img} alt="" />
+            </a>
+            <p>{featureCard.tittle}</p>
+            <p className="w-48">{featureCard.descripton}</p>
+            <div className="flex">
+              <p>{featureCard.date}</p>
+              <p>{featureCard.comments}</p>
+            </div>
+            <div className="flex">
+              <p>Learn More</p>
+              <img src={featureCard.arrow} />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
