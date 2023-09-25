@@ -55,7 +55,23 @@ export const PageBody = () => {
           <img src={Hdata.bodyArea.sliderPhoto2} />
         </div>
       </div>
-      YEŞİL ALAN YAZI + FOTO ALAN
+      <div className="flex ">
+        <div>
+          <img src={Hdata.bodyArea.parthOfTheNeural} />
+        </div>
+        <div>
+          <p className="h5">SUMMER 2020</p>
+          <p>Part of the Neural Universe</p>
+          <p>
+            We know how large objects will act, but things on a small scale.
+          </p>
+          <div className="flex">
+            <img src={Hdata.bodyArea.buyNowButton} />
+            <img src={Hdata.bodyArea.readMoreButton} />
+          </div>
+        </div>
+      </div>
+      YAZI + FOTO ALAN
       <p>Practice Advice</p>
       <p>Featured Posts</p>
       <p>Problems trying to resolve the conflict between</p>

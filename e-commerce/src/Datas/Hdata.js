@@ -25,6 +25,9 @@ import editorPicAccessories from "../IconsAndPhotos/editorPicAccessories.png";
 import editorPicKids from "../IconsAndPhotos/editorPicKids.png";
 import sliderPhoto2 from "../IconsAndPhotos/sliderPhoto2.png";
 import addToCardButton from "../IconsAndPhotos/addToCardButton.png";
+import buyNowButton from "../IconsAndPhotos/buyNowButton.png";
+import readMoreButton from "../IconsAndPhotos/readMoreButton.png";
+import parthOfTheNeural from "../IconsAndPhotos/parthOfTheNeural.png";
 
 export const Hdata = {
   headerArea: {
@@ -48,6 +51,9 @@ export const Hdata = {
     editorPicKids,
     sliderPhoto2,
     addToCardButton,
+    parthOfTheNeural,
+    buyNowButton,
+    readMoreButton,
     productCarsdArray: [
       {
         id: "1",
