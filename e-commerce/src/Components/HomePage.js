@@ -21,9 +21,15 @@ export const HomePage = () => {
           <img src={Hdata.bodyArea.editorPicKids} />
         </div>
       </div>
-      <p>Featured Products</p>
-      <p>BESTSELLER PRODUCTS</p>
-      <p>Problems trying to resolve the conflict between</p>
+      <p className="text-neutral-500 text-xl text-center mt-40">
+        Featured Products
+      </p>
+      <p className="text-slate-800 text-2xl font-bold text-center mt-2.5">
+        BESTSELLER PRODUCTS
+      </p>
+      <p className="text-neutral-500 text-center mt-2.5 mb-12">
+        Problems trying to resolve the conflict between
+      </p>
       <div className="flex flex-wrap">
         {Hdata.bodyArea.productCarsdArray.map((productCard, index) => (
           <div className="flex-col shadow-2xl text-center" key={index}>
