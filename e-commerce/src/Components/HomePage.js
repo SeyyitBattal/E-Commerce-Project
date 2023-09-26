@@ -3,14 +3,21 @@ import { Hdata } from "../Datas/Hdata";
 export const HomePage = () => {
   return (
     <div>
-      <img src={Hdata.bodyArea.sliderPhoto1} />
-      <p>EDITOR’S PICK</p>
-      <p>Problems trying to resolve the conflict between</p>
-      <div className="flex">
+      <div className="bg-gradient-to-r from-cyan-500 to-blue-500 object-contain">
+        <img src={Hdata.bodyArea.sliderPhoto1} className="slider ml-20 " />
+      </div>
+
+      <p className="text-slate-800 text-2xl font-bold text-center mt-20">
+        EDITOR’S PICK
+      </p>
+      <p className="text-neutral-500 text-center mt-2.5 mb-12">
+        Problems trying to resolve the conflict between
+      </p>
+      <div className="flex mx-48">
         <img src={Hdata.bodyArea.editorPicMan} />
-        <img src={Hdata.bodyArea.editorPicWoman} />
+        <img src={Hdata.bodyArea.editorPicWoman} className="mx-7" />
         <div>
-          <img src={Hdata.bodyArea.editorPicAccessories} />
+          <img src={Hdata.bodyArea.editorPicAccessories} className="mb-4" />
           <img src={Hdata.bodyArea.editorPicKids} />
         </div>
       </div>
@@ -19,7 +26,7 @@ export const HomePage = () => {
       <p>Problems trying to resolve the conflict between</p>
       <div className="flex flex-wrap">
         {Hdata.bodyArea.productCarsdArray.map((productCard, index) => (
-          <div className="flex-col text-center" key={index}>
+          <div className="flex-col shadow-2xl text-center" key={index}>
             <a href="#">
               <img class="rounded-t-lg" src={productCard.img} alt="" />
             </a>
