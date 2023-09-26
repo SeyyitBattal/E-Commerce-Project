@@ -1,6 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Hdata } from "../Datas/Hdata";
+import { NavLink } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -20,10 +20,6 @@ export const Header = () => {
 
       <div className="section2 flex">
         <p>Bandage</p>
-        <Router>
-          <Link to="/">Homedösldsödslkdlskds</Link>
-          <Link to="/products">Products Pagesldösldöksld</Link>
-        </Router>
         <p>Home</p>
         <p>Shop</p>
         <img src={Hdata.headerArea.vectorLogo} />
