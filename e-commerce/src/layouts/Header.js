@@ -27,22 +27,35 @@ export const Header = () => {
         </div>
       </div>
 
-      <div className="section2 flex">
-        <p>Bandage</p>
-        <p>Home</p>
-        <p>Shop</p>
-        <img src={Hdata.headerArea.vectorLogo} />
-        <p>About</p>
-        <p>Blog</p>
-        <p>Contact</p>
-        <p>Pages</p>
-        <img src={Hdata.headerArea.userLogo} />
-        <p>Login / Register</p>
-        <img src={Hdata.headerArea.searchLogo} />
-        <img src={Hdata.headerArea.basketLogo} />
-        <p>1</p>
-        <img src={Hdata.headerArea.heartLogo} />
-        <p>1</p>
+      <div className="section2 flex justify-between py-5 px-9">
+        <p className="text-slate-800 text-2xl font-bold">Bandage</p>
+        <div className="flex pr-96 text-neutral-500 ">
+          <p className="px-2">Home</p>
+          <div className="flex px-2">
+            <p className="pr-1">Shop</p>
+            <img src={Hdata.headerArea.vectorLogo} />
+          </div>
+
+          <p className="px-2">About</p>
+          <p className="px-2">Blog</p>
+          <p className="px-2">Contact</p>
+          <p className="px-2">Pages</p>
+        </div>
+        <div className="flex py-1">
+          <div className="flex px-4">
+            <img src={Hdata.headerArea.userLogo} />
+            <p className="text-sky-500 font-bold">Login / Register</p>
+          </div>
+          <img src={Hdata.headerArea.searchLogo} />
+          <div className="flex px-4">
+            <img src={Hdata.headerArea.basketLogo} />
+            <p className="text-sky-500">1</p>
+          </div>
+          <div className="flex px-4">
+            <img src={Hdata.headerArea.heartLogo} />
+            <p className="text-sky-500">1</p>
+          </div>
+        </div>
       </div>
     </div>
   );
