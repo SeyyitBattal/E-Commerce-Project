@@ -30,7 +30,7 @@ export const HomePage = () => {
       <p className="text-neutral-500 text-center mt-2.5 mb-12">
         Problems trying to resolve the conflict between
       </p>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap justify-between ml-48 mr-32 ">
         {Hdata.bodyArea.productCarsdArray.map((productCard, index) => (
           <div className="flex-col shadow-2xl text-center" key={index}>
             <a href="#">
