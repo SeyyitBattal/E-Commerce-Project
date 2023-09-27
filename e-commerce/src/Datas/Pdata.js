@@ -4,9 +4,11 @@ import blueCircle from "../IconsAndPhotos/blueCircle.svg";
 import greenCircle from "../IconsAndPhotos/greenCircle.svg";
 import orangeCircle from "../IconsAndPhotos/orangeCircle.svg";
 import blackCircle from "../IconsAndPhotos/blackCircle.svg";
+import HomeToShop from "../IconsAndPhotos/HomeToShop.svg";
 
 export const Pdata = {
   bodyArea: {
+    HomeToShop,
     productCarsdArray: [
       {
         id: "1",
