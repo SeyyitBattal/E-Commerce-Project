@@ -77,16 +77,18 @@ export const HomePage = () => {
       </div>
       <div className="flex ">
         <div>
-          <img src={Hdata.bodyArea.parthOfTheNeural} />
+          <img src={Hdata.bodyArea.parthOfTheNeural} className="ml-28 mr-28" />
         </div>
-        <div>
-          <p className="h5">SUMMER 2020</p>
-          <p>Part of the Neural Universe</p>
-          <p>
+        <div className="max-w-xs mt-44">
+          <p className=" text-stone-300 mb-8">SUMMER 2020</p>
+          <p className="text-4xl font-bold text-slate-800 ">
+            Part of the Neural Universe
+          </p>
+          <p className="text-xl text-neutral-500 my-8">
             We know how large objects will act, but things on a small scale.
           </p>
           <div className="flex">
-            <img src={Hdata.bodyArea.buyNowButton} />
+            <img src={Hdata.bodyArea.buyNowButton} className="mr-2" />
             <img src={Hdata.bodyArea.readMoreButton} />
           </div>
         </div>
