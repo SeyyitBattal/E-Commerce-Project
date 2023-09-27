@@ -2,45 +2,59 @@ import { Hdata } from "../Datas/Hdata";
 
 export const Footer = () => {
   return (
-    <div>
-      <div className="flex">
-        <p>Bandage</p>
-        <img src={Hdata.footerArea.facebookFooter} />
-        <img src={Hdata.footerArea.instagramFooter} />
-        <img src={Hdata.footerArea.twitterFooter} />
+    <div className="mt-40">
+      <div className="flex justify-between mx-48 mb-14">
+        <p className=" text-slate-800 text-2xl font-bold">Bandage</p>
+
+        <div className="flex">
+          <img src={Hdata.footerArea.facebookFooter} />
+          <img src={Hdata.footerArea.instagramFooter} className="mx-5" />
+          <img src={Hdata.footerArea.twitterFooter} />
+        </div>
       </div>
-      <hr />
-      <div className="flex">
-        <div className="flex flex-col">
-          <a href="#">Company Info</a>
+
+      <hr className="mx-48" />
+      <div className="flex  my-12 mx-48">
+        <div className="flex flex-col ">
+          <a href="#" className="font-bold">
+            Company Info
+          </a>
+          <a href="#">About Us</a>
+          <a href="#">Carrier</a>
+          <a href="#">We are hiring</a>
+          <a href="#">Blog</a>
+        </div>
+        <div className="flex flex-col mx-7">
+          <a href="#" className="font-bold">
+            Legal
+          </a>
           <a href="#">About Us</a>
           <a href="#">Carrier</a>
           <a href="#">We are hiring</a>
           <a href="#">Blog</a>
         </div>
         <div className="flex flex-col">
-          <a href="#">Legal</a>
-          <a href="#">About Us</a>
-          <a href="#">Carrier</a>
-          <a href="#">We are hiring</a>
-          <a href="#">Blog</a>
-        </div>
-        <div className="flex flex-col">
-          <a href="#">Features</a>
+          <a href="#" className="font-bold">
+            Features
+          </a>
           <a href="#">Business Marketing</a>
           <a href="#">User Analytic</a>
           <a href="#">Live Chat</a>
           <a href="#">Unlimited Support</a>
         </div>
-        <div className="flex flex-col">
-          <a href="#">Resources</a>
+        <div className="flex flex-col mx-7">
+          <a href="#" className="font-bold">
+            Resources
+          </a>
           <a href="#">IOS & Android</a>
           <a href="#">Watch a Demo</a>
           <a href="#">Customers</a>
           <a href="#">API</a>
         </div>
         <div className="flex flex-col">
-          <a href="#">Get In Touch</a>
+          <a href="#" className="font-bold">
+            Get In Touch
+          </a>
           <div className="flex">
             <input
               type="email"
@@ -59,7 +73,9 @@ export const Footer = () => {
           <p>Lore imp sum dolor Amit</p>
         </div>
       </div>
-      <p>Made With Love By Finland All Right Reserved</p>
+      <p className="mx-48 my-6 text-neutral-500 font-bold">
+        Made With Love By Finland All Right Reserved
+      </p>
     </div>
   );
 };
