@@ -93,25 +93,42 @@ export const HomePage = () => {
           </div>
         </div>
       </div>
-      <p>Practice Advice</p>
-      <p>Featured Posts</p>
-      <p>Problems trying to resolve the conflict between</p>
-      <p>the two major realms of Classical physics: Newtonian mechanics </p>
-      <div className="flex flex-wrap">
+      <div className="mt-28 mb-20 text-center">
+        <p className="text-sky-500 font-bold">Practice Advice</p>
+        <p className="text-slate-800 text-5xl font-bold my-2">Featured Posts</p>
+        <p className="text-neutral-500">
+          Problems trying to resolve the conflict between
+        </p>
+        <p className="text-neutral-500 ">
+          the two major realms of Classical physics: Newtonian mechanics{" "}
+        </p>
+      </div>
+
+      <div className="flex flex-wrap mx-48">
         {Hdata.bodyArea.featureCarsdArray.map((featureCard, index) => (
-          <div className="flex-col" key={index}>
+          <div className="flex-col shadow-xl mx-3 " key={index}>
             <a href="#">
               <img class="rounded-t-lg" src={featureCard.img} alt="" />
             </a>
-            <p>{featureCard.tittle}</p>
-            <p className="w-48">{featureCard.descripton}</p>
-            <div className="flex">
-              <p>{featureCard.date}</p>
-              <p>{featureCard.comments}</p>
-            </div>
-            <div className="flex">
-              <p>Learn More</p>
-              <img src={featureCard.arrow} />
+
+            <div className="mx-6 mt-6 mb-9">
+              <div className="flex text-neutral-500">
+                <p className="text-blue-300">{featureCard.google}</p>
+                <p className="mx-4">{featureCard.trending}</p>
+                <p>{featureCard.new}</p>
+              </div>
+              <p className="text-slate-800 font-bold my-2.5">
+                {featureCard.tittle}
+              </p>
+              <p className="w-72 text-neutral-500">{featureCard.descripton}</p>
+              <div className="flex text-neutral-500 my-4 justify-between">
+                <p>{featureCard.date}</p>
+                <p>{featureCard.comments}</p>
+              </div>
+              <div className="flex">
+                <p className="text-neutral-500 font-bold mr-2.5">Learn More</p>
+                <img src={featureCard.arrow} />
+              </div>
             </div>
           </div>
         ))}
