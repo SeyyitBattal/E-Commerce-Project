@@ -2,7 +2,7 @@ import { Hdata } from "../Datas/Hdata";
 
 export const Footer = () => {
   return (
-    <div className="mt-40">
+    <div className="">
       <div className="flex justify-between mx-48 mb-14">
         <p className=" text-slate-800 text-2xl font-bold">Bandage</p>
 

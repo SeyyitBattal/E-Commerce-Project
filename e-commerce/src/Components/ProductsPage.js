@@ -187,6 +187,14 @@ export const ProductsPage = () => {
           </div>
         </div>
       </div>
+      <div className="flex mx-48 my-24 justify-between">
+        <img src={Pdata.footerArea.brands1} className="object-contain" />
+        <img src={Pdata.footerArea.brands2} className="object-contain" />
+        <img src={Pdata.footerArea.brands3} className="object-contain" />
+        <img src={Pdata.footerArea.brands4} className="object-contain" />
+        <img src={Pdata.footerArea.brands5} className="object-contain" />
+        <img src={Pdata.footerArea.brands6} className="object-contain" />
+      </div>
     </div>
   );
 };

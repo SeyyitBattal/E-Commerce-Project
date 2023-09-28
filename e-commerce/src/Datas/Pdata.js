@@ -9,6 +9,12 @@ import ProductTopImg from "../IconsAndPhotos/ProductTopImg.png";
 import viewBox from "../IconsAndPhotos/viewBox.png";
 import viewList from "../IconsAndPhotos/viewList.png";
 import filterButton from "../IconsAndPhotos/filterButton.png";
+import brands1 from "../IconsAndPhotos/fa-brands-1.png";
+import brands2 from "../IconsAndPhotos/fa-brands-2.png";
+import brands3 from "../IconsAndPhotos/fa-brands-3.png";
+import brands4 from "../IconsAndPhotos/fa-brands-4.png";
+import brands5 from "../IconsAndPhotos/fa-brands-5.png";
+import brands6 from "../IconsAndPhotos/fa-brands-6.svg";
 
 export const Pdata = {
   headerArea: {
@@ -213,5 +219,13 @@ export const Pdata = {
         color4: blackCircle,
       },
     ],
+  },
+  footerArea: {
+    brands1,
+    brands2,
+    brands3,
+    brands4,
+    brands5,
+    brands6,
   },
 };
