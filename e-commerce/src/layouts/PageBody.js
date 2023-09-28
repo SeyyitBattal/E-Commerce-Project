@@ -6,7 +6,7 @@ export const PageBody = () => {
   return (
     <div>
       <Router>
-        <div className="bg-red-800">
+        <div className="">
           <Link to="/">*Home*</Link>
           <Link to="/products">*Products Page*</Link>
         </div>
