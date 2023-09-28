@@ -18,7 +18,6 @@ export const ProductsPage = () => {
         <img src={Pdata.headerArea.ProductTopImg} className="mx-3.5" />
         <img src={Pdata.headerArea.ProductTopImg} />
       </div>
-
       <div className="flex justify-between ml-52 mr-64 my-20">
         <p className="text-neutral-500 content-end mt-3 font-bold ">
           Showing all 12 results
@@ -99,7 +98,6 @@ export const ProductsPage = () => {
           <img src={Pdata.headerArea.filterButton} className="ml-3.5" />
         </div>
       </div>
-
       <div className="flex flex-wrap ml-48 mr-32 ">
         {Pdata.bodyArea.productCarsdArray.map((productCard, index) => (
           <div
@@ -151,10 +149,10 @@ export const ProductsPage = () => {
             >
               <a
                 href="#"
-                class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                class="relative inline-flex items-center rounded-l-md px-6 py-4 text-sky-500 font-bold ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
               >
                 <span class="sr-only">Previous</span>
-                Firsttttttttt
+                First
               </a>
 
               <a
@@ -166,22 +164,22 @@ export const ProductsPage = () => {
               </a>
               <a
                 href="#"
-                class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                class="relative inline-flex items-center px-4 py-6 text-sm font-semibold text-sky-500 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
               >
                 2
               </a>
               <a
                 href="#"
-                class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
+                class="relative hidden items-center px-4 py-2 text-sm font-semibold text-sky-500 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
               >
                 3
               </a>
 
               <a
                 href="#"
-                class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                class="relative inline-flex items-center rounded-r-md px-6 py-4 text-sky-500 font-bold  ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
               >
-                Nexttttttttt
+                Next
               </a>
             </nav>
           </div>
