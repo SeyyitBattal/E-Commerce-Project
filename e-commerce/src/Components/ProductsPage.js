@@ -11,12 +11,93 @@ export const ProductsPage = () => {
           <p className="text-stone-300 font-bold">Shop</p>
         </div>
       </div>
-      <div className="flex ml-44">
+      <div className="flex ml-48 mt-6">
         <img src={Pdata.headerArea.ProductTopImg} />
         <img src={Pdata.headerArea.ProductTopImg} className="mx-3.5" />
         <img src={Pdata.headerArea.ProductTopImg} />
         <img src={Pdata.headerArea.ProductTopImg} className="mx-3.5" />
         <img src={Pdata.headerArea.ProductTopImg} />
+      </div>
+
+      <div className="flex justify-between ml-52 mr-64 my-20">
+        <p className="text-neutral-500 content-end mt-3 font-bold ">
+          Showing all 12 results
+        </p>
+        <div className="flex">
+          <p className="text-neutral-500 content-end mt-3 font-bold">Views:</p>
+          <img src={Pdata.headerArea.viewBox} className="mx-3.5" />
+          <img src={Pdata.headerArea.viewList} />
+        </div>
+        <div className="flex">
+          <button
+            id="dropdownDefaultButton"
+            data-dropdown-toggle="dropdown"
+            class="text-black bg-white hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-white border dark:hover:bg-blue-700 "
+            type="button"
+          >
+            Popularity
+            <svg
+              class="w-2.5 h-2.5 ml-2.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 4 4 4-4"
+              />
+            </svg>
+          </button>
+
+          <div
+            id="dropdown"
+            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+          >
+            <ul
+              class="py-2 text-sm text-gray-700 dark:text-gray-200"
+              aria-labelledby="dropdownDefaultButton"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  111
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  222
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  333
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  444
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <img src={Pdata.headerArea.filterButton} className="ml-3.5" />
+        </div>
       </div>
 
       <div className="flex flex-wrap ml-48 mr-32 ">

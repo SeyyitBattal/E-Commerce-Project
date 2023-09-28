@@ -6,10 +6,16 @@ import orangeCircle from "../IconsAndPhotos/orangeCircle.svg";
 import blackCircle from "../IconsAndPhotos/blackCircle.svg";
 import HomeToShop from "../IconsAndPhotos/HomeToShop.svg";
 import ProductTopImg from "../IconsAndPhotos/ProductTopImg.png";
+import viewBox from "../IconsAndPhotos/viewBox.png";
+import viewList from "../IconsAndPhotos/viewList.png";
+import filterButton from "../IconsAndPhotos/filterButton.png";
 
 export const Pdata = {
   headerArea: {
     ProductTopImg,
+    viewBox,
+    viewList,
+    filterButton,
   },
   bodyArea: {
     HomeToShop,
