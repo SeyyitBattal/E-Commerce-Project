@@ -3,10 +3,31 @@ import { Hdata } from "../Datas/Hdata";
 export const HomePage = () => {
   return (
     <div>
-      <div className="bg-gradient-to-r from-cyan-500 to-blue-500 object-contain">
+      *** ORNEK
+      <body class="p-10">
+        <div class="relative w-[500px]">
+          <img src="https://www.kindacode.com/wp-content/uploads/2022/06/big-boss.jpeg" />
+          <div class="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
+            <h3 class="text-xl text-white font-bold">Hey, I Am The Big Boss</h3>
+            <p class="mt-2 text-sm text-gray-300">
+              Some description text. Some dummy text here. Welcome to
+              KindaCode.com
+            </p>
+          </div>
+        </div>
+      </body>
+      *** ORNEK
+      <div className="bg-gradient-to-r from-cyan-500 to-blue-500 object-contain relative">
         <img src={Hdata.bodyArea.sliderPhoto1} className="slider ml-20 " />
+        <div class="absolute text-white top-48 left-48">
+          <p className="font-bold ">SUMMER 2020</p>
+          <p class="my-9 font-bold text-7xl ">NEW COLLECTION</p>
+          <p class="text-2xl w-96  ">
+            We know how large objects will act, but things on a small scale.
+          </p>
+          <img src={Hdata.bodyArea.shopNowButton} className="mt-9" />
+        </div>
       </div>
-
       <p className="text-slate-800 text-2xl font-bold text-center mt-20">
         EDITOR’S PICK
       </p>
@@ -103,7 +124,6 @@ export const HomePage = () => {
           the two major realms of Classical physics: Newtonian mechanics{" "}
         </p>
       </div>
-
       <div className="flex flex-wrap mx-48">
         {Hdata.bodyArea.featureCarsdArray.map((featureCard, index) => (
           <div className="flex-col shadow-xl mx-3 " key={index}>

@@ -32,6 +32,7 @@ import featurePost1 from "../IconsAndPhotos/featurePost1.png";
 import featurePost2 from "../IconsAndPhotos/featurePost2.png";
 import featurePost3 from "../IconsAndPhotos/featurePost3.png";
 import learnMoreArrow from "../IconsAndPhotos/learnMoreArrow.svg";
+import shopNowButton from "../IconsAndPhotos/shopNowButton.png";
 
 export const Hdata = {
   headerArea: {
@@ -58,6 +59,7 @@ export const Hdata = {
     parthOfTheNeural,
     buyNowButton,
     readMoreButton,
+    shopNowButton,
     productCarsdArray: [
       {
         id: "1",
