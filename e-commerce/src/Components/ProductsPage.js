@@ -142,7 +142,7 @@ export const ProductsPage = () => {
           </a>
         </div>
         <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-          <div>
+          <div className=" mt-12 ml-auto mr-auto">
             <nav
               class="isolate inline-flex -space-x-px rounded-md shadow-sm"
               aria-label="Pagination"
