@@ -33,6 +33,10 @@ import featurePost2 from "../IconsAndPhotos/featurePost2.png";
 import featurePost3 from "../IconsAndPhotos/featurePost3.png";
 import learnMoreArrow from "../IconsAndPhotos/learnMoreArrow.svg";
 import shopNowButton from "../IconsAndPhotos/shopNowButton.png";
+import menText from "../IconsAndPhotos/menText.png";
+import womenText from "../IconsAndPhotos/womenText.png";
+import accessoriesText from "../IconsAndPhotos/accessoriesText.png";
+import kidsText from "../IconsAndPhotos/kidsText.png";
 
 export const Hdata = {
   headerArea: {
@@ -60,6 +64,10 @@ export const Hdata = {
     buyNowButton,
     readMoreButton,
     shopNowButton,
+    menText,
+    womenText,
+    accessoriesText,
+    kidsText,
     productCarsdArray: [
       {
         id: "1",

@@ -7,8 +7,8 @@ export const PageBody = () => {
     <div>
       <Router>
         <div className="bg-red-800">
-          <Link to="/">HomeXXXXXX</Link>
-          <Link to="/products">Products PageXXX</Link>
+          <Link to="/">*Home*</Link>
+          <Link to="/products">*Products Page*</Link>
         </div>
 
         <Switch>

@@ -2,21 +2,7 @@ import { Hdata } from "../Datas/Hdata";
 
 export const HomePage = () => {
   return (
-    <div>
-      *** ORNEK
-      <body class="p-10">
-        <div class="relative w-[500px]">
-          <img src="https://www.kindacode.com/wp-content/uploads/2022/06/big-boss.jpeg" />
-          <div class="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
-            <h3 class="text-xl text-white font-bold">Hey, I Am The Big Boss</h3>
-            <p class="mt-2 text-sm text-gray-300">
-              Some description text. Some dummy text here. Welcome to
-              KindaCode.com
-            </p>
-          </div>
-        </div>
-      </body>
-      *** ORNEK
+    <div className="">
       <div className="bg-gradient-to-r from-cyan-500 to-blue-500 object-contain relative">
         <img src={Hdata.bodyArea.sliderPhoto1} className="slider ml-20 " />
         <div class="absolute text-white top-48 left-48">
@@ -35,11 +21,34 @@ export const HomePage = () => {
         Problems trying to resolve the conflict between
       </p>
       <div className="flex mx-48">
-        <img src={Hdata.bodyArea.editorPicMan} />
-        <img src={Hdata.bodyArea.editorPicWoman} className="mx-7" />
+        <body className="flex">
+          <div class="relative w-[500px]">
+            <img src={Hdata.bodyArea.editorPicMan} />
+            <div class="absolute bottom-7 left-7">
+              <img src={Hdata.bodyArea.menText} />
+            </div>
+          </div>
+
+          <div class="relative w-[235px] mx-8">
+            <img src={Hdata.bodyArea.editorPicWoman} />
+            <div class="absolute bottom-7 left-7">
+              <img src={Hdata.bodyArea.womenText} />
+            </div>
+          </div>
+        </body>
         <div>
-          <img src={Hdata.bodyArea.editorPicAccessories} className="mb-4" />
-          <img src={Hdata.bodyArea.editorPicKids} />
+          <div class="relative w-[235px] mb-4">
+            <img src={Hdata.bodyArea.editorPicAccessories} />
+            <div class="absolute bottom-7 left-7">
+              <img src={Hdata.bodyArea.accessoriesText} />
+            </div>
+          </div>
+          <div class="relative w-[235px] ">
+            <img src={Hdata.bodyArea.editorPicKids} />
+            <div class="absolute bottom-7 left-7">
+              <img src={Hdata.bodyArea.kidsText} />
+            </div>
+          </div>
         </div>
       </div>
       <p className="text-neutral-500 text-xl text-center mt-40">
@@ -79,20 +88,23 @@ export const HomePage = () => {
           </div>
         ))}
       </div>
-      <div className="flex bg-color bg-emerald-700">
-        <div>
-          <p className="h5">SUMMER 2020</p>
-          <p>Vita Classic Product</p>
-          <p>
-            We know how large objects will act, We know how are objects will
-            act, We know
-          </p>
-          <div className="flex">
-            <p>$16.48</p>
-            <img src={Hdata.bodyArea.addToCardButton} />
+      <div className="flex bg-color bg-emerald-700 pt-28">
+        <div className=" object-contain relative ml-52">
+          <div class="absolute text-white top-1 left-1">
+            <p className=" ">SUMMER 2020</p>
+            <p class="my-9 font-bold text-7xl ">Vita Classic Prouduct</p>
+            <p class="text-xl w-96  ">
+              We know how large objects will act, We know how are objects will
+              act, We know
+            </p>
+            <div className="flex mt-9">
+              <p className="text-2xl font-bold mt-2 mr-9">$16.48</p>
+              <img src={Hdata.bodyArea.addToCardButton} className="" />
+            </div>
           </div>
         </div>
-        <div>
+
+        <div className="mr-52 ml-auto">
           <img src={Hdata.bodyArea.sliderPhoto2} />
         </div>
       </div>
@@ -124,7 +136,7 @@ export const HomePage = () => {
           the two major realms of Classical physics: Newtonian mechanics{" "}
         </p>
       </div>
-      <div className="flex flex-wrap mx-48">
+      <div className="flex flex-wrap mx-48 mb-40">
         {Hdata.bodyArea.featureCarsdArray.map((featureCard, index) => (
           <div className="flex-col shadow-xl mx-3 " key={index}>
             <a href="#">
