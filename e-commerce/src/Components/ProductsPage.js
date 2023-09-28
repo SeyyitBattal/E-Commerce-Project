@@ -11,6 +11,13 @@ export const ProductsPage = () => {
           <p className="text-stone-300 font-bold">Shop</p>
         </div>
       </div>
+      <div className="flex ml-44">
+        <img src={Pdata.headerArea.ProductTopImg} />
+        <img src={Pdata.headerArea.ProductTopImg} className="mx-3.5" />
+        <img src={Pdata.headerArea.ProductTopImg} />
+        <img src={Pdata.headerArea.ProductTopImg} className="mx-3.5" />
+        <img src={Pdata.headerArea.ProductTopImg} />
+      </div>
 
       <div className="flex flex-wrap ml-48 mr-32 ">
         {Pdata.bodyArea.productCarsdArray.map((productCard, index) => (

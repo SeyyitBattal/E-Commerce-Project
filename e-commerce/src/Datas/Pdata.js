@@ -5,8 +5,12 @@ import greenCircle from "../IconsAndPhotos/greenCircle.svg";
 import orangeCircle from "../IconsAndPhotos/orangeCircle.svg";
 import blackCircle from "../IconsAndPhotos/blackCircle.svg";
 import HomeToShop from "../IconsAndPhotos/HomeToShop.svg";
+import ProductTopImg from "../IconsAndPhotos/ProductTopImg.png";
 
 export const Pdata = {
+  headerArea: {
+    ProductTopImg,
+  },
   bodyArea: {
     HomeToShop,
     productCarsdArray: [
