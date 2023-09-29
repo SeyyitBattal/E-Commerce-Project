@@ -1,5 +1,4 @@
 import { Hdata } from "../Datas/Hdata";
-import { Carousel, IconButton } from "@material-tailwind/react";
 
 export const HomePage = () => {
   return (
