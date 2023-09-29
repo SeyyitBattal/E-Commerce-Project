@@ -1,12 +1,31 @@
-import featurePost1 from "../IconsAndPhotos/featurePost1.png";
-import featurePost2 from "../IconsAndPhotos/featurePost2.png";
-import featurePost3 from "../IconsAndPhotos/featurePost3.png";
 import learnMoreArrow from "../IconsAndPhotos/learnMoreArrow.svg";
+import newOnPicture from "../IconsAndPhotos/newOnPicture.png";
+import product1 from "../IconsAndPhotos/product1.png";
+import product2 from "../IconsAndPhotos/product2.png";
+import product3 from "../IconsAndPhotos/product3.png";
+import product4 from "../IconsAndPhotos/product4.png";
+import product5 from "../IconsAndPhotos/product5.png";
+import product6 from "../IconsAndPhotos/product6.png";
 
 export const BlogData = {
   CardsdArray: [
     {
-      img: featurePost1,
+      img: product1,
+      newOnPicture,
+      google: "Google",
+      trending: "Trending",
+      new: "New",
+      tittle: "Koudetat à la Maison #1 (L'intégrale)",
+      descripton:
+        "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+      date: "22 April 2023",
+      comments: "10 comments",
+      learnMore: "Learn More",
+      arrow: learnMoreArrow,
+    },
+    {
+      img: product2,
+      newOnPicture,
       google: "Google",
       trending: "Trending",
       new: "New",
@@ -19,7 +38,22 @@ export const BlogData = {
       arrow: learnMoreArrow,
     },
     {
-      img: featurePost2,
+      img: product3,
+      newOnPicture,
+      google: "Google",
+      trending: "Trending",
+      new: "New",
+      tittle: "Koudetat à la Maison #1 (L'intégrale)",
+      descripton:
+        "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+      date: "22 April 2023",
+      comments: "10 comments",
+      learnMore: "Learn More",
+      arrow: learnMoreArrow,
+    },
+    {
+      img: product4,
+      newOnPicture,
       google: "Google",
       trending: "Trending",
       new: "New",
@@ -32,7 +66,22 @@ export const BlogData = {
       arrow: learnMoreArrow,
     },
     {
-      img: featurePost3,
+      img: product5,
+      newOnPicture,
+      google: "Google",
+      trending: "Trending",
+      new: "New",
+      tittle: "Koudetat à la Maison #1 (L'intégrale)",
+      descripton:
+        "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+      date: "22 April 2023",
+      comments: "10 comments",
+      learnMore: "Learn More",
+      arrow: learnMoreArrow,
+    },
+    {
+      img: product6,
+      newOnPicture,
       google: "Google",
       trending: "Trending",
       new: "New",
