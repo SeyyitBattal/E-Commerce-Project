@@ -17,6 +17,7 @@ export const PageBody = () => {
           <Route path="/" exact>
             <HomePage />
           </Route>
+
           <Route path="/products">
             <ProductsPage />
           </Route>

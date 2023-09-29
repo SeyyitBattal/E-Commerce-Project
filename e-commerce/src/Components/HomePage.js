@@ -133,7 +133,7 @@ export const HomePage = () => {
           Problems trying to resolve the conflict between
         </p>
         <p className="text-neutral-500 ">
-          the two major realms of Classical physics: Newtonian mechanics{" "}
+          the two major realms of Classical physics: Newtonian mechanics
         </p>
       </div>
       <div className="flex flex-wrap mx-48 mb-40">

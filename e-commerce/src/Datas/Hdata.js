@@ -169,9 +169,9 @@ export const Hdata = {
     featureCarsdArray: [
       {
         img: featurePost1,
-        google: "google",
-        trending: "trending",
-        new: "new",
+        google: "Google",
+        trending: "Trending",
+        new: "New",
         tittle: "Loudest à la Madison #1 (L'integral)",
         descripton:
           "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
@@ -182,9 +182,9 @@ export const Hdata = {
       },
       {
         img: featurePost2,
-        google: "google",
-        trending: "trending",
-        new: "new",
+        google: "Google",
+        trending: "Trending",
+        new: "New",
         tittle: "Loudest à la Madison #1 (L'integral)",
         descripton:
           "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
@@ -195,9 +195,9 @@ export const Hdata = {
       },
       {
         img: featurePost3,
-        google: "google",
-        trending: "trending",
-        new: "new",
+        google: "Google",
+        trending: "Trending",
+        new: "New",
         tittle: "Loudest à la Madison #1 (L'integral)",
         descripton:
           "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
