@@ -20,21 +20,17 @@ export const HomePage = () => {
           </div>
         )}
       >
-        <div className="flex">
-          <img
-            src={Hdata.bodyArea.sliderPhoto1}
-            alt="image 1"
-            className="h-full w-full object-cover"
-          />
-        </div>
+        <img
+          src={Hdata.bodyArea.sliderPhoto1}
+          alt="image 1"
+          className="h-full w-full object-cover flex"
+        />
 
-        <div className="flex">
-          <img
-            src={Hdata.bodyArea.sliderPhoto1}
-            alt="image 1"
-            className="h-full w-full object-cover"
-          />
-        </div>
+        <img
+          src={Hdata.bodyArea.sliderPhoto1}
+          alt="image 1"
+          className="h-full w-full object-cover flex"
+        />
       </Carousel>
       ***************************************************
       <div className="bg-gradient-to-r from-cyan-500 to-blue-500 object-contain relative">
