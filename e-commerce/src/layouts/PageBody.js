@@ -1,6 +1,7 @@
 import { HomePage } from "../Components/HomePage";
 import { ProductsPage } from "../Components/ProductsPage";
 import { BlogPage } from "../Components/BlogPage";
+import { ContactPage } from "../Components/ContactPage";
 import { TeamPage } from "../Components/TeamPage";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -11,7 +12,8 @@ export const PageBody = () => {
         <div className="">
           <Link to="/">*Home*</Link>
           <Link to="/products">*Products Page*</Link>
-          <Link to="/blog">*blog*</Link>
+          <Link to="/blog">*Blog*</Link>
+          <Link to="/contact">*Contact*</Link>
           <Link to="/team">*Team*</Link>
         </div>
 
@@ -26,6 +28,10 @@ export const PageBody = () => {
 
           <Route path="/blog">
             <BlogPage />
+          </Route>
+
+          <Route path="/contact">
+            <ContactPage />
           </Route>
 
           <Route path="/team">
