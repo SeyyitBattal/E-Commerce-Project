@@ -24,7 +24,7 @@ export const ContactPage = () => {
         <h1>VISIT OUR OFFICE</h1>
         <label>We help small businesses with big ideas</label>
       </div>
-      <div className="flex buyuk">
+      <div className="flex">
         <div>
           <img src={ContactData.lower.phoneLogoContact} />
           <h1>seyyitbattalarvas3@gmail.com</h1>
@@ -48,6 +48,12 @@ export const ContactPage = () => {
           <h1>Get Support</h1>
           <img src={ContactData.lower.submitButtonContact} />
         </div>
+      </div>
+      <div>
+        <img src={ContactData.lower.ArrowContact} />
+        <h1>WE CAN'T WAIT TO MEET YOU</h1>
+        <h1>Let’s Talk</h1>
+        <img src={ContactData.lower.tryItButton} />
       </div>
     </div>
   );
