@@ -2,7 +2,7 @@ import { Hdata } from "../Datas/Hdata";
 
 export const HomePage = () => {
   return (
-    <div className="">
+    <div>
       <div className="bg-gradient-to-r from-cyan-500 to-blue-500 object-contain relative">
         <img src={Hdata.bodyArea.sliderPhoto1} className="slider ml-20 " />
         <div class="absolute text-white top-48 left-48">
