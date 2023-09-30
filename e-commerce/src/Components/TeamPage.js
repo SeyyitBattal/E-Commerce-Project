@@ -57,18 +57,23 @@ export const TeamPage = () => {
         </div>
       </div>
 
-      <div>
-        <p>Start your 14 days free trial</p>
-        <p>
+      <div className="flex flex-col justify-center mx-auto my-32">
+        <p className=" text-slate-800 font-bold text-5xl justify-center mx-auto">
+          Start your 14 days free trial
+        </p>
+        <p className="justify-center mx-auto text-neutral-500 my-8 font-bold w-[35rem] text-xl text-center">
           Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
           RELIT official consequent.
         </p>
-        <img src={TeamData.footerArea.tryItButton} />
-        <div className="flex">
+        <img
+          src={TeamData.footerArea.tryItButton}
+          className="flex object-none justify-center mx-auto"
+        />
+        <div className="flex justify-center mx-auto mt-8">
           <img src={TeamData.footerArea.twitterLogoFooter} />
-          <img src={TeamData.footerArea.facebookLogoFooter} />
+          <img src={TeamData.footerArea.facebookLogoFooter} className="mx-9" />
           <img src={TeamData.footerArea.instagramLogoFooter} />
-          <img src={TeamData.footerArea.linkedinLogoFooter} />
+          <img src={TeamData.footerArea.linkedinLogoFooter} className="ml-9" />
         </div>
       </div>
     </div>
