@@ -27,6 +27,29 @@ export const TeamPage = () => {
           </div>
         </div>
       </div>
+      <p>Meet Our Team</p>
+
+      <div className="flex flex-wrap">
+        {TeamData.bodyArea.teamCardsArray.map((teamCard, index) => (
+          <div
+            className="flex-col shadow-xl text-center mx-4 mb-20"
+            key={index}
+          >
+            <a href="#">
+              <img class="rounded-t-lg" src={teamCard.img} alt="" />
+            </a>
+            <div className="mt-6 mb-9">
+              <p className="font-bold ">{teamCard.username}</p>
+              <p className="text-neutral-500">{teamCard.title}</p>
+              <div className="flex">
+                <img src={teamCard.facebookIcon} />
+                <img src={teamCard.instagramIcon} />
+                <img src={teamCard.twitterIcon} />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
