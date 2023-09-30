@@ -50,6 +50,21 @@ export const TeamPage = () => {
           </div>
         ))}
       </div>
+
+      <div>
+        <p>Start your 14 days free trial</p>
+        <p>
+          Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
+          RELIT official consequent.
+        </p>
+        <img src={TeamData.footerArea.tryItButton} />
+        <div className="flex">
+          <img src={TeamData.footerArea.twitterLogoFooter} />
+          <img src={TeamData.footerArea.facebookLogoFooter} />
+          <img src={TeamData.footerArea.instagramLogoFooter} />
+          <img src={TeamData.footerArea.linkedinLogoFooter} />
+        </div>
+      </div>
     </div>
   );
 };

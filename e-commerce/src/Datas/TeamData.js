@@ -16,6 +16,11 @@ import teamMember9 from "../IconsAndPhotos/teamMember9.jpg";
 import facebookIcon from "../IconsAndPhotos/facebookFooter.svg";
 import instagramIcon from "../IconsAndPhotos/instagramFooter.svg";
 import twitterIcon from "../IconsAndPhotos/twitterFooter.svg";
+import tryItButton from "../IconsAndPhotos/tryItButton.png";
+import twitterLogoFooter from "../IconsAndPhotos/twitterLogoFooter.svg";
+import facebookLogoFooter from "../IconsAndPhotos/facebookLogoFooter.svg";
+import instagramLogoFooter from "../IconsAndPhotos/instagramLogoFooter.svg";
+import linkedinLogoFooter from "../IconsAndPhotos/linkedinLogoFooter.svg";
 
 export const TeamData = {
   headerArea: {
@@ -111,5 +116,11 @@ export const TeamData = {
       },
     ],
   },
-  footerArea: {},
+  footerArea: {
+    tryItButton,
+    twitterLogoFooter,
+    facebookLogoFooter,
+    instagramLogoFooter,
+    linkedinLogoFooter,
+  },
 };
