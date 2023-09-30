@@ -6,6 +6,7 @@ import linkedinLogoContact from "../IconsAndPhotos/linkedinLogoContact.svg";
 import phoneLogoContact from "../IconsAndPhotos/phoneLogoContact.svg";
 import mapsLogoContact from "../IconsAndPhotos/mapsLogoContact.svg";
 import mailLogoContact from "../IconsAndPhotos/mailLogoContact.svg";
+import submitButtonContact from "../IconsAndPhotos/submitButtonContact.png";
 import ArrowContact from "../IconsAndPhotos/ArrowContact.svg";
 import tryItButton from "../IconsAndPhotos/tryItButton.png";
 
@@ -21,6 +22,7 @@ export const ContactData = {
     phoneLogoContact,
     mapsLogoContact,
     mailLogoContact,
+    submitButtonContact,
     ArrowContact,
     tryItButton,
   },

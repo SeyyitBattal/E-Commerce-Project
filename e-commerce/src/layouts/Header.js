@@ -12,7 +12,7 @@ export const Header = () => {
           </div>
           <div className="flex pl-7">
             <img src={Hdata.headerArea.mailLogo} className="pr-1" />
-            <p>battal.arvas@gmail.com</p>
+            <p>seyyitbattalarvas3@gmail.com</p>
           </div>
         </div>
 
