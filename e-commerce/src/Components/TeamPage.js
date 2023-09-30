@@ -14,17 +14,17 @@ export const TeamPage = () => {
           <p className="text-stone-300 font-bold">Team</p>
         </div>
       </div>
-      <div className="flex ml-auto mr-auto">
+      <div className=" flex mx-auto justify-center">
         <div>
-          <img src={TeamData.headerArea.topImg1} />
+          <img src={TeamData.headerArea.topImg1} className="h-full" />
         </div>
-        <div>
-          <div className="flex">
-            <img src={TeamData.headerArea.topImg2} />
+        <div className="ml-4">
+          <div className="flex mb-4 ">
+            <img src={TeamData.headerArea.topImg2} className="mr-4" />
             <img src={TeamData.headerArea.topImg3} />
           </div>
           <div className="flex">
-            <img src={TeamData.headerArea.topImg4} />
+            <img src={TeamData.headerArea.topImg4} className="mr-4" />
             <img src={TeamData.headerArea.topImg5} />
           </div>
         </div>
