@@ -89,11 +89,17 @@ export const ContactPage = () => {
         </div>
       </div>
 
-      <div>
-        <img src={ContactData.lower.ArrowContact} />
-        <h1>WE CAN'T WAIT TO MEET YOU</h1>
-        <h1>Let’s Talk</h1>
-        <img src={ContactData.lower.tryItButton} />
+      <div className="mx-auto justify-center text-center mb-32">
+        <img
+          src={ContactData.lower.ArrowContact}
+          className="mx-auto justify-center"
+        />
+        <h1 className="font-bold">WE CAN'T WAIT TO MEET YOU</h1>
+        <h1 className="text-6xl font-bold text-slate-800 my-4">Let’s Talk</h1>
+        <img
+          src={ContactData.lower.tryItButton}
+          className="mx-auto justify-center"
+        />
       </div>
     </div>
   );
