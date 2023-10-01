@@ -59,13 +59,13 @@ export const AboutPage = () => {
         </div>
       </div>
       <div>BURAYA VİDEO</div>
-      <div>
-        <p className=" my-28 text-slate-800 font-bold text-5xl mx-auto">
+      <div className="my-28">
+        <p className="  text-slate-800 font-bold text-5xl mx-auto text-center">
           Meet Our Team
         </p>
-        <p>
-          Problems trying to resolve the conflict between the two major realms
-          of Classical physics: Newtonian mechanics
+        <p className="font-bold text-neutral-500 text-center mt-5">
+          Problems trying to resolve the conflict between <br /> the two major
+          realms of Classical physics: Newtonian mechanics
         </p>
       </div>
       <div className="flex flex-wrap mx-48">
