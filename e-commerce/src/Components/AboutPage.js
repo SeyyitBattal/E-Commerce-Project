@@ -51,7 +51,7 @@ export const AboutPage = () => {
           </p>
         </div>
 
-        <div className="mx-24">
+        <div className="ml-24">
           <label className="text-6xl font-bold text-slate-800">100+</label>
           <p className="font-bold text-neutral-500 text-center mt-2.5">
             Top Partners
@@ -59,7 +59,7 @@ export const AboutPage = () => {
         </div>
       </div>
 
-      <div className="my-28">
+      <div className="my-80">
         <video
           className="w-[62rem] h-[34rem] max-w-full flex mx-auto justify-center border border-gray-200 rounded-2xl"
           autoplay
