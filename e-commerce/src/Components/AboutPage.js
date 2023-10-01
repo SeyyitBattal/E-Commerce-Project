@@ -89,14 +89,16 @@ export const AboutPage = () => {
           </div>
         ))}
       </div>
-      <div>
-        <h1>Big Companies Are Here</h1>
-        <p>
-          Problems trying to resolve the conflict between the two major realms
-          of Classical physics: Newtonian mechanics
+      <div className="mt-48">
+        <h1 className="text-slate-800 font-bold text-5xl mx-auto text-center">
+          Big Companies Are Here
+        </h1>
+        <p className="font-bold text-neutral-500 text-center mt-8">
+          Problems trying to resolve the conflict between <br /> the two major
+          realms of Classical physics: Newtonian mechanics
         </p>
       </div>
-      <div className="flex mx-48 my-24 justify-between">
+      <div className="flex mx-48 mt-20 mb-32 justify-between">
         <img src={AboutData.footerArea.brands1} className="object-contain" />
         <img src={AboutData.footerArea.brands2} className="object-contain" />
         <img src={AboutData.footerArea.brands3} className="object-contain" />
@@ -104,16 +106,18 @@ export const AboutPage = () => {
         <img src={AboutData.footerArea.brands5} className="object-contain" />
         <img src={AboutData.footerArea.brands6} className="object-contain" />
       </div>
-      <div className="flex mx-auto justify-center">
-        <div className="text-slate-800 w-96 mt-28 mr-32">
-          <h1 className="font-bold">ABOUT COMPANY</h1>
-          <h1 className="text-6xl font-bold text-slate-800 my-9">ABOUT US</h1>
-          <p className="text-neutral-500 text-xl">
-            We know how large objects will act, but things on a small scale
+
+      <div className="flex mx-auto justify-center bg-sky-500 text-white mb-10">
+        <div className=" mt-44 mr-44">
+          <h1 className="font-bold">WORK WITH US</h1>
+          <h1 className="text-6xl font-bold my-9">Now Let's Grow Yours</h1>
+          <p className=" text-xl w-[35rem]">
+            The gradual accumulation of information about atomic and small-scale
+            behavior during the first quarter of the 20th
           </p>
           <img
             src={AboutData.footerArea.aboutWorkWithUsButton}
-            className="mt-9 bg-red-500"
+            className="mt-9 "
           />
         </div>
         <div>
