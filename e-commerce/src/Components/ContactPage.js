@@ -27,35 +27,68 @@ export const ContactPage = () => {
           <img src={ContactData.upper.familyContact} />
         </div>
       </div>
-      <div>
-        <h1>VISIT OUR OFFICE</h1>
-        <label>We help small businesses with big ideas</label>
-      </div>
-      <div className="flex">
-        <div>
-          <img src={ContactData.lower.phoneLogoContact} />
-          <h1>seyyitbattalarvas3@gmail.com</h1>
-          <h1>syytbttlarvs140@gmail.com</h1>
-          <h1>Get Support</h1>
-          <img src={ContactData.lower.submitButtonContact} />
-        </div>
 
-        <div className="bg-slate-800 text-white">
-          <img src={ContactData.lower.mapsLogoContact} />
-          <h1>seyyitbattalarvas3@gmail.com</h1>
-          <h1>syytbttlarvs140@gmail.com</h1>
-          <h1>Get Support</h1>
-          <img src={ContactData.lower.submitButtonContact} />
-        </div>
-
+      <div className="my-32 text-center">
         <div>
-          <img src={ContactData.lower.mailLogoContact} />
-          <h1>seyyitbattalarvas3@gmail.com</h1>
-          <h1>syytbttlarvs140@gmail.com</h1>
-          <h1>Get Support</h1>
-          <img src={ContactData.lower.submitButtonContact} />
+          <h1 className="font-bold">VISIT OUR OFFICE</h1>
+          <p className="text-4xl mx-auto justify-center font-bold max-w-md mt-2.5">
+            We help small businesses with big ideas
+          </p>
+        </div>
+        <div className="flex mx-auto justify-center mt-20">
+          <div className=" font-bold py-20 px-10">
+            <img
+              src={ContactData.lower.phoneLogoContact}
+              className="justify-center mx-auto"
+            />
+            <div className="my-4">
+              <h1>seyyitbattalarvas3@gmail.com</h1>
+              <h1>syytbttlarvs140@gmail.com</h1>
+            </div>
+
+            <h1 className="mb-4">Get Support</h1>
+            <img
+              src={ContactData.lower.submitButtonContact}
+              className="justify-center mx-auto"
+            />
+          </div>
+
+          <div className="bg-slate-800 text-white font-bold py-20 px-10">
+            <img
+              src={ContactData.lower.mapsLogoContact}
+              className="justify-center mx-auto"
+            />
+            <div className="my-4">
+              <h1>seyyitbattalarvas3@gmail.com</h1>
+              <h1>syytbttlarvs140@gmail.com</h1>
+            </div>
+
+            <h1 className="mb-4">Get Support</h1>
+            <img
+              src={ContactData.lower.submitButtonContact}
+              className="justify-center mx-auto"
+            />
+          </div>
+
+          <div className="font-bold py-20 px-10">
+            <img
+              src={ContactData.lower.mailLogoContact}
+              className="justify-center mx-auto"
+            />
+            <div className="my-4">
+              <h1>seyyitbattalarvas3@gmail.com</h1>
+              <h1>syytbttlarvs140@gmail.com</h1>
+            </div>
+
+            <h1 className="mb-4">Get Support</h1>
+            <img
+              src={ContactData.lower.submitButtonContact}
+              className="justify-center mx-auto"
+            />
+          </div>
         </div>
       </div>
+
       <div>
         <img src={ContactData.lower.ArrowContact} />
         <h1>WE CAN'T WAIT TO MEET YOU</h1>
