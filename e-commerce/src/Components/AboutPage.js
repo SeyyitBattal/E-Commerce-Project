@@ -30,30 +30,32 @@ export const AboutPage = () => {
         </p>
       </div>
 
-      <div className="flex text-center">
+      <div className="flex mx-auto justify-center text-center">
         <div>
           <label className="text-6xl font-bold text-slate-800">15K</label>
-          <p className="font-bold text-neutral-500 text-center">
+          <p className="font-bold text-neutral-500 text-center mt-2.5">
             Happy Customers
           </p>
         </div>
-        <div>
+        <div className="mx-24">
           <label className="text-6xl font-bold text-slate-800">150K</label>
-          <p className="font-bold text-neutral-500 text-center">
+          <p className="font-bold text-neutral-500 text-center mt-2.5">
             Monthly Visitors
           </p>
         </div>
 
         <div>
           <label className="text-6xl font-bold text-slate-800">15</label>
-          <p className="font-bold text-neutral-500 text-center">
+          <p className="font-bold text-neutral-500 text-center mt-2.5">
             Countries Worldwide
           </p>
         </div>
 
-        <div>
+        <div className="mx-24">
           <label className="text-6xl font-bold text-slate-800">100+</label>
-          <p className="font-bold text-neutral-500 text-center">Top Partners</p>
+          <p className="font-bold text-neutral-500 text-center mt-2.5">
+            Top Partners
+          </p>
         </div>
       </div>
       <div>BURAYA VİDEO</div>
