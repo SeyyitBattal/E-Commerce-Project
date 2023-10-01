@@ -19,34 +19,41 @@ export const AboutPage = () => {
           <img src={AboutData.headerArea.aboutPhoto} />
         </div>
       </div>
-      <div>
-        <label>Problems trying</label>
-        <p>
+
+      <div className="my-36 flex mx-auto justify-center">
+        <p className="font-bold text-2xl w-[23rem] mr-16">
           Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
         </p>
-        <p>
+        <p className=" text-neutral-500 w-[35rem]">
           Problems trying to resolve the conflict between the two major realms
           of Classical physics: Newtonian mechanics
         </p>
       </div>
-      <div className="flex">
+
+      <div className="flex text-center">
         <div>
-          <label>15K</label>
-          <p>Happy Customers</p>
+          <label className="text-6xl font-bold text-slate-800">15K</label>
+          <p className="font-bold text-neutral-500 text-center">
+            Happy Customers
+          </p>
         </div>
         <div>
-          <label>150K</label>
-          <p>Monthly Visitors</p>
+          <label className="text-6xl font-bold text-slate-800">150K</label>
+          <p className="font-bold text-neutral-500 text-center">
+            Monthly Visitors
+          </p>
         </div>
 
         <div>
-          <label>15</label>
-          <p>Countries Worldwide</p>
+          <label className="text-6xl font-bold text-slate-800">15</label>
+          <p className="font-bold text-neutral-500 text-center">
+            Countries Worldwide
+          </p>
         </div>
 
         <div>
-          <label>100+</label>
-          <p>Top Partners</p>
+          <label className="text-6xl font-bold text-slate-800">100+</label>
+          <p className="font-bold text-neutral-500 text-center">Top Partners</p>
         </div>
       </div>
       <div>BURAYA VİDEO</div>
