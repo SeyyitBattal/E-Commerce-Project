@@ -2,18 +2,25 @@ import { ContactData } from "../Datas/ContactData";
 export const ContactPage = () => {
   return (
     <div>
-      <div className="flex">
-        <div>
-          <h1>CONTACT US</h1>
-          <label>Get in touch today!</label>
-          <p>We know how large objects will act, but things on a small scale</p>
-          <h1>Phone ; +451 215 215 </h1>
-          <h1>Fax : +451 215 215</h1>
+      <div className="flex mx-auto justify-center">
+        <div className="text-slate-800 w-96 mt-28 mr-28">
+          <h1 className="font-bold">CONTACT US</h1>
+          <h1 className="text-6xl font-bold text-slate-800 my-9">
+            Get in touch today!
+          </h1>
+          <p className="text-neutral-500 text-xl">
+            We know how large objects will act, but things on a small scale
+          </p>
+          <div className="my-9">
+            <h1 className="text-2xl font-bold mb-5">Phone ; +451 215 215 </h1>
+            <h1 className="text-2xl font-bold">Fax : +451 215 215</h1>
+          </div>
+
           <div className="flex">
             <img src={ContactData.upper.twitterLogoContact} />
-            <img src={ContactData.upper.facebookLogoContact} />
+            <img src={ContactData.upper.facebookLogoContact} className="px-9" />
             <img src={ContactData.upper.instagramLogoContact} />
-            <img src={ContactData.upper.linkedinLogoContact} />
+            <img src={ContactData.upper.linkedinLogoContact} className="px-9" />
           </div>
         </div>
         <div>
