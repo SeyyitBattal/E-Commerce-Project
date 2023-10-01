@@ -58,7 +58,19 @@ export const AboutPage = () => {
           </p>
         </div>
       </div>
-      <div>BURAYA VİDEO</div>
+
+      <div className="my-28">
+        <video
+          className="w-[62rem] h-[34rem] max-w-full flex mx-auto justify-center border border-gray-200 rounded-2xl"
+          autoplay
+          muted
+          controls
+        >
+          <source src={AboutData.bodyArea.aboutVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
       <div className="my-28">
         <p className="  text-slate-800 font-bold text-5xl mx-auto text-center">
           Meet Our Team

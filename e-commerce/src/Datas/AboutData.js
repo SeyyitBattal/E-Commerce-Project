@@ -14,6 +14,7 @@ import brands3 from "../IconsAndPhotos/fa-brands-3.png";
 import brands4 from "../IconsAndPhotos/fa-brands-4.png";
 import brands5 from "../IconsAndPhotos/fa-brands-5.png";
 import brands6 from "../IconsAndPhotos/fa-brands-6.svg";
+import aboutVideo from "../IconsAndPhotos/aboutVideo.mp4";
 
 export const AboutData = {
   headerArea: {
@@ -21,6 +22,7 @@ export const AboutData = {
     aboutGetQuoteButton,
   },
   bodyArea: {
+    aboutVideo,
     teamCardsArray: [
       {
         id: "1",
