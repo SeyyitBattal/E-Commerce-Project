@@ -1,5 +1,6 @@
 import { HomePage } from "../Components/HomePage";
 import { ProductsPage } from "../Components/ProductsPage";
+import { AboutPage } from "../Components/AboutPage";
 import { BlogPage } from "../Components/BlogPage";
 import { ContactPage } from "../Components/ContactPage";
 import { TeamPage } from "../Components/TeamPage";
@@ -12,6 +13,7 @@ export const PageBody = () => {
         <div className="">
           <Link to="/">*Home*</Link>
           <Link to="/products">*Products Page*</Link>
+          <Link to="/about">*About*</Link>
           <Link to="/blog">*Blog*</Link>
           <Link to="/contact">*Contact*</Link>
           <Link to="/team">*Team*</Link>
@@ -24,6 +26,10 @@ export const PageBody = () => {
 
           <Route path="/products">
             <ProductsPage />
+          </Route>
+
+          <Route path="/about">
+            <AboutPage />
           </Route>
 
           <Route path="/blog">
