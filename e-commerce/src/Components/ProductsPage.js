@@ -11,7 +11,7 @@ export const ProductsPage = () => {
           <p className="text-stone-300 font-bold">Shop</p>
         </div>
       </div>
-      <div className="flex ml-48 mt-6">
+      <div className="flex flex-wrap mt-6 mx-44 justify-evenly">
         <img src={Pdata.headerArea.ProductTopImg} />
         <img src={Pdata.headerArea.ProductTopImg} className="mx-3.5" />
         <img src={Pdata.headerArea.ProductTopImg} />
@@ -98,7 +98,7 @@ export const ProductsPage = () => {
           <img src={Pdata.headerArea.filterButton} className="ml-3.5" />
         </div>
       </div>
-      <div className="flex flex-wrap ml-48 mr-32 ">
+      <div className="flex flex-wrap mx-auto justify-center ml-48 mr-48 ">
         {Pdata.bodyArea.productCarsdArray.map((productCard, index) => (
           <div
             className="flex-col shadow-xl text-center mx-4 mb-20"
