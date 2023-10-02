@@ -39,6 +39,7 @@ export const Header = () => {
           <p className="px-2">About</p>
           <p className="px-2">Blog</p>
           <p className="px-2">Contact</p>
+          <p className="px-2">Pages</p>
           <p className="px-2">Team</p>
         </div>
         <div className="flex py-1">
