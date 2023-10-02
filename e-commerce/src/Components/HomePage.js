@@ -139,7 +139,7 @@ export const HomePage = () => {
           the two major realms of Classical physics: Newtonian mechanics
         </p>
       </div>
-      <div className="flex flex-wrap mx-48 mb-40 mx-auto justify-center">
+      <div className="flex flex-wrap mb-40 mx-auto justify-center">
         {Hdata.bodyArea.featureCarsdArray.map((featureCard, index) => (
           <div className="flex-col shadow-xl mx-3 " key={index}>
             <a href="#">

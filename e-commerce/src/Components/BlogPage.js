@@ -2,8 +2,8 @@ import { BlogData } from "../Datas/BlogData";
 
 export const BlogPage = () => {
   return (
-    <div>
-      <div className="flex flex-wrap ml-48 mb-40 ">
+    <div className="">
+      <div className="flex flex-wrap mx-48 mb-40  justify-center">
         {BlogData.CardsdArray.map((featureCard, index) => (
           <div className="flex-col shadow-xl  mx-8 mt-20 " key={index}>
             <div class="relative">
