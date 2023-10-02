@@ -4,7 +4,10 @@ export const HomePage = () => {
   return (
     <div>
       <div className="bg-gradient-to-r from-cyan-500 to-blue-500 object-contain relative">
-        <img src={Hdata.bodyArea.sliderPhoto1} className="slider ml-20 " />
+        <div className="flex mx-auto justify-end">
+          <img src={Hdata.bodyArea.sliderPhoto1} className="slider ml-20 " />
+        </div>
+
         <div class="absolute text-white top-48 left-48">
           <p className="font-bold ">SUMMER 2020</p>
           <p class="my-9 font-bold text-7xl ">NEW COLLECTION</p>
@@ -20,7 +23,7 @@ export const HomePage = () => {
       <p className="text-neutral-500 text-center mt-2.5 mb-12">
         Problems trying to resolve the conflict between
       </p>
-      <div className="flex mx-48">
+      <div className="flex mx-auto justify-center">
         <body className="flex">
           <div class="relative w-[500px]">
             <img src={Hdata.bodyArea.editorPicMan} />
@@ -60,7 +63,7 @@ export const HomePage = () => {
       <p className="text-neutral-500 text-center mt-2.5 mb-12">
         Problems trying to resolve the conflict between
       </p>
-      <div className="flex flex-wrap ml-48 mr-32 ">
+      <div className="flex flex-wrap mx-auto justify-center ml-48 mr-48 ">
         {Hdata.bodyArea.productCarsdArray.map((productCard, index) => (
           <div
             className="flex-col shadow-xl text-center mx-4 mb-20"
@@ -90,7 +93,7 @@ export const HomePage = () => {
       </div>
       <div className="flex bg-color bg-emerald-700 pt-28">
         <div className=" object-contain relative ml-52">
-          <div class="absolute text-white top-1 left-1">
+          <div class="absolute text-white top-20 left-20">
             <p className=" ">SUMMER 2020</p>
             <p class="my-9 font-bold text-7xl ">Vita Classic Prouduct</p>
             <p class="text-xl w-96  ">
@@ -108,9 +111,9 @@ export const HomePage = () => {
           <img src={Hdata.bodyArea.sliderPhoto2} />
         </div>
       </div>
-      <div className="flex ">
+      <div className="flex mx-auto justify-center">
         <div>
-          <img src={Hdata.bodyArea.parthOfTheNeural} className="ml-28 mr-28" />
+          <img src={Hdata.bodyArea.parthOfTheNeural} className="mr-28" />
         </div>
         <div className="max-w-xs mt-44">
           <p className=" text-stone-300 mb-8">SUMMER 2020</p>
@@ -136,7 +139,7 @@ export const HomePage = () => {
           the two major realms of Classical physics: Newtonian mechanics
         </p>
       </div>
-      <div className="flex flex-wrap mx-48 mb-40">
+      <div className="flex flex-wrap mx-48 mb-40 mx-auto justify-center">
         {Hdata.bodyArea.featureCarsdArray.map((featureCard, index) => (
           <div className="flex-col shadow-xl mx-3 " key={index}>
             <a href="#">
