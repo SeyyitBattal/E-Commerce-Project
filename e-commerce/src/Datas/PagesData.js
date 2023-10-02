@@ -3,13 +3,13 @@ import yellowSeatSlider from "../IconsAndPhotos/PagesPage/yellowSeatSlider.jpg";
 import fullStar from "../IconsAndPhotos/PagesPage/fullStar.svg";
 import emptyStar from "../IconsAndPhotos/PagesPage/emptyStar.svg";
 import blueCircle from "../IconsAndPhotos/PagesPage/blueCircle.svg";
-import yellowCircle from "../IconsAndPhotos/PagesPage/yellowCircle.svg";
+import greenCircle from "../IconsAndPhotos/PagesPage/yellowCircle.svg";
 import orangeCircle from "../IconsAndPhotos/PagesPage/orangeCircle.svg";
 import blackCircle from "../IconsAndPhotos/PagesPage/blackCircle.svg";
 import selectOptionsButton from "../IconsAndPhotos/PagesPage/selectOptionsButton.png";
-import heartButton from "../IconsAndPhotos/PagesPage/heartButton.svg";
+import heartButton from "../IconsAndPhotos/PagesPage/heartButton.png";
 import basketButton from "../IconsAndPhotos/PagesPage/basketButton.png";
-import reviewButton from "../IconsAndPhotos/PagesPage/reviewButton.svg";
+import reviewButton from "../IconsAndPhotos/PagesPage/reviewButton.png";
 import chairPicture from "../IconsAndPhotos/PagesPage/chairPicture.jpg";
 import yellowSmallPicture from "../IconsAndPhotos/PagesPage/yellowSmallPicture.jpg";
 import pinkRoom from "../IconsAndPhotos/PagesPage/pinkRoom.png";
@@ -18,7 +18,6 @@ import bestSeller1 from "../IconsAndPhotos/PagesPage/bestSeller1.png";
 import bestSeller2 from "../IconsAndPhotos/PagesPage/bestSeller2.png";
 import bestSeller3 from "../IconsAndPhotos/PagesPage/bestSeller3.png";
 import bestSeller4 from "../IconsAndPhotos/PagesPage/bestSeller4.png";
-
 import brands1 from "../IconsAndPhotos/PagesPage/fa-brands-1.png";
 import brands2 from "../IconsAndPhotos/PagesPage/fa-brands-2.png";
 import brands3 from "../IconsAndPhotos/PagesPage/fa-brands-3.png";
@@ -33,7 +32,7 @@ export const PagesData = {
     fullStar,
     emptyStar,
     blueCircle,
-    yellowCircle,
+    greenCircle,
     orangeCircle,
     blackCircle,
     selectOptionsButton,
