@@ -56,31 +56,54 @@ export const PagesPage = () => {
         <img src={PagesData.headerArea.yellowSmallPicture} />
       </div>
 
-      <div className="flex">
-        <label>Description</label>
-        <label>Additional Information</label>
-        <label>Reviews</label>
-        <label>( 0 )</label>
+      <div className="flex mt-20 mb-6 mx-auto justify-center ">
+        <label className="mx-4 text-neutral-500 font-bold">Description</label>
+        <label className="mx-4 text-neutral-500 font-bold">
+          Additional Information
+        </label>
+        <label className="ml-4 mr-2 text-neutral-500 font-bold">Reviews</label>
+        <label className="text-teal-700 font-bold">( 0 )</label>
       </div>
-      <hr />
+      <hr className="mx-48" />
 
-      <div className="flex">
+      <div className="flex mt-12 mx-auto justify-center">
         <div>
-          <img src={PagesData.bodyArea.pinkRoom} />
+          <img
+            src={PagesData.bodyArea.pinkRoom}
+            className="w-[20rem] h-[24rem]"
+          />
+        </div>
+        <div className="w-[20rem] mx-8">
+          <p className="text-2xl font-bold mb-8"> {PagesData.bodyArea.title}</p>
+          <p className="text-neutral-500 ">{PagesData.bodyArea.bigParagraph}</p>
+          <p className="text-neutral-500 my-4">
+            {PagesData.bodyArea.bigParagraph}
+          </p>
+          <p className="text-neutral-500 ">{PagesData.bodyArea.bigParagraph}</p>
         </div>
         <div>
-          <label>{PagesData.bodyArea.title}</label>
-          <p>{PagesData.bodyArea.bigParagraph}</p>
-          <p>{PagesData.bodyArea.bigParagraph}</p>
-          <p>{PagesData.bodyArea.bigParagraph}</p>
-        </div>
-        <div>
-          {PagesData.bodyArea.arrowArray.map((eachArticle, index) => (
-            <div className="flex" key={index}>
-              <img src={eachArticle.arrowInBody} />
-              <label>{eachArticle.text}</label>
-            </div>
-          ))}
+          <div>
+            <p className="text-2xl font-bold mb-8">
+              {PagesData.bodyArea.title}
+            </p>
+            {PagesData.bodyArea.arrowArray.map((eachArticle, index) => (
+              <div className="flex text-neutral-500 mb-2" key={index}>
+                <img src={eachArticle.arrowInBody} className="mr-5" />
+                <label className="font-bold">{eachArticle.text}</label>
+              </div>
+            ))}
+          </div>
+          <div>
+            <p className="text-2xl font-bold mb-8 mt-8">
+              {PagesData.bodyArea.title}
+            </p>
+            {PagesData.bodyArea.arrowArray.map((eachArticle, index) => (
+              <div className="flex text-neutral-500 mb-2" key={index}>
+                <img src={eachArticle.arrowInBody} className="mr-5" />
+                <label className="font-bold">{eachArticle.text}</label>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
