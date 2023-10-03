@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { Hdata } from "../Datas/Hdata";
 
 export const Header = () => {
@@ -30,17 +31,40 @@ export const Header = () => {
       <div className="section2 flex justify-between py-5 px-9">
         <p className="text-slate-800 text-2xl font-bold ml-44">Bandage</p>
         <div className="flex text-neutral-500 ">
-          <p className="px-2">Home</p>
-          <div className="flex px-2">
-            <p className="pr-1">Shop</p>
-            <img src={Hdata.headerArea.vectorLogo} />
-          </div>
+          <nav>
+            <ul className="flex">
+              <NavLink to={"/"} className="px-2" exact>
+                Home
+              </NavLink>
 
-          <p className="px-2">About</p>
-          <p className="px-2">Blog</p>
-          <p className="px-2">Contact</p>
-          <p className="px-2">Pages</p>
-          <p className="px-2">Team</p>
+              <div className="flex pr-2">
+                <NavLink to={"/products"} className="px-2">
+                  Shop
+                </NavLink>
+                <img src={Hdata.headerArea.vectorLogo} />
+              </div>
+
+              <NavLink to={"/about"} className="px-2">
+                About
+              </NavLink>
+
+              <NavLink to={"/blog"} className="px-2">
+                Blog
+              </NavLink>
+
+              <NavLink to={"/contact"} className="px-2">
+                Contact
+              </NavLink>
+
+              <NavLink to={"/furniture"} className="px-2">
+                Furniture
+              </NavLink>
+
+              <NavLink to={"/team"} className="px-2">
+                Team
+              </NavLink>
+            </ul>
+          </nav>
         </div>
         <div className="flex py-1">
           <div className="flex px-4">
