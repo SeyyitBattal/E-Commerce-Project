@@ -107,18 +107,29 @@ export const PagesPage = () => {
         </div>
       </div>
 
-      <div>
-        <label>BESTSELLER PRODUCTS</label>
-        <hr />
-        <div className="flex">
+      <div className="flex flex-col mx-48">
+        <p className="text-2xl font-bold text-slate-800 ml-12 mt-12 mb-6">
+          BESTSELLER PRODUCTS
+        </p>
+        <hr className="mb-6 mx-12" />
+        <div className="flex flex-wrap mx-auto justify-center">
           {PagesData.bodyArea.bestsellerArray.map((bestCard, index) => (
-            <div className="flex flex-col" key={index}>
+            <div
+              className="mx-4 mb-8 flex flex-col shadow-xl text-center"
+              key={index}
+            >
               <img src={bestCard.img} />
-              <label>{bestCard.tittle}</label>
-              <label>{bestCard.descripton}</label>
-              <div className="flex">
-                <label>{bestCard.price1}</label>
-                <label>{bestCard.price2}</label>
+              <div className="flex flex-col mx-6 my-6">
+                <label className="font-bold">{bestCard.tittle}</label>
+                <label className="text-neutral-500 my-2.5">
+                  {bestCard.descripton}
+                </label>
+                <div className="flex font-bold mx-auto justify-center">
+                  <p className="text-stone-300 mr-2 text-center">
+                    {bestCard.price1}
+                  </p>
+                  <p className="text-teal-700 text-center">{bestCard.price2}</p>
+                </div>
               </div>
             </div>
           ))}
