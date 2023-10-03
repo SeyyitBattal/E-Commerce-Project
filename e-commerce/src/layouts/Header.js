@@ -60,6 +60,10 @@ export const Header = () => {
                 Furniture
               </NavLink>
 
+              <NavLink to={"/pricing"} className="px-2">
+                Pricing
+              </NavLink>
+
               <NavLink to={"/team"} className="px-2">
                 Team
               </NavLink>

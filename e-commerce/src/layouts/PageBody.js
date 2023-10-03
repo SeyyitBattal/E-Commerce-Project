@@ -6,6 +6,7 @@ import { ContactPage } from "../Components/ContactPage";
 import { PagesPage } from "../Components/PagesPage";
 import { TeamPage } from "../Components/TeamPage";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { PricingPage } from "../Components/PricingPage";
 
 export const PageBody = () => {
   return (
@@ -33,6 +34,10 @@ export const PageBody = () => {
 
         <Route path="/furniture">
           <PagesPage />
+        </Route>
+
+        <Route path="/pricing">
+          <PricingPage />
         </Route>
 
         <Route path="/team">
