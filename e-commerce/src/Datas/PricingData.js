@@ -45,27 +45,6 @@ export const PricingData = {
         bigParagraph:
           "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
       },
-      {
-        id: 4,
-        arrowBlue,
-        title: "the quick fox jumps over the lazy dog",
-        bigParagraph:
-          "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
-      },
-      {
-        id: 5,
-        arrowBlue,
-        title: "the quick fox jumps over the lazy dog",
-        bigParagraph:
-          "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
-      },
-      {
-        id: 6,
-        arrowBlue,
-        title: "the quick fox jumps over the lazy dog",
-        bigParagraph:
-          "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
-      },
     ],
   },
   footerArea: {

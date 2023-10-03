@@ -40,18 +40,41 @@ export const PricingPage = () => {
           Problems trying to resolve the conflict between the two major realms
           of Classical physics
         </p>
-        <div>
-          {PricingData.bodyArea.pricingFAQarray.map((everyParagraph, index) => (
-            <div key={index}>
-              <div className="flex">
-                <img src={everyParagraph.arrowBlue} />
-                <p className="font-bold">{everyParagraph.title}</p>
-              </div>
+        <div className="flex mx-48 px-24">
+          <div className="mr-24">
+            {PricingData.bodyArea.pricingFAQarray.map(
+              (everyParagraph, index) => (
+                <div key={index} className="m-6">
+                  <div className="flex">
+                    <img src={everyParagraph.arrowBlue} className="mr-5 " />
+                    <p className="font-bold">{everyParagraph.title}</p>
+                  </div>
 
-              <p className="text-neutral-500">{everyParagraph.bigParagraph}</p>
-            </div>
-          ))}
+                  <p className="text-neutral-500 ml-7 w-[23rem]">
+                    {everyParagraph.bigParagraph}
+                  </p>
+                </div>
+              )
+            )}
+          </div>
+          <div>
+            {PricingData.bodyArea.pricingFAQarray.map(
+              (everyParagraph, index) => (
+                <div key={index} className="p-6">
+                  <div className="flex">
+                    <img src={everyParagraph.arrowBlue} className="mr-5" />
+                    <p className="font-bold">{everyParagraph.title}</p>
+                  </div>
+
+                  <p className="text-neutral-500 ml-7 w-[25rem]">
+                    {everyParagraph.bigParagraph}
+                  </p>
+                </div>
+              )
+            )}
+          </div>
         </div>
+
         <p className="text-xl text-center text-neutral-500">
           Haven’t got your answer? Contact our support
         </p>
