@@ -22,7 +22,7 @@ export const PricingPage = () => {
           realms of Classical physics: Newtonian mechanics
         </p>
       </div>
-      <p>Trusted By Over 4000 Big Companies</p>
+      <p className="text-center text-xl">Trusted By Over 4000 Big Companies</p>
       <div className="flex mx-48 mt-20 mb-32 justify-between">
         <img src={PricingData.bodyArea.brands1} className="object-contain" />
         <img src={PricingData.bodyArea.brands2} className="object-contain" />
@@ -31,13 +31,39 @@ export const PricingPage = () => {
         <img src={PricingData.bodyArea.brands5} className="object-contain" />
         <img src={PricingData.bodyArea.brands6} className="object-contain" />
       </div>
+
+      <div className="flex flex-col justify-center mx-auto my-32">
+        <p className=" text-slate-800 font-bold text-5xl justify-center mx-auto">
+          Pricing FAQs
+        </p>
+        <p className="justify-center mx-auto text-neutral-500 my-8 font-bold w-[30rem] text-xl text-center">
+          Problems trying to resolve the conflict between the two major realms
+          of Classical physics
+        </p>
+        <div>
+          {PricingData.bodyArea.pricingFAQarray.map((everyParagraph, index) => (
+            <div key={index}>
+              <div className="flex">
+                <img src={everyParagraph.arrowBlue} />
+                <p className="font-bold">{everyParagraph.title}</p>
+              </div>
+
+              <p className="text-neutral-500">{everyParagraph.bigParagraph}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-xl text-center text-neutral-500">
+          Haven’t got your answer? Contact our support
+        </p>
+      </div>
+
       <div className="flex flex-col justify-center mx-auto my-32">
         <p className=" text-slate-800 font-bold text-5xl justify-center mx-auto">
           Start your 14 days free trial
         </p>
         <p className="justify-center mx-auto text-neutral-500 my-8 font-bold w-[35rem] text-xl text-center">
-          Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
-          RELIT official consequent.
+          Problems trying to resolve the conflict between the two major realms
+          of Classical physics
         </p>
         <img
           src={PricingData.footerArea.tryItButton}

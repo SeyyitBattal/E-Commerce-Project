@@ -10,6 +10,7 @@ import twitterLogoFooter from "../IconsAndPhotos/twitterLogoFooter.svg";
 import facebookLogoFooter from "../IconsAndPhotos/facebookLogoFooter.svg";
 import instagramLogoFooter from "../IconsAndPhotos/instagramLogoFooter.svg";
 import linkedinLogoFooter from "../IconsAndPhotos/linkedinLogoFooter.svg";
+import arrowBlue from "../IconsAndPhotos/PricingPage/arrowBlue.svg";
 
 export const PricingData = {
   headerArea: {
@@ -22,6 +23,50 @@ export const PricingData = {
     brands4,
     brands5,
     brands6,
+    pricingFAQarray: [
+      {
+        id: 1,
+        arrowBlue,
+        title: "the quick fox jumps over the lazy dog",
+        bigParagraph:
+          "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+      },
+      {
+        id: 2,
+        arrowBlue,
+        title: "the quick fox jumps over the lazy dog",
+        bigParagraph:
+          "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+      },
+      {
+        id: 3,
+        arrowBlue,
+        title: "the quick fox jumps over the lazy dog",
+        bigParagraph:
+          "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+      },
+      {
+        id: 4,
+        arrowBlue,
+        title: "the quick fox jumps over the lazy dog",
+        bigParagraph:
+          "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+      },
+      {
+        id: 5,
+        arrowBlue,
+        title: "the quick fox jumps over the lazy dog",
+        bigParagraph:
+          "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+      },
+      {
+        id: 6,
+        arrowBlue,
+        title: "the quick fox jumps over the lazy dog",
+        bigParagraph:
+          "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+      },
+    ],
   },
   footerArea: {
     tryItButton,
