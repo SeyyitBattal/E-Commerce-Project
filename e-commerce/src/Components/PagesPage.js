@@ -3,46 +3,57 @@ import { PagesData } from "../Datas/PagesData";
 export const PagesPage = () => {
   return (
     <div>
-      <div className="flex">
+      <div className="flex my-9 ml-48">
         <p className="font-bold">Home</p>
         <img src={PagesData.headerArea.HomeToShop} className="mx-3.5" />
         <p className="text-stone-300 font-bold">Shop</p>
       </div>
 
-      <div className="flex">
-        <div>
-          <img src={PagesData.headerArea.yellowSeatSlider} />
+      <div className="flex justify-center mx-48">
+        <div className="mr-14">
+          <img src={PagesData.headerArea.yellowSeatSlider} className="h-full" />
         </div>
-        <div>
-          <label>Floating Phone</label>
+        <div className="w-[40rem]">
+          <p className="my-3 text-xl ">Floating Phone </p>
           <div className="flex">
             <img src={PagesData.headerArea.fullStar} />
+            <img src={PagesData.headerArea.fullStar} className="mx-1.5" />
             <img src={PagesData.headerArea.fullStar} />
-            <img src={PagesData.headerArea.fullStar} />
-            <img src={PagesData.headerArea.fullStar} />
-            <img src={PagesData.headerArea.emptyStar} />
-            <label>10 Reviews</label>
+            <img src={PagesData.headerArea.fullStar} className="mx-1.5" />
+            <img src={PagesData.headerArea.emptyStar} className="mr-3" />
+            <label className="text-neutral-500 font-bold">10 Reviews</label>
           </div>
-          <label>$1,139.33</label>
+          <p className="mt-5 mb-1.5 text-2xl font-bold text-slate-800 ">
+            $1,139.33
+          </p>
           <div className="flex">
-            <label>Availability : </label>
-            <label> In Stock</label>
+            <label className="text-neutral-500 font-bold">Availability :</label>
+            <p className="ml-1.5 text-sky-500 font-bold">In Stock</p>
           </div>
-          <p>{PagesData.bodyArea.bigParagraph}</p>
-          <hr />
+          <p className="mt-8 text-neutral-500">
+            {PagesData.bodyArea.bigParagraph}
+          </p>
+          <hr className="my-7" />
           <div className="flex">
             <img src={PagesData.headerArea.blueCircle} />
-            <img src={PagesData.headerArea.greenCircle} />
+            <img src={PagesData.headerArea.greenCircle} className="mx-3" />
             <img src={PagesData.headerArea.orangeCircle} />
-            <img src={PagesData.headerArea.blackCircle} />
+            <img src={PagesData.headerArea.blackCircle} className="mx-3" />
           </div>
-          <div className="flex">
-            <img src={PagesData.headerArea.selectOptionsButton} />
+          <div className="flex mt-16">
+            <img
+              src={PagesData.headerArea.selectOptionsButton}
+              className="mr-3"
+            />
             <img src={PagesData.headerArea.heartButton} />
-            <img src={PagesData.headerArea.basketButton} />
+            <img src={PagesData.headerArea.basketButton} className="mx-3" />
             <img src={PagesData.headerArea.reviewButton} />
           </div>
         </div>
+      </div>
+      <div className="flex mt-6 ml-48">
+        <img src={PagesData.headerArea.chairPicture} className="mr-5" />
+        <img src={PagesData.headerArea.yellowSmallPicture} />
       </div>
 
       <div className="flex">
