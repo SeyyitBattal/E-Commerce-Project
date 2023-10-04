@@ -146,6 +146,7 @@ export const HomePage = () => {
           </div>
         ))}
       </div>
+
       <div className="flex bg-color bg-emerald-700 pt-28">
         <div className=" object-contain relative ml-52">
           <div class="absolute text-white top-20 left-20">
@@ -161,11 +162,11 @@ export const HomePage = () => {
             </div>
           </div>
         </div>
-
         <div className="mr-52 ml-auto">
           <img src={Hdata.bodyArea.sliderPhoto2} />
         </div>
       </div>
+
       <div className="flex mx-auto justify-center">
         <div>
           <img src={Hdata.bodyArea.parthOfTheNeural} className="mr-28" />
