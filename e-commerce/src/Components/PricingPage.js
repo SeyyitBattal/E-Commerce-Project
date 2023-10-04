@@ -21,15 +21,36 @@ export const PricingPage = () => {
           Problems trying to resolve the conflict between <br /> the two major
           realms of Classical physics: Newtonian mechanics
         </p>
+        <div className="flex mx-auto justify-center">
+          <p className="font-bold text-xl">Monthly</p>
+
+          <label class="relative inline-flex items-center mb-6 cursor-pointer">
+            <input type="checkbox" value="" class="sr-only peer" />
+
+            <div class="w-9 h-5 bg-gray-800 peer-focus:outline-none  peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-white dark:border peer-checked:after:translate-x-full peer-checked:after:border-sky-500 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-blue-600 peer-checked:bg-blue-600"></div>
+          </label>
+
+          <p className="font-bold text-xl">Yearly</p>
+          <img src={PricingData.bodyArea.saveButton} />
+        </div>
       </div>
-      <p className="text-center text-xl">Trusted By Over 4000 Big Companies</p>
-      <div className="flex mx-48 mt-12 mb-32 justify-between">
-        <img src={PricingData.bodyArea.brands1} className="object-contain" />
-        <img src={PricingData.bodyArea.brands2} className="object-contain" />
-        <img src={PricingData.bodyArea.brands3} className="object-contain" />
-        <img src={PricingData.bodyArea.brands4} className="object-contain" />
-        <img src={PricingData.bodyArea.brands5} className="object-contain" />
-        <img src={PricingData.bodyArea.brands6} className="object-contain" />
+      <div className="flex flex-wrap mx-auto justify-center">
+        <img src={PricingData.bodyArea.freeCard} />
+        <img src={PricingData.bodyArea.standardCard} />
+        <img src={PricingData.bodyArea.premiumCard} />
+      </div>
+      <div>
+        <p className="text-center text-xl">
+          Trusted By Over 4000 Big Companies
+        </p>
+        <div className="flex flex-wrap mx-48 mt-12 mb-32 justify-between">
+          <img src={PricingData.bodyArea.brands1} className="object-contain" />
+          <img src={PricingData.bodyArea.brands2} className="object-contain" />
+          <img src={PricingData.bodyArea.brands3} className="object-contain" />
+          <img src={PricingData.bodyArea.brands4} className="object-contain" />
+          <img src={PricingData.bodyArea.brands5} className="object-contain" />
+          <img src={PricingData.bodyArea.brands6} className="object-contain" />
+        </div>
       </div>
 
       <div className="flex flex-col justify-center mx-auto my-20 text-center">

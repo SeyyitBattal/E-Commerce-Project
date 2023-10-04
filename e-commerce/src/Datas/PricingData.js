@@ -11,6 +11,10 @@ import facebookLogoFooter from "../IconsAndPhotos/facebookLogoFooter.svg";
 import instagramLogoFooter from "../IconsAndPhotos/instagramLogoFooter.svg";
 import linkedinLogoFooter from "../IconsAndPhotos/linkedinLogoFooter.svg";
 import arrowBlue from "../IconsAndPhotos/PricingPage/arrowBlue.svg";
+import freeCard from "../IconsAndPhotos/PricingPage/freeCard.png";
+import standardCard from "../IconsAndPhotos/PricingPage/standardCard.png";
+import premiumCard from "../IconsAndPhotos/PricingPage/premiumCard.png";
+import saveButton from "../IconsAndPhotos/PricingPage/saveButton.png";
 
 export const PricingData = {
   headerArea: {
@@ -23,6 +27,10 @@ export const PricingData = {
     brands4,
     brands5,
     brands6,
+    freeCard,
+    standardCard,
+    premiumCard,
+    saveButton,
     pricingFAQarray: [
       {
         id: 1,
