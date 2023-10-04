@@ -5,3 +5,7 @@
 .slider {
   object-position: right;
 }
+
+body {
+  background-color: white;
+}

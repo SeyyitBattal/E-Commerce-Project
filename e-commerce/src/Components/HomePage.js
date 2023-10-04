@@ -3,20 +3,75 @@ import { Hdata } from "../Datas/Hdata";
 export const HomePage = () => {
   return (
     <div>
-      <div className="bg-gradient-to-r from-cyan-500 to-blue-500 object-contain relative">
-        <div className="flex mx-auto justify-end">
-          <img src={Hdata.bodyArea.sliderPhoto1} className="slider ml-20 " />
+      <div className="carousel w-full">
+        <div id="slide1" className="carousel-item relative w-full">
+          <div className="bg-gradient-to-r from-cyan-500 to-cyan-500 object-contain relative">
+            <div className="flex mx-auto justify-end">
+              <img
+                src={Hdata.bodyArea.sliderPhoto1}
+                className="slider ml-20 "
+              />
+            </div>
+            <div class="absolute text-white top-48 left-48">
+              <p className="font-bold ">SUMMER 2020</p>
+              <p class="my-9 font-bold text-7xl ">NEW COLLECTION</p>
+              <p class="text-2xl w-96  ">
+                We know how large objects will act, but things on a small scale.
+              </p>
+              <img src={Hdata.bodyArea.shopNowButton} className="mt-9" />
+            </div>
+          </div>
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a
+              href="#slide2"
+              className="btn btn-circle text-black hover:text-white bg-transparent"
+            >
+              ❮
+            </a>
+            <a
+              href="#slide2"
+              className="btn btn-circle text-black hover:text-white bg-transparent"
+            >
+              ❯
+            </a>
+          </div>
         </div>
 
-        <div class="absolute text-white top-48 left-48">
-          <p className="font-bold ">SUMMER 2020</p>
-          <p class="my-9 font-bold text-7xl ">NEW COLLECTION</p>
-          <p class="text-2xl w-96  ">
-            We know how large objects will act, but things on a small scale.
-          </p>
-          <img src={Hdata.bodyArea.shopNowButton} className="mt-9" />
+        <div id="slide2" className="carousel-item relative w-full">
+          <div className="bg-gradient-to-r from-cyan-500 to-cyan-500 object-contain relative">
+            <div className="flex mx-auto justify-end">
+              <img
+                src={Hdata.bodyArea.sliderPhoto1}
+                className="slider ml-20 "
+              />
+            </div>
+            <div class="absolute text-white top-48 left-48">
+              <p className="font-bold ">SUMMER 2020</p>
+              <p class="my-9 font-bold text-7xl ">NEW COLLECTION</p>
+              <p class="text-2xl w-96  ">
+                We know how large objects will act, but things on a small scale.
+              </p>
+              <img src={Hdata.bodyArea.shopNowButton} className="mt-9" />
+            </div>
+          </div>
+
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a
+              href="#slide1"
+              className="btn btn-circle text-black hover:text-white bg-transparent"
+            >
+              ❮
+            </a>
+            <a
+              href="#slide1"
+              className="btn btn-circle text-black hover:text-white bg-transparent"
+            >
+              ❯
+            </a>
+          </div>
         </div>
       </div>
+
       <p className="text-slate-800 text-2xl font-bold text-center mt-20">
         EDITOR’S PICK
       </p>
