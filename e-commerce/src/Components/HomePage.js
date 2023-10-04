@@ -4,15 +4,15 @@ export const HomePage = () => {
   return (
     <div>
       <div className="carousel w-full">
-        <div id="slide1" className="carousel-item relative w-full">
-          <div className="bg-gradient-to-r from-cyan-500 to-cyan-500 object-contain relative">
-            <div className="flex mx-auto justify-end">
+        <div id="slide1" className="carousel-item relative w-full ">
+          <div className="bg-gradient-to-r from-cyan-500 to-cyan-500 object-contain relative ">
+            <div className="flex mx-auto justify-end ">
               <img
                 src={Hdata.bodyArea.sliderPhoto1}
                 className="slider ml-20 "
               />
             </div>
-            <div class="absolute text-white top-48 left-48">
+            <div class="absolute text-slate-800 top-48 left-48">
               <p className="font-bold ">SUMMER 2020</p>
               <p class="my-9 font-bold text-7xl ">NEW COLLECTION</p>
               <p class="text-2xl w-96  ">
