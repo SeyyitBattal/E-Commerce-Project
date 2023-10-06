@@ -5,7 +5,7 @@ import { Hdata } from "../Datas/Hdata";
 export const Header = () => {
   return (
     <div>
-      <div className="section1 py-4 px-9  text-white bg-slate-800 md:flex flex-wrap justify-between">
+      <div className="desktop-only section1 py-4 px-9  text-white bg-slate-800 md:flex flex-wrap justify-between">
         <div className="md:flex flex-wrap mx-auto justify-center">
           <div className="md:flex flex-wrap">
             <img src={Hdata.headerArea.phoneLogo} className="pr-1" />
@@ -29,7 +29,7 @@ export const Header = () => {
           <img src={Hdata.headerArea.twitterLogo} className="px-2" />
         </div>
       </div>
-      <div className="section2 md:flex flex-wrap justify-between py-5 px-9">
+      <div className=" section2 md:flex flex-wrap justify-between py-5 px-9">
         <p className="text-slate-800 text-2xl font-bold ml-44">Bandage</p>
         <div className="md:flex flex-wrap text-neutral-500 ">
           <nav>

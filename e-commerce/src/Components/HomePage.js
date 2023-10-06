@@ -78,30 +78,30 @@ export const HomePage = () => {
       <p className="text-neutral-500 text-center mt-2.5 mb-12">
         Problems trying to resolve the conflict between
       </p>
-      <div className="flex mx-auto justify-center">
-        <body className="flex">
-          <div class="relative w-[500px]">
+      <div className="flex flex-wrap mx-auto justify-center">
+        <body className="flex flex-wrap ">
+          <div class="flex relative w-[300px] h-[300px] md:w-[500px] md:h-auto mx-auto justify-center">
             <img src={Hdata.bodyArea.editorPicMan} />
             <div class="absolute bottom-7 left-7">
               <img src={Hdata.bodyArea.menText} />
             </div>
           </div>
 
-          <div class="relative w-[235px] mx-8">
+          <div className="flex relative m md:max-h-max w-[300px] h-[350px] md:w-[235px] md:h-auto mx-auto justify-center md:mx-8 mt-8 md:mt-auto">
             <img src={Hdata.bodyArea.editorPicWoman} />
             <div class="absolute bottom-7 left-7">
               <img src={Hdata.bodyArea.womenText} />
             </div>
           </div>
         </body>
-        <div>
-          <div class="relative w-[235px] mb-4">
+        <div className="mt-8 md:mt-0">
+          <div class="relative w-[235px] mb-4 ">
             <img src={Hdata.bodyArea.editorPicAccessories} />
             <div class="absolute bottom-7 left-7">
               <img src={Hdata.bodyArea.accessoriesText} />
             </div>
           </div>
-          <div class="relative w-[235px] ">
+          <div class="relative w-[235px]  mt:8 md:mt-0">
             <img src={Hdata.bodyArea.editorPicKids} />
             <div class="absolute bottom-7 left-7">
               <img src={Hdata.bodyArea.kidsText} />
@@ -121,7 +121,7 @@ export const HomePage = () => {
       <div className="flex flex-wrap mx-auto justify-center ml-48 mr-48 ">
         {Hdata.bodyArea.productCarsdArray.map((productCard, index) => (
           <div
-            className="flex-col shadow-xl text-center mx-4 mb-20"
+            className="flex flex-col shadow-xl text-center mx-4 mb-20 min-w-max "
             key={index}
           >
             <a href="#">
@@ -197,7 +197,7 @@ export const HomePage = () => {
       </div>
       <div className="flex flex-wrap mb-40 mx-auto justify-center">
         {Hdata.bodyArea.featureCarsdArray.map((featureCard, index) => (
-          <div className="flex-col shadow-xl mx-3 " key={index}>
+          <div className="flex-col shadow-xl mx-3 mt-12 md:mt-0" key={index}>
             <a href="#">
               <img class="rounded-t-lg" src={featureCard.img} alt="" />
             </a>

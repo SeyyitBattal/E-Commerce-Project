@@ -9,3 +9,9 @@
 body {
   background-color: white;
 }
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+}
