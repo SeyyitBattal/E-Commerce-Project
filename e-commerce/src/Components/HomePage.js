@@ -151,9 +151,9 @@ export const HomePage = () => {
       </div>
 
       <div className="flex bg-color bg-emerald-700 pt-28">
-        <div className=" object-contain relative ml-52">
-          <div class="absolute text-white top-20 left-20">
-            <p className=" ">SUMMER 2020</p>
+        <div className=" object-contain relative ml-0 md:ml-52">
+          <div className="absolute text-white top-20 left-20">
+            <p>SUMMER 2020</p>
             <p class="my-9 font-bold text-7xl ">Vita Classic Prouduct</p>
             <p class="text-xl w-96  ">
               We know how large objects will act, We know how are objects will
@@ -165,16 +165,16 @@ export const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="mr-52 ml-auto">
-          <img src={Hdata.bodyArea.sliderPhoto2} />
+        <div className=" mr:0 md:mr-52 ml-auto mt-[30rem] md:mt-0">
+          <img src={Hdata.bodyArea.sliderPhoto2} className=" max-w-full " />
         </div>
       </div>
 
-      <div className="flex mx-auto justify-center">
+      <div className="flex flex-wrap mx-auto justify-center">
         <div>
-          <img src={Hdata.bodyArea.parthOfTheNeural} className="mr-28" />
+          <img src={Hdata.bodyArea.parthOfTheNeural} className="mr-28 mt-48" />
         </div>
-        <div className="max-w-xs mt-44">
+        <div className="max-w-xs mt-12 mb-48 md:mt-44">
           <p className=" text-stone-300 mb-8">SUMMER 2020</p>
           <p className="text-4xl font-bold text-slate-800 ">
             Part of the Neural Universe
