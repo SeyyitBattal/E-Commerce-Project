@@ -83,15 +83,18 @@ export const HomePage = () => {
       </p>
       <div className="flex flex-wrap mx-auto justify-center">
         <body className="flex flex-wrap ">
-          <div class="flex relative w-[300px] h-[300px] md:w-[500px] md:h-auto mx-auto justify-center">
+          <div class="flex relative w-[300px] h-[350px] md:w-[500px] md:h-auto mx-auto justify-center">
             <img src={Hdata.bodyArea.editorPicMan} />
             <div class="absolute bottom-7 left-7">
               <img src={Hdata.bodyArea.menText} />
             </div>
           </div>
 
-          <div className="flex relative m md:max-h-max w-[300px] h-[350px] md:w-[235px] md:h-auto mx-auto justify-center md:mx-8 mt-8 md:mt-auto">
-            <img src={Hdata.bodyArea.editorPicWoman} />
+          <div className="flex relative w-[300px] h-[350px] md:w-[235px] md:h-auto mx-auto justify-center md:mx-8 mt-8 md:mt-auto">
+            <img
+              src={Hdata.bodyArea.editorPicWoman}
+              className=" md:w-auto w-[14rem]"
+            />
             <div class="absolute bottom-7 left-7">
               <img src={Hdata.bodyArea.womenText} />
             </div>
