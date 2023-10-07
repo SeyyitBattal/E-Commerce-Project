@@ -29,9 +29,9 @@ export const Header = () => {
           <img src={Hdata.headerArea.twitterLogo} className="px-2" />
         </div>
       </div>
-      <div className=" section2 md:flex flex-wrap justify-between py-5 px-9">
+      <div className=" section2 flex flex-wrap justify-between py-5 px-9 ">
         <p className="text-slate-800 text-2xl font-bold ml-44">Bandage</p>
-        <div className="md:flex flex-wrap text-neutral-500 ">
+        <div className=" flex-wrap text-neutral-500 ">
           <nav>
             <ul className="flex">
               <NavLink to={"/"} className="px-2" exact>
@@ -61,17 +61,13 @@ export const Header = () => {
                 Furniture
               </NavLink>
 
-              <NavLink to={"/pricing"} className="px-2">
-                Pricing
-              </NavLink>
-
               <NavLink to={"/team"} className="px-2">
                 Team
               </NavLink>
             </ul>
           </nav>
         </div>
-        <div className="flex py-1">
+        <div className="desktop-only flex py-1">
           <div className="flex px-4">
             <img src={Hdata.headerArea.userLogo} />
             <p className="text-sky-500 font-bold">Login / Register</p>
