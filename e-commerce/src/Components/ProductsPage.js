@@ -3,27 +3,42 @@ import { Pdata } from "../Datas/Pdata";
 export const ProductsPage = () => {
   return (
     <div>
-      <div className="flex justify-between mx-56 mt-12 mb-6">
+      <div className="flex flex-wrap justify-center md:justify-between mx-44 md:mx-56 mt-24 md:mt-12 mb-6">
         <p className="text-slate-800 text-2xl font-bold ">Shop</p>
-        <div className="flex">
-          <p className="font-bold">Home</p>
+        <div className="flex flex-wrap mt-12 md:mt-0">
+          <p className="font-bold text-slate-800">Home</p>
           <img src={Pdata.bodyArea.HomeToShop} className="mx-3.5" />
           <p className="text-stone-300 font-bold">Shop</p>
         </div>
       </div>
-      <div className="flex flex-wrap mt-6 mx-44 justify-evenly">
-        <img src={Pdata.headerArea.ProductTopImg} />
-        <img src={Pdata.headerArea.ProductTopImg} className="mx-3.5" />
-        <img src={Pdata.headerArea.ProductTopImg} />
-        <img src={Pdata.headerArea.ProductTopImg} className="mx-3.5" />
-        <img src={Pdata.headerArea.ProductTopImg} />
+      <div className="flex flex-wrap mt-12 md:mt-6 mx-44 justify-evenly">
+        <img
+          src={Pdata.headerArea.ProductTopImg}
+          className=" min-w-max mt-2 md:mt-0"
+        />
+        <img
+          src={Pdata.headerArea.ProductTopImg}
+          className="mx-3.5 min-w-max mt-2 md:mt-0"
+        />
+        <img
+          src={Pdata.headerArea.ProductTopImg}
+          className=" min-w-max mt-2 md:mt-0"
+        />
+        <img
+          src={Pdata.headerArea.ProductTopImg}
+          className="mx-3.5 min-w-max mt-2 md:mt-0"
+        />
+        <img
+          src={Pdata.headerArea.ProductTopImg}
+          className=" min-w-max mt-2 md:mt-0"
+        />
       </div>
-      <div className="flex justify-between ml-52 mr-64 my-20">
-        <p className="text-neutral-500 content-end mt-3 font-bold ">
+      <div className="flex flex-wrap justify-between  ml-36 mr-24 md:ml-52 md:mr-64 my-20">
+        <p className="text-neutral-500 content-end ml-4 md:ml-0 mt-3 font-bold ">
           Showing all 12 results
         </p>
-        <div className="flex">
-          <p className="text-neutral-500 content-end mt-3 font-bold">Views:</p>
+        <div className="flex my-6 md:my-0 ml-4 md:ml-0">
+          <p className="text-neutral-500 content-end  mt-3 font-bold">Views:</p>
           <img src={Pdata.headerArea.viewBox} className="mx-3.5" />
           <img src={Pdata.headerArea.viewList} />
         </div>
@@ -101,7 +116,7 @@ export const ProductsPage = () => {
       <div className="flex flex-wrap mx-auto justify-center ml-48 mr-48 ">
         {Pdata.bodyArea.productCarsdArray.map((productCard, index) => (
           <div
-            className="flex-col shadow-xl text-center mx-4 mb-20"
+            className="flex flex-col shadow-xl text-center mx-4 min-w-max mb-20"
             key={index}
           >
             <a href="#">
