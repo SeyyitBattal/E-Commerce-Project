@@ -12,7 +12,7 @@ export const HomePage = () => {
                 className="slider ml-20 "
               />
             </div>
-            <div class="absolute text-slate-800 top-48 left-48">
+            <div class="absolute text-slate-800 md:top-48 top-0  left-0 md:left-48">
               <p className="font-bold ">SUMMER 2020</p>
               <p class="my-9 font-bold text-7xl ">NEW COLLECTION</p>
               <p class="text-2xl w-96  ">
@@ -45,13 +45,16 @@ export const HomePage = () => {
                 className="slider ml-20 "
               />
             </div>
-            <div class="absolute text-white top-48 left-48">
+            <div class="desktop-only absolute text-white md:top-48 top-0 left-0 md:left-48 h-5 md:h-auto w-5 md:w-auto">
               <p className="font-bold ">SUMMER 2020</p>
               <p class="my-9 font-bold text-7xl ">NEW COLLECTION</p>
-              <p class="text-2xl w-96  ">
+              <p class="desktop-only text-2xl w-96 ">
                 We know how large objects will act, but things on a small scale.
               </p>
-              <img src={Hdata.bodyArea.shopNowButton} className="mt-9" />
+              <img
+                src={Hdata.bodyArea.shopNowButton}
+                className="desktop-only mt-9 "
+              />
             </div>
           </div>
 
