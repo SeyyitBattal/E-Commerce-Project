@@ -2,8 +2,8 @@ import { ContactData } from "../Datas/ContactData";
 export const ContactPage = () => {
   return (
     <div>
-      <div className="flex mx-auto justify-center">
-        <div className="text-slate-800 w-96 mt-28 mr-28">
+      <div className="flex flex-wrap mx-auto justify-center text-center md:text-left">
+        <div className="text-slate-800 w-96 mt-28 mr-0 md:mr-28">
           <h1 className="font-bold">CONTACT US</h1>
           <h1 className="text-6xl font-bold text-slate-800 my-9">
             Get in touch today!
@@ -16,14 +16,14 @@ export const ContactPage = () => {
             <h1 className="text-2xl font-bold">Fax : +451 215 215</h1>
           </div>
 
-          <div className="flex">
+          <div className="flex mx-auto md:justify-start justify-center">
             <img src={ContactData.upper.twitterLogoContact} />
             <img src={ContactData.upper.facebookLogoContact} className="px-9" />
             <img src={ContactData.upper.instagramLogoContact} />
             <img src={ContactData.upper.linkedinLogoContact} className="px-9" />
           </div>
         </div>
-        <div>
+        <div className="md:mt-0 mt-36">
           <img src={ContactData.upper.familyContact} />
         </div>
       </div>
@@ -31,11 +31,11 @@ export const ContactPage = () => {
       <div className="my-32 text-center">
         <div>
           <h1 className="font-bold">VISIT OUR OFFICE</h1>
-          <p className="text-4xl mx-auto justify-center font-bold max-w-md mt-2.5">
+          <p className="text-4xl mx-auto justify-center font-bold max-w-md mt-2.5 text-slate-800">
             We help small businesses with big ideas
           </p>
         </div>
-        <div className="flex mx-auto justify-center mt-20">
+        <div className="flex flex-wrap mx-auto justify-center mt-20 text-slate-800">
           <div className=" font-bold py-20 px-10">
             <img
               src={ContactData.lower.phoneLogoContact}
