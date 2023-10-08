@@ -4,7 +4,6 @@ import topImg2 from "../IconsAndPhotos/topImg2.png";
 import topImg3 from "../IconsAndPhotos/topImg3.png";
 import topImg4 from "../IconsAndPhotos/topImg4.png";
 import topImg5 from "../IconsAndPhotos/topImg5.png";
-import teamMember0 from "../IconsAndPhotos/teamMember0.jpg";
 import teamMember1 from "../IconsAndPhotos/teamMember1.jpg";
 import teamMember2 from "../IconsAndPhotos/teamMember2.jpg";
 import teamMember3 from "../IconsAndPhotos/teamMember3.jpg";

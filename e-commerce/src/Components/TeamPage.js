@@ -42,7 +42,7 @@ export const TeamPage = () => {
             >
               <a href="#">
                 <img
-                  className="rounded-t-lg min-w-max"
+                  className="rounded-t-lg min-w-max w-[250px] h-[250px]"
                   src={teamCard.img}
                   alt=""
                 />
