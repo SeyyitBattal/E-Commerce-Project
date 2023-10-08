@@ -105,35 +105,56 @@ export const AboutPage = () => {
         <h1 className="text-slate-800 font-bold text-5xl mx-auto text-center">
           Big Companies Are Here
         </h1>
-        <p className="font-bold text-neutral-500 text-center mt-8">
+        <p className="font-bold text-neutral-500 text-center mt-8 mx-12">
           Problems trying to resolve the conflict between <br /> the two major
           realms of Classical physics: Newtonian mechanics
         </p>
       </div>
-      <div className="flex mx-48 mt-20 mb-32 justify-between">
-        <img src={AboutData.footerArea.brands1} className="object-contain" />
-        <img src={AboutData.footerArea.brands2} className="object-contain" />
-        <img src={AboutData.footerArea.brands3} className="object-contain" />
-        <img src={AboutData.footerArea.brands4} className="object-contain" />
-        <img src={AboutData.footerArea.brands5} className="object-contain" />
-        <img src={AboutData.footerArea.brands6} className="object-contain" />
+      <div className="flex flex-wrap mx-48 my-24 md:mx-48 md:my-24 md:justify-between justify-center">
+        <img
+          src={AboutData.footerArea.brands1}
+          className="object-contain mb-12 md:mb-0"
+        />
+        <img
+          src={AboutData.footerArea.brands2}
+          className="object-contain mb-12 md:mb-0"
+        />
+        <img
+          src={AboutData.footerArea.brands3}
+          className="object-contain mb-12 md:mb-0"
+        />
+        <img
+          src={AboutData.footerArea.brands4}
+          className="object-contain mb-12 md:mb-0"
+        />
+        <img
+          src={AboutData.footerArea.brands5}
+          className="object-contain mb-12 md:mb-0"
+        />
+        <img
+          src={AboutData.footerArea.brands6}
+          className="object-contain mb-12 md:mb-0 "
+        />
       </div>
 
       <div className="flex mx-auto justify-center bg-sky-500 text-white mb-10">
-        <div className=" mt-44 mr-44">
+        <div className="mb-44 md:mb-0 mt-44 mr-0 md:mr-44 text-center">
           <h1 className="font-bold">WORK WITH US</h1>
           <h1 className="text-6xl font-bold my-9">Now Let's Grow Yours</h1>
-          <p className=" text-xl w-[35rem]">
+          <p className="flex mx-auto justify-center text-xl w-[24rem] md:w-[35rem] px-0 md:px-24">
             The gradual accumulation of information about atomic and small-scale
             behavior during the first quarter of the 20th
           </p>
           <img
             src={AboutData.footerArea.aboutWorkWithUsButton}
-            className="mt-9 "
+            className="mt-9 flex mx-auto justify-center"
           />
         </div>
         <div>
-          <img src={AboutData.footerArea.aboutWorkWithUs} />
+          <img
+            src={AboutData.footerArea.aboutWorkWithUs}
+            className="desktop-only"
+          />
         </div>
       </div>
     </div>
