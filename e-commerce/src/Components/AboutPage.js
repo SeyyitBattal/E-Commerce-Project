@@ -3,8 +3,8 @@ import { AboutData } from "../Datas/AboutData";
 export const AboutPage = () => {
   return (
     <div>
-      <div className="flex mx-auto justify-center">
-        <div className="text-slate-800 w-96 mt-28 mr-32">
+      <div className="flex flex-wrap mx-auto justify-center">
+        <div className="text-slate-800 w-96 mt-28 mr-0 md:mr-32 justify-center text-center md:text-start">
           <h1 className="font-bold">ABOUT COMPANY</h1>
           <h1 className="text-6xl font-bold text-slate-800 my-9">ABOUT US</h1>
           <p className="text-neutral-500 text-xl">
@@ -12,32 +12,32 @@ export const AboutPage = () => {
           </p>
           <img
             src={AboutData.headerArea.aboutGetQuoteButton}
-            className="mt-9"
+            className="mt-9 flex mx-auto md:justify-start justify-center"
           />
         </div>
-        <div>
+        <div className="mt-36 md:mt-0">
           <img src={AboutData.headerArea.aboutPhoto} />
         </div>
       </div>
 
-      <div className="my-36 flex mx-auto justify-center">
-        <p className="font-bold text-2xl w-[23rem] mr-16">
+      <div className="my-36 flex flex-wrap mx-auto justify-center text-center">
+        <p className="font-bold text-slate-800 text-2xl w-[23rem] mr-0 md:mr-16">
           Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
         </p>
-        <p className=" text-neutral-500 w-[35rem]">
+        <p className=" text-neutral-500 w-[35rem] md:mt-0 mt-12">
           Problems trying to resolve the conflict between the two major realms
           of Classical physics: Newtonian mechanics
         </p>
       </div>
 
-      <div className="flex mx-auto justify-center text-center">
+      <div className="flex flex-wrap mx-48 justify-center text-center">
         <div>
           <label className="text-6xl font-bold text-slate-800">15K</label>
           <p className="font-bold text-neutral-500 text-center mt-2.5">
             Happy Customers
           </p>
         </div>
-        <div className="mx-24">
+        <div className="mx-24 md:my-0 my-36">
           <label className="text-6xl font-bold text-slate-800">150K</label>
           <p className="font-bold text-neutral-500 text-center mt-2.5">
             Monthly Visitors
@@ -51,7 +51,7 @@ export const AboutPage = () => {
           </p>
         </div>
 
-        <div className="ml-24">
+        <div className="mx-24 mt-36 md:mt-0">
           <label className="text-6xl font-bold text-slate-800">100+</label>
           <p className="font-bold text-neutral-500 text-center mt-2.5">
             Top Partners
@@ -59,9 +59,9 @@ export const AboutPage = () => {
         </div>
       </div>
 
-      <div className="my-80">
+      <div className="my-80 mx-12 ">
         <video
-          className="w-[62rem] h-[34rem] max-w-full flex mx-auto justify-center border border-gray-200 rounded-2xl"
+          className="w-[62rem] h-[17rem] md:h-[34rem] max-w-full flex mx-auto justify-center border border-gray-200 rounded-2xl"
           autoplay
           muted
           controls
@@ -71,19 +71,19 @@ export const AboutPage = () => {
         </video>
       </div>
 
-      <div className="my-28">
-        <p className="  text-slate-800 font-bold text-5xl mx-auto text-center">
+      <div className="my-28 ">
+        <p className="  text-slate-800 mx-24 font-bold text-5xl text-center">
           Meet Our Team
         </p>
-        <p className="font-bold text-neutral-500 text-center mt-5">
+        <p className="font-bold mx-32 text-neutral-500 text-center mt-5">
           Problems trying to resolve the conflict between <br /> the two major
           realms of Classical physics: Newtonian mechanics
         </p>
       </div>
-      <div className="flex flex-wrap mx-48">
+      <div className="flex flex-wrap mx-0 md:mx-48">
         {AboutData.bodyArea.teamCardsArray.map((teamCard, index) => (
           <div
-            className="shadow-xl text-center mx-auto mr-14  mb-20"
+            className="shadow-xl text-center mx-20 md:mx-auto mr-0 md:mr-14  mb-20 min-w-max"
             key={index}
           >
             <a href="#">
