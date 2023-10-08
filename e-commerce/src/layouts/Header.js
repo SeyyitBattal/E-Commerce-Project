@@ -30,7 +30,9 @@ export const Header = () => {
         </div>
       </div>
       <div className=" section2 flex flex-wrap justify-between py-5 px-9">
-        <p className="text-slate-800 text-2xl font-bold ml-44">Bandage</p>
+        <p className="text-slate-800 text-2xl font-bold ml-40 md:ml-44">
+          Bandage
+        </p>
         <div className="flex flex-wrap  text-neutral-500 ">
           <nav>
             <ul className="flex">
