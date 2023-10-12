@@ -33,37 +33,37 @@ export const Header = () => {
         <p className="text-slate-800 text-2xl font-bold ml-40 md:ml-44">
           Bandage
         </p>
-        <div className="flex flex-wrap  text-neutral-500 ">
-          <nav>
-            <ul className="flex">
-              <NavLink to={"/"} className="px-2" exact>
+        <div className="flex flex-wrap mx-auto justify-center text-neutral-500 md:mt-0 mt-12">
+          <nav className="flex text-center justify-center md:mx-0 mx-40">
+            <ul className="flex flex-wrap justify-center">
+              <NavLink to={"/"} className="px-2 md:my-0 my-2" exact>
                 Home
               </NavLink>
 
               <div className="flex pr-2">
-                <NavLink to={"/products"} className="px-2">
+                <NavLink to={"/products"} className="px-2 md:my-0 my-2">
                   Shop
                 </NavLink>
                 <img src={Hdata.headerArea.vectorLogo} />
               </div>
 
-              <NavLink to={"/about"} className="px-2">
+              <NavLink to={"/about"} className="px-2 md:my-0 my-2">
                 About
               </NavLink>
 
-              <NavLink to={"/blog"} className="px-2">
+              <NavLink to={"/blog"} className="px-2 md:my-0 my-2">
                 Blog
               </NavLink>
 
-              <NavLink to={"/contact"} className="px-2">
+              <NavLink to={"/contact"} className="px-2 md:my-0 my-2">
                 Contact
               </NavLink>
 
-              <NavLink to={"/furniture"} className="px-2">
+              <NavLink to={"/furniture"} className="px-2 md:my-0 my-2">
                 Furniture
               </NavLink>
 
-              <NavLink to={"/team"} className="px-2">
+              <NavLink to={"/team"} className="px-2 md:my-0 my-2">
                 Team
               </NavLink>
             </ul>
