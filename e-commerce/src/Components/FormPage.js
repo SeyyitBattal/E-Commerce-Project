@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 
 const api = axios.create({
   baseURL: "https://workinteck-fe-final.onrender.com",
 });
 
 export const FormPage = () => {
+  const [loading, setLoading] = useState(false);
+  const history = useHistory();
   const {
     register,
     handleSubmit,
@@ -33,14 +36,24 @@ export const FormPage = () => {
   }, []);
 
   const onSubmit = (data) => {
+    setLoading(true);
     if (selectedRoleId) data.role_id = selectedRoleId;
     console.log(data);
     api
-      .post("/endpoint", data)
+      .post("/signup", data)
       .then((response) => {
+        setLoading(false);
         console.log(response.data);
+        history.push({
+          pathname: "/products",
+          state: {
+            message:
+              "You need to click the link in the email to activate your account!",
+          },
+        });
       })
       .catch((error) => {
+        setLoading(false);
         console.error("Error submitting form data: ", error);
       });
   };
@@ -328,9 +341,10 @@ export const FormPage = () => {
 
         <button
           type="submit"
+          disabled={loading}
           className="flex mx-auto justify-center bg-blue-500 hover:bg-blue-400 text-white font-bold py-3 text-xl px-12 border-b-4 border-blue-700 hover:border-blue-500 rounded mt-20"
         >
-          Open
+          {loading ? "Loading..." : "Submit"}
         </button>
       </form>
     </div>

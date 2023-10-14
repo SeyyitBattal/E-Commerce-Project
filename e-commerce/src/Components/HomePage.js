@@ -12,10 +12,10 @@ export const HomePage = () => {
                 className="slider ml-20 "
               />
             </div>
-            <div class="absolute text-slate-800 md:top-48 top-0  left-0 md:left-48">
+            <div className="absolute text-slate-800 md:top-48 top-0  left-0 md:left-48">
               <p className="font-bold ">SUMMER 2020</p>
-              <p class="my-9 font-bold text-7xl ">NEW COLLECTION</p>
-              <p class="text-2xl w-96  ">
+              <p className="my-9 font-bold text-7xl ">NEW COLLECTION</p>
+              <p className="text-2xl w-96  ">
                 We know how large objects will act, but things on a small scale.
               </p>
               <img src={Hdata.bodyArea.shopNowButton} className="mt-9" />
@@ -45,10 +45,10 @@ export const HomePage = () => {
                 className="slider ml-20 "
               />
             </div>
-            <div class="desktop-only absolute text-white md:top-48 top-0 left-0 md:left-48 h-5 md:h-auto w-5 md:w-auto">
+            <div className="desktop-only absolute text-white md:top-48 top-0 left-0 md:left-48 h-5 md:h-auto w-5 md:w-auto">
               <p className="font-bold ">SUMMER 2020</p>
-              <p class="my-9 font-bold text-7xl ">NEW COLLECTION</p>
-              <p class="desktop-only text-2xl w-96 ">
+              <p className="my-9 font-bold text-7xl ">NEW COLLECTION</p>
+              <p className="desktop-only text-2xl w-96 ">
                 We know how large objects will act, but things on a small scale.
               </p>
               <img
@@ -83,9 +83,9 @@ export const HomePage = () => {
       </p>
       <div className="flex flex-wrap mx-auto justify-center">
         <body className="flex flex-wrap ">
-          <div class="flex relative w-[300px] h-[350px] md:w-[500px] md:h-auto mx-auto justify-center">
+          <div className="flex relative w-[300px] h-[350px] md:w-[500px] md:h-auto mx-auto justify-center">
             <img src={Hdata.bodyArea.editorPicMan} />
-            <div class="absolute bottom-7 left-7">
+            <div className="absolute bottom-7 left-7">
               <img src={Hdata.bodyArea.menText} />
             </div>
           </div>
@@ -95,21 +95,21 @@ export const HomePage = () => {
               src={Hdata.bodyArea.editorPicWoman}
               className=" md:w-auto w-[14rem]"
             />
-            <div class="absolute bottom-7 left-7">
+            <div className="absolute bottom-7 left-7">
               <img src={Hdata.bodyArea.womenText} />
             </div>
           </div>
         </body>
         <div className="mt-8 md:mt-0">
-          <div class="relative w-[235px] mb-4 ">
+          <div className="relative w-[235px] mb-4 ">
             <img src={Hdata.bodyArea.editorPicAccessories} />
-            <div class="absolute bottom-7 left-7">
+            <div className="absolute bottom-7 left-7">
               <img src={Hdata.bodyArea.accessoriesText} />
             </div>
           </div>
-          <div class="relative w-[235px]  mt:8 md:mt-0">
+          <div className="relative w-[235px]  mt:8 md:mt-0">
             <img src={Hdata.bodyArea.editorPicKids} />
-            <div class="absolute bottom-7 left-7">
+            <div className="absolute bottom-7 left-7">
               <img src={Hdata.bodyArea.kidsText} />
             </div>
           </div>
@@ -131,7 +131,7 @@ export const HomePage = () => {
             key={index}
           >
             <a href="#">
-              <img class="rounded-t-lg" src={productCard.img} alt="" />
+              <img className="rounded-t-lg" src={productCard.img} alt="" />
             </a>
             <div className="mt-6 mb-9">
               <p className="font-bold ">{productCard.tittle}</p>
@@ -157,8 +157,8 @@ export const HomePage = () => {
         <div className=" object-contain relative ml-0 md:ml-52">
           <div className="absolute text-white top-20 left-20">
             <p>SUMMER 2020</p>
-            <p class="my-9 font-bold text-7xl ">Vita Classic Prouduct</p>
-            <p class="text-xl w-96  ">
+            <p className="my-9 font-bold text-7xl ">Vita Classic Prouduct</p>
+            <p className="text-xl w-96  ">
               We know how large objects will act, We know how are objects will
               act, We know
             </p>
@@ -205,7 +205,7 @@ export const HomePage = () => {
         {Hdata.bodyArea.featureCarsdArray.map((featureCard, index) => (
           <div className="flex-col shadow-xl mx-3 mt-12 md:mt-0" key={index}>
             <a href="#">
-              <img class="rounded-t-lg" src={featureCard.img} alt="" />
+              <img className="rounded-t-lg" src={featureCard.img} alt="" />
             </a>
 
             <div className="mx-6 mt-6 mb-9">

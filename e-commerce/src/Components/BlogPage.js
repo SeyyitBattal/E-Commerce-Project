@@ -6,11 +6,11 @@ export const BlogPage = () => {
       <div className="flex flex-wrap mx-48 mb-40  justify-center">
         {BlogData.CardsdArray.map((featureCard, index) => (
           <div className="flex-col shadow-xl  mx-8 mt-20 " key={index}>
-            <div class="relative">
+            <div className="relative">
               <a href="#">
-                <img class="rounded-t-lg" src={featureCard.img} alt="" />
+                <img className="rounded-t-lg" src={featureCard.img} alt="" />
               </a>
-              <div class="absolute top-7 left-7">
+              <div className="absolute top-7 left-7">
                 <img src={featureCard.newOnPicture} />
               </div>
             </div>

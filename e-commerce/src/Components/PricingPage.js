@@ -24,10 +24,10 @@ export const PricingPage = () => {
         <div className="flex mx-auto my-12 justify-center  ">
           <p className="font-bold text-xl pt-3">Monthly</p>
 
-          <label class="relative inline-flex items-center mt-4 mb-6 mx-4 cursor-pointer ">
-            <input type="checkbox" value="" class="sr-only peer" />
+          <label className="relative inline-flex items-center mt-4 mb-6 mx-4 cursor-pointer ">
+            <input type="checkbox" value="" className="sr-only peer" />
 
-            <div class="w-9 h-5 bg-gray-800 peer-focus:outline-none  peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-white dark:border peer-checked:after:translate-x-full peer-checked:after:border-sky-500 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-gray-200 after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-blue-600 peer-checked:bg-blue-600"></div>
+            <div className="w-9 h-5 bg-gray-800 peer-focus:outline-none  peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-white dark:border peer-checked:after:translate-x-full peer-checked:after:border-sky-500 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-gray-200 after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-blue-600 peer-checked:bg-blue-600"></div>
           </label>
 
           <p className="font-bold text-xl pt-3">Yearly</p>

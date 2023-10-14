@@ -87,7 +87,7 @@ export const AboutPage = () => {
             key={index}
           >
             <a href="#">
-              <img class="rounded-t-lg" src={teamCard.img} alt="" />
+              <img className="rounded-t-lg" src={teamCard.img} alt="" />
             </a>
             <div className="m-8">
               <p className="font-bold ">{teamCard.username}</p>

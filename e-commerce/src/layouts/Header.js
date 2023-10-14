@@ -34,7 +34,7 @@ export const Header = () => {
           Bandage
         </p>
         <div className="flex flex-wrap mx-auto justify-center text-neutral-500 md:mt-0 mt-12">
-          <nav className="flex text-center justify-center md:mx-0 mx-40">
+          <nav className="flex text-center justify-center md:mx-0 mx-40 mt-1">
             <ul className="flex flex-wrap justify-center">
               <NavLink to={"/"} className="px-2 md:my-0 my-2" exact>
                 Home
