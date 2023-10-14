@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export const FormPage = () => {
@@ -9,6 +9,16 @@ export const FormPage = () => {
   } = useForm();
   const onSubmit = (data) => console.log(data);
   console.log(errors);
+
+  const [showStoreDiv, setShowStoreDiv] = useState(false);
+
+  const handleRoleChange = (event) => {
+    if (event.target.value === "Store") {
+      setShowStoreDiv(true);
+    } else {
+      setShowStoreDiv(false);
+    }
+  };
 
   return (
     <div className="flex mx-auto justify-center my-20">
@@ -71,9 +81,6 @@ export const FormPage = () => {
               type="password"
               placeholder="******************"
             />
-            <p class="text-gray-600 text-xs italic">
-              Make it as long and as crazy as you'd like
-            </p>
           </div>
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
@@ -90,9 +97,6 @@ export const FormPage = () => {
               type="password"
               placeholder="******************"
             />
-            <p class="text-gray-600 text-xs italic">
-              Make it as long and as crazy as you'd like
-            </p>
           </div>
         </div>
 
@@ -106,7 +110,9 @@ export const FormPage = () => {
             </label>
             <div class="relative">
               <select
-                class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                value={showStoreDiv ? "Store" : "Customer"}
+                onChange={(event) => handleRoleChange(event)}
+                className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-state"
               >
                 <option>Customer</option>
@@ -124,6 +130,11 @@ export const FormPage = () => {
             </div>
           </div>
         </div>
+        {showStoreDiv && (
+          <div className="flex mx-auto justify-center my-4">
+            <div className="bg-black px-3 py-2 rounded">Store seçildi</div>
+          </div>
+        )}
         <input type="submit" />
       </form>
     </div>
