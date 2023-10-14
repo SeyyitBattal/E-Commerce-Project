@@ -5,10 +5,19 @@ export const FormPage = () => {
   const {
     register,
     handleSubmit,
+    watch,
     trigger,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const [passwordCheck, setPasswordCheck] = useState("");
+
+  const onSubmit = (data) => {
+    if (data.password !== passwordCheck) {
+      alert("Passwords do not match");
+    } else {
+      console.log(data);
+    }
+  };
   console.log(errors);
 
   const [showStoreDiv, setShowStoreDiv] = useState(false);
@@ -94,7 +103,7 @@ export const FormPage = () => {
               errors.email ? "border-red-500" : "border-gray-200"
             } rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500`}
             type="text"
-            placeholder="Lütfen mail adresinizi giriniz"
+            placeholder="Email"
             {...register("email", {
               required: "Email is required",
               pattern: {
@@ -118,32 +127,59 @@ export const FormPage = () => {
               Password
             </label>
             <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className={`appearance-none block w-full bg-gray-200 text-gray-700 border ${
+                errors.password ? "border-red-500" : "border-gray-200"
+              } rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500`}
               id="grid-password"
               type="password"
-              placeholder="******************"
+              placeholder="Password"
               {...register("password", {
-                required: true,
-                minLength: 8,
-                pattern: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/,
+                required: "Password is required",
+                minLength: {
+                  value: 8,
+                  message: "Password must have at least 8 characters",
+                },
+                pattern: {
+                  value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/,
+                  message:
+                    "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
+                },
               })}
             />
+            {errors.password && (
+              <p className="text-red-500 text-xs italic">
+                {errors.password.message}
+              </p>
+            )}
           </div>
         </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full px-3">
             <label
-              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-password"
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="grid-password"
             >
-              Password Again
+              Password Check
             </label>
             <input
-              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-password"
+              className={`appearance-none block w-full bg-gray-200 text-gray-700 border ${
+                errors.passwordCheck ? "border-red-500" : "border-gray-200"
+              } rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500`}
+              id="grid-password-check"
               type="password"
-              placeholder="******************"
+              placeholder="Password Check"
+              onChange={(e) => setPasswordCheck(e.target.value)}
+              {...register("passwordCheck", {
+                required: "Password check is required",
+                validate: (value) =>
+                  value === watch("password") || "Passwords do not match",
+              })}
             />
+            {errors.passwordCheck && (
+              <p className="text-red-500 text-xs italic">
+                {errors.passwordCheck.message}
+              </p>
+            )}
           </div>
         </div>
 
