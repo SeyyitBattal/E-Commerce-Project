@@ -300,7 +300,13 @@ export const FormPage = () => {
             </div>
           </div>
         )}
-        <input type="submit" />
+
+        <button
+          type="submit"
+          className="flex mx-auto justify-center bg-blue-500 hover:bg-blue-400 text-white font-bold py-3 text-xl px-12 border-b-4 border-blue-700 hover:border-blue-500 rounded mt-20"
+        >
+          Open
+        </button>
       </form>
     </div>
   );
