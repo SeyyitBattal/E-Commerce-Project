@@ -1,5 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
+
+const api = axios.create({
+  baseURL: "https://workinteck-fe-final.onrender.com",
+});
 
 export const FormPage = () => {
   const {
@@ -10,34 +15,54 @@ export const FormPage = () => {
     formState: { errors },
   } = useForm();
   const [passwordCheck, setPasswordCheck] = useState("");
+  const [roles, setRoles] = useState([]);
+  const [selectedRoleId, setSelectedRoleId] = useState(null);
+  const [showStoreDiv, setShowStoreDiv] = useState(false);
+
+  useEffect(() => {
+    const fetchRoles = async () => {
+      try {
+        const response = await api.get("/roles");
+        setRoles(response.data);
+      } catch (error) {
+        console.error("Error fetching roles data: ", error);
+      }
+    };
+
+    fetchRoles();
+  }, []);
 
   const onSubmit = (data) => {
-    if (data.password !== passwordCheck) {
-      alert("Passwords do not match");
-    } else {
-      console.log(data);
-    }
+    if (selectedRoleId) data.role_id = selectedRoleId;
+    console.log(data);
+    api
+      .post("/endpoint", data)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Error submitting form data: ", error);
+      });
   };
-  console.log(errors);
-
-  const [showStoreDiv, setShowStoreDiv] = useState(false);
 
   const handleRoleChange = (event) => {
     if (event.target.value === "Store") {
       setShowStoreDiv(true);
+      setSelectedRoleId(1);
     } else {
       setShowStoreDiv(false);
+      setSelectedRoleId(2);
     }
   };
 
   return (
     <div className="flex mx-auto justify-center my-20">
       <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-lg">
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="firstName"
+              htmlFor="firstName"
             >
               First Name
             </label>
@@ -62,10 +87,10 @@ export const FormPage = () => {
               </p>
             )}
           </div>
-          <div class="w-full md:w-1/2 px-3">
+          <div className="w-full md:w-1/2 px-3">
             <label
-              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-last-name"
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="grid-last-name"
             >
               Last Name
             </label>
@@ -91,10 +116,10 @@ export const FormPage = () => {
             )}
           </div>
         </div>
-        <div class="w-full md:w-1/2 px-3 -mx-3 mb-6">
+        <div className="w-full md:w-1/2 px-3 -mx-3 mb-6">
           <label
             className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            for="grid-last-name"
+            htmlFor="grid-last-name"
           >
             e-mail
           </label>
@@ -118,11 +143,11 @@ export const FormPage = () => {
             </p>
           )}
         </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full px-3">
             <label
-              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-password"
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="grid-password"
             >
               Password
             </label>
@@ -183,15 +208,15 @@ export const FormPage = () => {
           </div>
         </div>
 
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
-              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-state"
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="grid-state"
             >
               Role
             </label>
-            <div class="relative">
+            <div className="relative">
               <select
                 value={showStoreDiv ? "Store" : "Customer"}
                 onChange={(event) => handleRoleChange(event)}
@@ -201,9 +226,9 @@ export const FormPage = () => {
                 <option>Customer</option>
                 <option>Store</option>
               </select>
-              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
-                  class="fill-current h-4 w-4"
+                  className="fill-current h-4 w-4"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                 >
@@ -215,10 +240,10 @@ export const FormPage = () => {
         </div>
         {showStoreDiv && (
           <div className="flex flex-wrap -mx-3 mb-6">
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
+            <div className="w-full md:w-1/2 px-3 mb-6 ">
               <label
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-first-name"
+                htmlFor="grid-first-name"
               >
                 Store Name
               </label>
@@ -241,10 +266,10 @@ export const FormPage = () => {
                 </p>
               )}
             </div>
-            <div class="w-full px-3 mb-6">
+            <div className="w-full px-3 mb-6">
               <label
-                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-last-name"
+                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                htmlFor="grid-last-name"
               >
                 Store Tax ID
               </label>
@@ -270,10 +295,10 @@ export const FormPage = () => {
                 </p>
               )}
             </div>
-            <div class="w-full px-3 mb-6">
+            <div className="w-full px-3 mb-6">
               <label
-                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-last-name"
+                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                htmlFor="grid-last-name"
               >
                 Store Bank Account
               </label>
