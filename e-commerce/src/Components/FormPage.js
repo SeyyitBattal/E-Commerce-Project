@@ -5,6 +5,7 @@ export const FormPage = () => {
   const {
     register,
     handleSubmit,
+    trigger,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
@@ -27,16 +28,30 @@ export const FormPage = () => {
           <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-first-name"
+              for="firstName"
             >
               First Name
             </label>
             <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-first-name"
+              className={`appearance-none block w-full bg-gray-200 text-gray-700 border ${
+                errors.firstName ? "border-red-500" : "border-gray-200"
+              } rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500`}
+              id="firstName"
               type="text"
-              placeholder="Jane"
+              placeholder="First Name"
+              {...register("firstName", {
+                required: "First name is required",
+                minLength: {
+                  value: 3,
+                  message: "First name should be at least 3 characters",
+                },
+              })}
             />
+            {errors.firstName && (
+              <p className="text-red-500 text-xs italic">
+                {errors.firstName.message}
+              </p>
+            )}
           </div>
           <div class="w-full md:w-1/2 px-3">
             <label
@@ -46,11 +61,25 @@ export const FormPage = () => {
               Last Name
             </label>
             <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className={`appearance-none block w-full bg-gray-200 text-gray-700 border ${
+                errors.lastName ? "border-red-500" : "border-gray-200"
+              } rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500`}
               id="grid-last-name"
               type="text"
-              placeholder="Doe"
+              placeholder="Last Name"
+              {...register("lastName", {
+                required: "Last name is required",
+                minLength: {
+                  value: 3,
+                  message: "Last name should be at least 3 characters",
+                },
+              })}
             />
+            {errors.lastName && (
+              <p className="text-red-500 text-xs italic">
+                {errors.lastName.message}
+              </p>
+            )}
           </div>
         </div>
         <div class="w-full md:w-1/2 px-3 -mx-3 mb-6">
@@ -61,10 +90,13 @@ export const FormPage = () => {
             e-mail
           </label>
           <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            type="email"
+            className={`appearance-none block w-full bg-gray-200 text-gray-700 border $ rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500`}
+            type="text"
             placeholder="Lütfen mail adresinizi giriniz"
-            {...register("Lütfen mail adresinizi giriniz", { required: true })}
+            {...register("email", {
+              required: true,
+              pattern: /^\S+@\S+$/i,
+            })}
           />
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
@@ -80,6 +112,11 @@ export const FormPage = () => {
               id="grid-password"
               type="password"
               placeholder="******************"
+              {...register("password", {
+                required: true,
+                minLength: 8,
+                pattern: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/,
+              })}
             />
           </div>
         </div>
@@ -100,7 +137,7 @@ export const FormPage = () => {
           </div>
         </div>
 
-        <div class="flex flex-wrap -mx-3 mb-2">
+        <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -131,8 +168,49 @@ export const FormPage = () => {
           </div>
         </div>
         {showStoreDiv && (
-          <div className="flex mx-auto justify-center my-4">
-            <div className="bg-black px-3 py-2 rounded">Store seçildi</div>
+          <div className="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
+              <label
+                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                for="grid-first-name"
+              >
+                Store Name
+              </label>
+              <input
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-first-name"
+                type="text"
+                placeholder="Jane"
+              />
+            </div>
+            <div class="w-full px-3 mb-6">
+              <label
+                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                for="grid-last-name"
+              >
+                Store Tax ID
+              </label>
+              <input
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-last-name"
+                type="text"
+                placeholder="Doe"
+              />
+            </div>
+            <div class="w-full px-3 mb-6">
+              <label
+                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                for="grid-last-name"
+              >
+                Store Bank Account
+              </label>
+              <input
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-last-name"
+                type="text"
+                placeholder="Doe"
+              />
+            </div>
           </div>
         )}
         <input type="submit" />
