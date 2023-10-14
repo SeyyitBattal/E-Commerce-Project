@@ -90,14 +90,24 @@ export const FormPage = () => {
             e-mail
           </label>
           <input
-            className={`appearance-none block w-full bg-gray-200 text-gray-700 border $ rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500`}
+            className={`appearance-none block w-full bg-gray-200 text-gray-700 border ${
+              errors.email ? "border-red-500" : "border-gray-200"
+            } rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500`}
             type="text"
             placeholder="Lütfen mail adresinizi giriniz"
             {...register("email", {
-              required: true,
-              pattern: /^\S+@\S+$/i,
+              required: "Email is required",
+              pattern: {
+                value: /^\S+@\S+$/i,
+                message: "Please enter a valid email address",
+              },
             })}
           />
+          {errors.email && (
+            <p className="text-red-500 text-xs italic">
+              {errors.email.message}
+            </p>
+          )}
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
@@ -181,7 +191,15 @@ export const FormPage = () => {
                 id="grid-first-name"
                 type="text"
                 placeholder="Jane"
+                {...register("storeName", {
+                  required: "Store name is required",
+                })}
               />
+              {errors.storeName && (
+                <p className="text-red-500 text-xs italic">
+                  {errors.storeName.message}
+                </p>
+              )}
             </div>
             <div class="w-full px-3 mb-6">
               <label
