@@ -7,6 +7,7 @@ import { PagesPage } from "../Components/PagesPage";
 import { TeamPage } from "../Components/TeamPage";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { PricingPage } from "../Components/PricingPage";
+import { FormPage } from "../Components/FormPage";
 
 export const PageBody = () => {
   return (
@@ -42,6 +43,10 @@ export const PageBody = () => {
 
         <Route path="/team">
           <TeamPage />
+        </Route>
+
+        <Route path="/form">
+          <FormPage />
         </Route>
       </Switch>
     </div>
