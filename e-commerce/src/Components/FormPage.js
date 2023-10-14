@@ -226,9 +226,13 @@ export const FormPage = () => {
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-first-name"
                 type="text"
-                placeholder="Jane"
+                placeholder="Store Name"
                 {...register("storeName", {
-                  required: "Store name is required",
+                  required: "First name is required",
+                  minLength: {
+                    value: 3,
+                    message: "Store name should be at least 3 characters",
+                  },
                 })}
               />
               {errors.storeName && (
@@ -245,11 +249,26 @@ export const FormPage = () => {
                 Store Tax ID
               </label>
               <input
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-last-name"
+                className={`appearance-none block w-full bg-gray-200 text-gray-700 border ${
+                  errors.storeTaxId ? "border-red-500" : "border-gray-200"
+                } rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500`}
+                id="storeTaxId"
                 type="text"
-                placeholder="Doe"
+                placeholder="TXXXXVXXXXXX"
+                {...register("storeTaxId", {
+                  required: "Store Tax ID is required",
+                  pattern: {
+                    value: /^T\d{4}V\d{6}$/,
+                    message:
+                      "Store Tax ID should match the pattern TXXXXVXXXXXX",
+                  },
+                })}
               />
+              {errors.storeTaxId && (
+                <p className="text-red-500 text-xs italic">
+                  {errors.storeTaxId.message}
+                </p>
+              )}
             </div>
             <div class="w-full px-3 mb-6">
               <label
@@ -259,11 +278,25 @@ export const FormPage = () => {
                 Store Bank Account
               </label>
               <input
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-last-name"
+                className={`appearance-none block w-full bg-gray-200 text-gray-700 border ${
+                  errors.storeBankAccount ? "border-red-500" : "border-gray-200"
+                } rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500`}
+                id="storeBankAccount"
                 type="text"
-                placeholder="Doe"
+                placeholder="TRXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                {...register("storeBankAccount", {
+                  required: "Store Bank Account is required",
+                  pattern: {
+                    value: /^TR\d{26}$/,
+                    message: "Please enter a valid TR IBAN",
+                  },
+                })}
               />
+              {errors.storeBankAccount && (
+                <p className="text-red-500 text-xs italic">
+                  {errors.storeBankAccount.message}
+                </p>
+              )}
             </div>
           </div>
         )}
