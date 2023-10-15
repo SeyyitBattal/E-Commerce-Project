@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 
 const api = axios.create({
-  baseURL: "https://workinteck-fe-final.onrender.com",
+  baseURL: "https://workintech-fe-ecommerce.onrender.com",
 });
 
 export const FormPage = () => {
@@ -24,8 +24,15 @@ export const FormPage = () => {
     setLoading(true);
     if (selectedRoleId) data.role_id = selectedRoleId;
     console.log(data);
+    const user = {
+      name: data.firstName + " " + data.lastName,
+      email: data.email,
+      password: data.password,
+      role_id: data.role_id,
+    };
+
     api
-      .post("/signup", data)
+      .post("/signup", user)
       .then((response) => {
         setLoading(false);
         console.log(response.data);
