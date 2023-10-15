@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
@@ -14,26 +14,11 @@ export const FormPage = () => {
     register,
     handleSubmit,
     watch,
-    trigger,
     formState: { errors },
   } = useForm();
   const [passwordCheck, setPasswordCheck] = useState("");
-  const [roles, setRoles] = useState([]);
   const [selectedRoleId, setSelectedRoleId] = useState(null);
   const [showStoreDiv, setShowStoreDiv] = useState(false);
-
-  useEffect(() => {
-    const fetchRoles = async () => {
-      try {
-        const response = await api.get("/roles");
-        setRoles(response.data);
-      } catch (error) {
-        console.error("Error fetching roles data: ", error);
-      }
-    };
-
-    fetchRoles();
-  }, []);
 
   const onSubmit = (data) => {
     setLoading(true);
