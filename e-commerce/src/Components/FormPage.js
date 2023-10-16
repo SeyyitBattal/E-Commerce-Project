@@ -24,31 +24,63 @@ export const FormPage = () => {
     setLoading(true);
     if (selectedRoleId) data.role_id = selectedRoleId;
     console.log(data);
-    const user = {
+
+    const userInfo = {
       name: data.firstName + " " + data.lastName,
       email: data.email,
       password: data.password,
       role_id: data.role_id,
     };
+    const storeInfo = {
+      name: data.firstName + " " + data.lastName,
+      email: data.email,
+      password: data.password,
+      role_id: data.role_id,
+      store: {
+        name: data.storeName,
+        tax_no: data.storeTaxId,
+        bank_account: data.storeBankAccount,
+      },
+    };
 
-    api
-      .post("/signup", user)
-      .then((response) => {
-        setLoading(false);
-        console.log(response.data);
-        history.push({
-          pathname: "/products",
-          state: {
-            message:
-              "You need to click the link in the email to activate your account!",
-          },
+    if (selectedRoleId === 1) {
+      api
+        .post("/signup", storeInfo)
+        .then((response) => {
+          setLoading(false);
+          console.log(response.data);
+          history.push({
+            pathname: "/products",
+            state: {
+              message:
+                "You need to click the link in the email to activate your account!",
+            },
+          });
+        })
+        .catch((error) => {
+          setLoading(false);
+          console.error("Error submitting form data: ", error);
         });
-      })
-      .catch((error) => {
-        setLoading(false);
-        console.error("Error submitting form data: ", error);
-        //TODO: When I did successfully submit I am seeing "AxiosError"
-      });
+    } else {
+      api
+        .post("/signup", userInfo)
+        .then((response) => {
+          setLoading(false);
+          console.log(response.data);
+          history.push({
+            pathname: "/products",
+            state: {
+              message:
+                "You need to click the link in the email to activate your account!",
+            },
+          });
+        })
+        .catch((error) => {
+          setLoading(false);
+          console.error("Error submitting form data: ", error);
+          //TODO: When I did successfully submit I am seeing "AxiosError"
+        });
+    }
   };
 
   const handleRoleChange = (event) => {
