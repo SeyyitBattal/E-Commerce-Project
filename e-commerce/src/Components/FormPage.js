@@ -2,12 +2,37 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const api = axios.create({
   baseURL: "https://workintech-fe-ecommerce.onrender.com",
 });
 
 export const FormPage = () => {
+  const notifySuccess = () =>
+    toast.success("Login successful", {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  const notifyError = () =>
+    toast.error("Login failed", {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
   const [loading, setLoading] = useState(false);
   const history = useHistory();
   const {
@@ -56,10 +81,12 @@ export const FormPage = () => {
                 "You need to click the link in the email to activate your account!",
             },
           });
+          notifySuccess();
         })
         .catch((error) => {
           setLoading(false);
           console.error("Error submitting form data: ", error);
+          notifyError();
         });
     } else {
       api
@@ -74,11 +101,12 @@ export const FormPage = () => {
                 "You need to click the link in the email to activate your account!",
             },
           });
+          notifySuccess();
         })
         .catch((error) => {
           setLoading(false);
           console.error("Error submitting form data: ", error);
-          //TODO: When I did successfully submit I am seeing "AxiosError"
+          notifyError();
         });
     }
   };
@@ -372,6 +400,18 @@ export const FormPage = () => {
           {loading ? "Loading..." : "Submit"}
         </button>
       </form>
+      <ToastContainer
+        position="bottom-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };
