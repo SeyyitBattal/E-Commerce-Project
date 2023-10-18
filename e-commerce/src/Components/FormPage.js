@@ -50,12 +50,20 @@ export const FormPage = () => {
     if (selectedRoleId) data.role_id = selectedRoleId;
     console.log(data);
 
+    const adminInfo = {
+      name: data.firstName + " " + data.lastName,
+      email: data.email,
+      password: data.password,
+      role_id: data.role_id,
+    };
+
     const userInfo = {
       name: data.firstName + " " + data.lastName,
       email: data.email,
       password: data.password,
       role_id: data.role_id,
     };
+
     const storeInfo = {
       name: data.firstName + " " + data.lastName,
       email: data.email,
@@ -99,9 +107,20 @@ export const FormPage = () => {
         .catch((error) => {
           handleError(error);
         });
-    } else {
+    } else if (selectedRoleId === 2) {
       api
         .post("/signup", userInfo)
+        .then((response) => {
+          setLoading(false);
+          console.log(response.data);
+          handleSuccess();
+        })
+        .catch((error) => {
+          handleError(error);
+        });
+    } else if (selectedRoleId === 3) {
+      api
+        .post("/signup", adminInfo)
         .then((response) => {
           setLoading(false);
           console.log(response.data);
@@ -117,9 +136,12 @@ export const FormPage = () => {
     if (event.target.value === "Store") {
       setShowStoreDiv(true);
       setSelectedRoleId(1);
-    } else {
+    } else if (event.target.value === "Customer") {
       setShowStoreDiv(false);
       setSelectedRoleId(2);
+    } else {
+      setShowStoreDiv(false);
+      setSelectedRoleId(3);
     }
   };
 
@@ -286,13 +308,20 @@ export const FormPage = () => {
             </label>
             <div className="relative">
               <select
-                value={showStoreDiv ? "Store" : "Customer"}
+                value={
+                  selectedRoleId === 1
+                    ? "Store"
+                    : selectedRoleId === 2
+                    ? "Customer"
+                    : "Admin"
+                }
                 onChange={(event) => handleRoleChange(event)}
                 className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-state"
               >
                 <option>Customer</option>
                 <option>Store</option>
+                <option>Admin</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
