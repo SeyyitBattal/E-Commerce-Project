@@ -11,7 +11,7 @@ const api = axios.create({
 
 export const FormPage = () => {
   const notifySuccess = () =>
-    toast.success("Login successful", {
+    toast.success("Login successful. You are directed to the products page.", {
       position: "bottom-left",
       autoClose: 5000,
       hideProgressBar: false,
@@ -22,7 +22,7 @@ export const FormPage = () => {
       theme: "light",
     });
   const notifyError = () =>
-    toast.error("Login failed", {
+    toast.error("Login failed. Please try again", {
       position: "bottom-left",
       autoClose: 5000,
       hideProgressBar: false,
@@ -78,7 +78,7 @@ export const FormPage = () => {
           pathname: "/products",
           state: successState,
         });
-      }, 4000);
+      }, 5000);
       notifySuccess();
     };
 
