@@ -68,25 +68,36 @@ export const FormPage = () => {
       },
     };
 
+    const successMessage =
+      "You need to click the link in the email to activate your account!";
+    const successState = { message: successMessage };
+
+    const handleSuccess = () => {
+      setTimeout(() => {
+        history.push({
+          pathname: "/products",
+          state: successState,
+        });
+      }, 4000);
+      notifySuccess();
+    };
+
+    const handleError = (error) => {
+      setLoading(false);
+      console.error("Error submitting form data: ", error);
+      notifyError();
+    };
+
     if (selectedRoleId === 1) {
       api
         .post("/signup", storeInfo)
         .then((response) => {
           setLoading(false);
           console.log(response.data);
-          history.push({
-            pathname: "/products",
-            state: {
-              message:
-                "You need to click the link in the email to activate your account!",
-            },
-          });
-          notifySuccess();
+          handleSuccess();
         })
         .catch((error) => {
-          setLoading(false);
-          console.error("Error submitting form data: ", error);
-          notifyError();
+          handleError(error);
         });
     } else {
       api
@@ -94,19 +105,10 @@ export const FormPage = () => {
         .then((response) => {
           setLoading(false);
           console.log(response.data);
-          history.push({
-            pathname: "/products",
-            state: {
-              message:
-                "You need to click the link in the email to activate your account!",
-            },
-          });
-          notifySuccess();
+          handleSuccess();
         })
         .catch((error) => {
-          setLoading(false);
-          console.error("Error submitting form data: ", error);
-          notifyError();
+          handleError(error);
         });
     }
   };
