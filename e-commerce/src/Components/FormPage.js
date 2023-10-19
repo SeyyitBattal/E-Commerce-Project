@@ -106,6 +106,9 @@ export const FormPage = () => {
         })
         .catch((error) => {
           handleError(error);
+        })
+        .finally(function () {
+          setLoading(false);
         });
     } else if (selectedRoleId === 2) {
       api
@@ -117,6 +120,9 @@ export const FormPage = () => {
         })
         .catch((error) => {
           handleError(error);
+        })
+        .finally(function () {
+          setLoading(false);
         });
     } else if (selectedRoleId === 3) {
       api
@@ -128,6 +134,9 @@ export const FormPage = () => {
         })
         .catch((error) => {
           handleError(error);
+        })
+        .finally(function () {
+          setLoading(false);
         });
     }
   };
