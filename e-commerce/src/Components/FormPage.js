@@ -42,7 +42,7 @@ export const FormPage = () => {
     formState: { errors },
   } = useForm();
   const [passwordCheck, setPasswordCheck] = useState("");
-  const [selectedRoleId, setSelectedRoleId] = useState(null);
+  const [selectedRoleId, setSelectedRoleId] = useState(2);
   const [showStoreDiv, setShowStoreDiv] = useState(false);
 
   const onSubmit = (data) => {
