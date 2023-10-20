@@ -69,23 +69,28 @@ export const Header = () => {
             </ul>
           </nav>
         </div>
-        <NavLink to={"/form"} className="">
+        <NavLink to={"/signup"} className="">
           <div className="desktop-only flex py-1">
-            <div className="flex px-4">
+            <div className="flex px-2">
               <img src={Hdata.headerArea.userLogo} />
-              <p className="text-sky-500 font-bold">Login / Register</p>
-            </div>
-            <img src={Hdata.headerArea.searchLogo} />
-            <div className="flex px-4">
-              <img src={Hdata.headerArea.basketLogo} />
-              <p className="text-sky-500">1</p>
-            </div>
-            <div className="flex px-4">
-              <img src={Hdata.headerArea.heartLogo} />
-              <p className="text-sky-500 mr-48">1</p>
+              <p className="text-sky-500 font-bold">Login / </p>
             </div>
           </div>
         </NavLink>
+        <div className="desktop-only flex py-1">
+          <p className="text-sky-500 font-bold mr-4"> Register</p>
+        </div>
+        <div className="desktop-only flex py-1">
+          <img src={Hdata.headerArea.searchLogo} />
+          <div className="flex px-4">
+            <img src={Hdata.headerArea.basketLogo} />
+            <p className="text-sky-500">1</p>
+          </div>
+          <div className="flex px-4">
+            <img src={Hdata.headerArea.heartLogo} />
+            <p className="text-sky-500 mr-48">1</p>
+          </div>
+        </div>
       </div>
     </div>
   );

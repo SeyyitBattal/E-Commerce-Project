@@ -48,7 +48,6 @@ export const FormPage = () => {
   const onSubmit = (data) => {
     setLoading(true);
     if (selectedRoleId) data.role_id = selectedRoleId;
-    console.log(data);
 
     const adminInfo = {
       name: data.firstName + " " + data.lastName,

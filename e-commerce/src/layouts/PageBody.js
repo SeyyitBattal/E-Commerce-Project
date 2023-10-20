@@ -45,7 +45,7 @@ export const PageBody = () => {
           <TeamPage />
         </Route>
 
-        <Route path="/form">
+        <Route path="/signup">
           <FormPage />
         </Route>
       </Switch>
