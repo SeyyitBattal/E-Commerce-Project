@@ -19,7 +19,7 @@ export const loadProductsActionCreator = () => (dispatch, getState) => {
   });
 
   api
-    .get("/products")
+    .get("products")
     .then((res) => {
       dispatch({ type: productActions.set, payload: res.data });
       dispatch({

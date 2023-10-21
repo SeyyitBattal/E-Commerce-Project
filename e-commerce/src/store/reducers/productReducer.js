@@ -9,6 +9,7 @@ export const FETCH_STATES = {
 
 const productStateInitial = {
   productList: [],
+  loading: false,
   totalProductCount: 0,
   pageCount: 1,
   activePage: 1,
@@ -37,11 +38,11 @@ export const productReducer = (state = productStateInitial, action) => {
         ),
       };
 
-    case productActions.setFetchState:
-      return { ...state, fetchState: action.payload };
-
     case productActions.setLoading:
       return { ...state, loading: action.payload };
+
+    case productActions.setFetchState:
+      return { ...state, fetchState: action.payload };
 
     default:
       return state;

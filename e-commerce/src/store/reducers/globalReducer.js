@@ -1,18 +1,13 @@
 //TODO: roles and categories will add
 
+import { globalActions } from "../actions/globalActions";
+
 const globalInitialValue = {
   theme: "light",
   language: "tr",
   roles: [],
   categories: [],
 };
-
-export const globalActions = Object.freeze({
-  changeTheme: "CHANGE_THEME",
-  changeLanguage: "CHANGE_LANGUAGE",
-  setRole: "SET_ROLE",
-  changeCategory: "CHANGE_CATEGORY",
-});
 
 export const globalReducer = (state = globalInitialValue, action) => {
   switch (action.type) {
