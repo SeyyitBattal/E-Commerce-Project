@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: "https://workintech-fe-ecommerce.onrender.com",
 });
 
