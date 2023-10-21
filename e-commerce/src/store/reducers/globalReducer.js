@@ -1,3 +1,5 @@
+//TODO: roles and categories will add
+
 const globalInitialValue = {
   theme: "light",
   language: "tr",
@@ -6,8 +8,15 @@ const globalInitialValue = {
 };
 
 export const globalActions = Object.freeze({
-  changeLanguage: "CHANGE_LANGUAGE",
   changeTheme: "CHANGE_THEME",
+  changeLanguage: "CHANGE_LANGUAGE",
+  setRole: "SET_ROLE",
+  changeCategory: "CHANGE_CATEGORY",
+});
+
+export const toggthemeActionCreator = (theme) => ({
+  type: globalActions.changeTheme,
+  payload: theme === "light" ? "dark" : "light",
 });
 
 export const toggleLanguageActionCreator = (language) => ({
@@ -17,11 +26,11 @@ export const toggleLanguageActionCreator = (language) => ({
 
 export const globalReducer = (state = globalInitialValue, action) => {
   switch (action.type) {
-    case globalActions.changeLanguage:
-      return { ...state, language: action.payload };
-
     case globalActions.changeTheme:
       return { ...state, theme: action.payload };
+
+    case globalActions.changeLanguage:
+      return { ...state, language: action.payload };
 
     default:
       return state;
