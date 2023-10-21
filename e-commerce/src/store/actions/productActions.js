@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 import { FETCH_STATES } from "../reducers/productReducer";
-import { api } from "../../Components/FormPage";
+import { api } from "../../api/api";
 
 export const productActions = Object.freeze({
   set: "SET_PRODUCTS",

@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import axios from "axios";
+import { api } from "../api/api";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-export const api = axios.create({
-  baseURL: "https://workintech-fe-ecommerce.onrender.com",
-});
 
 export const FormPage = () => {
   const notifySuccess = () =>
