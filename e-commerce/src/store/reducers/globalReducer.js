@@ -1,5 +1,3 @@
-//TODO: roles and categories will add
-
 import { globalActions } from "../actions/globalActions";
 
 const globalInitialValue = {
@@ -16,6 +14,18 @@ export const globalReducer = (state = globalInitialValue, action) => {
 
     case globalActions.changeLanguage:
       return { ...state, language: action.payload };
+
+    case globalActions.setRoles:
+      return {
+        ...state,
+        roles: [...state.roles, action.payload],
+      };
+
+    case globalActions.setCategory:
+      return {
+        ...state,
+        categories: [...state.categories, action.payload],
+      };
 
     default:
       return state;
