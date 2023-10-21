@@ -14,16 +14,6 @@ export const globalActions = Object.freeze({
   changeCategory: "CHANGE_CATEGORY",
 });
 
-export const toggthemeActionCreator = (theme) => ({
-  type: globalActions.changeTheme,
-  payload: theme === "light" ? "dark" : "light",
-});
-
-export const toggleLanguageActionCreator = (language) => ({
-  type: globalActions.changeLanguage,
-  payload: language === "tr" ? "en" : "tr",
-});
-
 export const globalReducer = (state = globalInitialValue, action) => {
   switch (action.type) {
     case globalActions.changeTheme:
@@ -35,9 +25,4 @@ export const globalReducer = (state = globalInitialValue, action) => {
     default:
       return state;
   }
-};
-
-const changeLangAction = {
-  type: globalActions.changeLanguage,
-  payload: "en",
 };

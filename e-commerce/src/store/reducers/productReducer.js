@@ -9,9 +9,9 @@ export const FETCH_STATES = {
 
 const productStateInitial = {
   productList: [],
-  totalProductCount: null,
-  pageCount: null,
-  activePage: null,
+  totalProductCount: 0,
+  pageCount: 1,
+  activePage: 1,
   fetchState: FETCH_STATES.notFetched,
 };
 

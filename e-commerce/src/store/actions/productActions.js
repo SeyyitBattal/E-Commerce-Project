@@ -1,4 +1,3 @@
-import axios from "axios";
 import { toast } from "react-toastify";
 import { FETCH_STATES } from "../reducers/productReducer";
 import { api } from "../../Components/FormPage";
