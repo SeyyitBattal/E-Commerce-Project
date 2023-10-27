@@ -11,7 +11,7 @@ export const productActions = Object.freeze({
   setFetchState: "SET_FETCH_STATE",
 });
 
-export const loadProductsActionCreator = () => (dispatch, getState) => {
+export const loadProductsActionCreator = () => (dispatch) => {
   dispatch({ type: productActions.setLoading, payload: true });
   dispatch({
     type: productActions.setFetchState,
