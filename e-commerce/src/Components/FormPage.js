@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import { fetchRoles } from "../store/actions/globalActions";
+import React, { useState, useEffect } from "react";
 import { api } from "../api/api";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const FormPage = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchRoles());
+  }, [dispatch]);
   const notifySuccess = () =>
     toast.success("Login successful. You are directed to the products page.", {
       position: "bottom-left",
