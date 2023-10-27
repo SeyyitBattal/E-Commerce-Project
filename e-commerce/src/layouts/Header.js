@@ -69,7 +69,8 @@ export const Header = () => {
             </ul>
           </nav>
         </div>
-        <NavLink to={"/signup"} className="">
+
+        <NavLink to={"/login"} className="">
           <div className="desktop-only flex py-1">
             <div className="flex px-2">
               <img src={Hdata.headerArea.userLogo} />
@@ -77,9 +78,13 @@ export const Header = () => {
             </div>
           </div>
         </NavLink>
-        <div className="desktop-only flex py-1">
-          <p className="text-sky-500 font-bold mr-4"> Register</p>
-        </div>
+
+        <NavLink to={"/signup"} className="">
+          <div className="desktop-only flex py-1">
+            <p className="text-sky-500 font-bold mr-4"> Register</p>
+          </div>
+        </NavLink>
+
         <div className="desktop-only flex py-1">
           <img src={Hdata.headerArea.searchLogo} />
           <div className="flex px-4">
