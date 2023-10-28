@@ -1,15 +1,20 @@
-import { fetchRoles } from "../store/actions/globalActions";
 import React, { useState, useEffect } from "react";
 import { api } from "../api/api";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { loginUser } from "../store/actions/userActions";
 import { changeUserActionCreator } from "../store/actions/userActions";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const LoginPage = () => {
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    if (userData) {
+      dispatch(changeUserActionCreator(userData));
+    }
+  }, []);
   const notifySuccess = () =>
     toast.success("Login successful. You are directed to the home page.", {
       position: "bottom-left",
@@ -56,6 +61,8 @@ export const LoginPage = () => {
           .post("/login", loginInfo)
           .then((response) => {
             const userData = response.data;
+            localStorage.setItem("token", userData.token);
+            localStorage.setItem("userData", JSON.stringify(userData));
             dispatch(changeUserActionCreator(userData));
             handleSuccess();
           })

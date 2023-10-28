@@ -1,8 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { Hdata } from "../Datas/Hdata";
+import md5 from "md5";
 
 export const Header = () => {
+  const user = useSelector((state) => state.user.user);
+  let gravatarUrl = "";
+
+  if (user && user.email) {
+    gravatarUrl = `https://www.gravatar.com/avatar/${md5(user.email)}`;
+  }
+
   return (
     <div className="">
       <div className="desktop-only section1 py-4 px-9 text-white bg-slate-800 md:flex flex-wrap justify-between">
@@ -70,28 +79,48 @@ export const Header = () => {
           </nav>
         </div>
 
-        <NavLink to={"/login"} className="">
+        <NavLink to={"/login"} className="flex">
           <div className="desktop-only flex py-1">
             <div className="flex px-2">
-              <img src={Hdata.headerArea.userLogo} />
-              <p className="text-sky-500 font-bold">Login / </p>
+              {gravatarUrl ? (
+                <div className="flex">
+                  <img
+                    className="mx-2"
+                    src={gravatarUrl}
+                    alt="User"
+                    style={{
+                      borderRadius: "50%",
+                      width: "30px",
+                      height: "30px",
+                    }}
+                  />
+                  <p className="text-sky-500 font-bold">{user.name}</p>
+                </div>
+              ) : (
+                <div className="flex">
+                  <img src={Hdata.headerArea.userLogo} className="pr-1" />
+                  <p className="text-sky-500 font-bold">Login</p>
+                </div>
+              )}
             </div>
           </div>
         </NavLink>
 
-        <NavLink to={"/signup"} className="">
-          <div className="desktop-only flex py-1">
-            <p className="text-sky-500 font-bold mr-4"> Register</p>
-          </div>
-        </NavLink>
+        {!gravatarUrl && (
+          <NavLink to={"/signup"} className="">
+            <div className="desktop-only flex py-1">
+              <p className="text-sky-500 font-bold mr-4">/ Register</p>
+            </div>
+          </NavLink>
+        )}
 
-        <div className="desktop-only flex py-1">
+        <div className="desktop-only flex my-2 mx-4">
           <img src={Hdata.headerArea.searchLogo} />
           <div className="flex px-4">
             <img src={Hdata.headerArea.basketLogo} />
             <p className="text-sky-500">1</p>
           </div>
-          <div className="flex px-4">
+          <div className="flex px-2">
             <img src={Hdata.headerArea.heartLogo} />
             <p className="text-sky-500 mr-48">1</p>
           </div>

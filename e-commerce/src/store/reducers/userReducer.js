@@ -1,7 +1,7 @@
 import { userActions } from "../actions/userActions";
 
 const userStateInitial = {
-  user: {},
+  user: null,
 };
 
 export const userReducer = (state = userStateInitial, action) => {
