@@ -4,16 +4,14 @@ import { api } from "../api/api";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { loginUser } from "../store/actions/userActions";
+import { changeUserActionCreator } from "../store/actions/userActions";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const LoginPage = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchRoles());
-  }, [dispatch]);
   const notifySuccess = () =>
-    toast.success("Login successful. You are directed to the products page.", {
+    toast.success("Login successful. You are directed to the home page.", {
       position: "bottom-left",
       autoClose: 5000,
       hideProgressBar: false,
@@ -37,122 +35,59 @@ export const LoginPage = () => {
 
   const [loading, setLoading] = useState(false);
   const history = useHistory();
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
-  const [passwordCheck, setPasswordCheck] = useState("");
-  const [selectedRoleId, setSelectedRoleId] = useState(2);
-  const [showStoreDiv, setShowStoreDiv] = useState(false);
 
   const onSubmit = (data) => {
     setLoading(true);
-    if (selectedRoleId) data.role_id = selectedRoleId;
 
-    const adminInfo = {
-      name: data.firstName + " " + data.lastName,
+    const loginInfo = {
       email: data.email,
       password: data.password,
-      role_id: data.role_id,
     };
 
-    const userInfo = {
-      name: data.firstName + " " + data.lastName,
-      email: data.email,
-      password: data.password,
-      role_id: data.role_id,
-    };
-
-    const storeInfo = {
-      name: data.firstName + " " + data.lastName,
-      email: data.email,
-      password: data.password,
-      role_id: data.role_id,
-      store: {
-        name: data.storeName,
-        tax_no: data.storeTaxId,
-        bank_account: data.storeBankAccount,
-      },
+    const loginUser = (loginInfo) => {
+      return (dispatch) => {
+        api
+          .post("/login", loginInfo)
+          .then((response) => {
+            const userData = response.data;
+            dispatch(changeUserActionCreator(userData));
+            handleSuccess();
+          })
+          .catch((error) => {
+            handleError(error);
+          })
+          .finally(() => {
+            setLoading(false);
+          });
+      };
     };
 
     const successMessage =
-      "You need to click the link in the email to activate your account!";
+      "You successfully logged in! You are directed to the home page.";
     const successState = { message: successMessage };
 
     const handleSuccess = () => {
+      notifySuccess();
       setTimeout(() => {
         history.push({
-          pathname: "/products",
+          pathname: "/",
           state: successState,
         });
       }, 5000);
-      notifySuccess();
     };
 
     const handleError = (error) => {
       setLoading(false);
-      console.error("Error submitting form data: ", error);
+      console.error("Error to login: ", error);
       notifyError();
     };
-
-    if (selectedRoleId === 1) {
-      api
-        .post("/signup", storeInfo)
-        .then((response) => {
-          setLoading(false);
-          console.log(response.data);
-          handleSuccess();
-        })
-        .catch((error) => {
-          handleError(error);
-        })
-        .finally(function () {
-          setLoading(false);
-        });
-    } else if (selectedRoleId === 2) {
-      api
-        .post("/signup", userInfo)
-        .then((response) => {
-          setLoading(false);
-          console.log(response.data);
-          handleSuccess();
-        })
-        .catch((error) => {
-          handleError(error);
-        })
-        .finally(function () {
-          setLoading(false);
-        });
-    } else if (selectedRoleId === 3) {
-      api
-        .post("/signup", adminInfo)
-        .then((response) => {
-          setLoading(false);
-          console.log(response.data);
-          handleSuccess();
-        })
-        .catch((error) => {
-          handleError(error);
-        })
-        .finally(function () {
-          setLoading(false);
-        });
-    }
-  };
-
-  const handleRoleChange = (event) => {
-    if (event.target.value === "Store") {
-      setShowStoreDiv(true);
-      setSelectedRoleId(1);
-    } else if (event.target.value === "Customer") {
-      setShowStoreDiv(false);
-      setSelectedRoleId(2);
-    } else {
-      setShowStoreDiv(false);
-      setSelectedRoleId(3);
-    }
+    dispatch(loginUser(loginInfo));
   };
 
   return (
