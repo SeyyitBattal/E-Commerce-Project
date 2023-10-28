@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { changeUserActionCreator } from "../store/actions/userActions";
 import { Hdata } from "../Datas/Hdata";
 import md5 from "md5";
 
 export const Header = () => {
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
+
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem("userData"));
+    if (storedUser) {
+      dispatch(changeUserActionCreator(storedUser));
+    }
+  }, [dispatch]);
+
   let gravatarUrl = "";
 
   if (user && user.email) {

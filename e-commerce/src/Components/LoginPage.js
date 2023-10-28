@@ -9,7 +9,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 export const LoginPage = () => {
   useEffect(() => {
-    const token = localStorage.getItem("token");
     const userData = JSON.parse(localStorage.getItem("userData"));
     if (userData) {
       dispatch(changeUserActionCreator(userData));
@@ -61,7 +60,6 @@ export const LoginPage = () => {
           .post("/login", loginInfo)
           .then((response) => {
             const userData = response.data;
-            localStorage.setItem("token", userData.token);
             localStorage.setItem("userData", JSON.stringify(userData));
             dispatch(changeUserActionCreator(userData));
             handleSuccess();
@@ -81,6 +79,7 @@ export const LoginPage = () => {
 
     const handleSuccess = () => {
       notifySuccess();
+
       setTimeout(() => {
         history.push({
           pathname: "/",
