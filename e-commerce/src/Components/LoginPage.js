@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const LoginPage = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -28,7 +29,7 @@ export const LoginPage = () => {
           delete api.defaults.headers.common["Authorization"];
         });
     }
-  }, []);
+  }, [dispatch]);
 
   const notifySuccess = () =>
     toast.success("Login successful. You are directed to the home page.", {
@@ -55,7 +56,6 @@ export const LoginPage = () => {
 
   const [loading, setLoading] = useState(false);
   const history = useHistory();
-  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
