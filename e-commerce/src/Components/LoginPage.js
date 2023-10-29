@@ -9,11 +9,27 @@ import "react-toastify/dist/ReactToastify.css";
 
 export const LoginPage = () => {
   useEffect(() => {
-    const userData = JSON.parse(localStorage.getItem("userData"));
-    if (userData) {
-      dispatch(changeUserActionCreator(userData));
+    const token = localStorage.getItem("token");
+    if (token) {
+      api.defaults.headers.common["Authorization"] = token;
+      api
+        .get("/verify")
+        .then((response) => {
+          const userData = response.data;
+          localStorage.setItem("userData", JSON.stringify(userData));
+          dispatch(changeUserActionCreator(userData));
+          localStorage.setItem("token", response.headers.authorization);
+          api.defaults.headers.common["Authorization"] =
+            response.headers.authorization;
+        })
+        .catch((error) => {
+          console.error("Error while verifying token: ", error);
+          localStorage.removeItem("token");
+          delete api.defaults.headers.common["Authorization"];
+        });
     }
   }, []);
+
   const notifySuccess = () =>
     toast.success("Login successful. You are directed to the home page.", {
       position: "bottom-left",
@@ -62,6 +78,9 @@ export const LoginPage = () => {
             const userData = response.data;
             localStorage.setItem("userData", JSON.stringify(userData));
             dispatch(changeUserActionCreator(userData));
+            localStorage.setItem("token", response.headers.authorization);
+            api.defaults.headers.common["Authorization"] =
+              response.headers.authorization;
             handleSuccess();
           })
           .catch((error) => {
