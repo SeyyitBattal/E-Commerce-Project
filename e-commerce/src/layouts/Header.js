@@ -51,9 +51,12 @@ export const Header = () => {
         </div>
       </div>
       <div className=" section2 flex flex-wrap justify-between py-5 px-9">
-        <p className="text-slate-800 text-2xl font-bold ml-40 md:ml-44">
+        <NavLink
+          to={"/"}
+          className="text-slate-800 text-2xl font-bold ml-40 md:ml-44"
+        >
           Bandage
-        </p>
+        </NavLink>
         <div className="flex flex-wrap mx-auto justify-center text-neutral-500 md:mt-0 mt-12">
           <nav className="flex text-center justify-center md:mx-0 mx-40 mt-1">
             <ul className="flex flex-wrap justify-center">

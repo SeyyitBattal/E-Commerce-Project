@@ -10,6 +10,7 @@ export const ProductsPage = () => {
     dispatch(fetchCategories());
   }, [dispatch]);
   const topFive = categories.sort((a, b) => b.rating - a.rating).slice(0, 5);
+
   return (
     <div>
       <div className="flex flex-wrap justify-center md:justify-between mx-44 md:mx-56 mt-24 md:mt-12 mb-6">
