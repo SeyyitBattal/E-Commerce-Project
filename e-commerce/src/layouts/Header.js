@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { changeUserActionCreator } from "../store/actions/userActions";
@@ -8,13 +8,15 @@ import md5 from "md5";
 export const Header = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
+  const categories = useSelector((state) => state.global.categories);
+  const [showCategories, setShowCategories] = useState(false);
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("token"));
     if (storedUser) {
       dispatch(changeUserActionCreator(storedUser));
     }
-  }, []);
+  }, [dispatch]);
 
   let gravatarUrl = "";
 
@@ -60,31 +62,51 @@ export const Header = () => {
               </NavLink>
 
               <div className="flex pr-2">
-                <NavLink to={"/products"} className="px-2 md:my-0 my-2">
-                  Shop
+                <div
+                  className="relative group"
+                  onMouseEnter={() => setShowCategories(true)}
+                  onMouseLeave={() => setShowCategories(false)}
+                >
+                  <NavLink to={"/products"} className="px-2 md:my-0 my-2 flex ">
+                    Shop
+                    <img className="ml-1" src={Hdata.headerArea.vectorLogo} />
+                  </NavLink>
+
+                  {showCategories && (
+                    <div className="absolute z-10 mt-1 bg-gray-200 rounded-md shadow-xl w-48">
+                      {categories.map((category) => (
+                        <NavLink
+                          to={`/products/${category.code}`}
+                          key={category.id}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          {category.code}
+                        </NavLink>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <NavLink to={"/about"} className="px-2 md:my-0 my-2">
+                  About
                 </NavLink>
-                <img src={Hdata.headerArea.vectorLogo} />
+
+                <NavLink to={"/blog"} className="px-2 md:my-0 my-2">
+                  Blog
+                </NavLink>
+
+                <NavLink to={"/contact"} className="px-2 md:my-0 my-2">
+                  Contact
+                </NavLink>
+
+                <NavLink to={"/furniture"} className="px-2 md:my-0 my-2">
+                  Furniture
+                </NavLink>
+
+                <NavLink to={"/team"} className="px-2 md:my-0 my-2">
+                  Team
+                </NavLink>
               </div>
-
-              <NavLink to={"/about"} className="px-2 md:my-0 my-2">
-                About
-              </NavLink>
-
-              <NavLink to={"/blog"} className="px-2 md:my-0 my-2">
-                Blog
-              </NavLink>
-
-              <NavLink to={"/contact"} className="px-2 md:my-0 my-2">
-                Contact
-              </NavLink>
-
-              <NavLink to={"/furniture"} className="px-2 md:my-0 my-2">
-                Furniture
-              </NavLink>
-
-              <NavLink to={"/team"} className="px-2 md:my-0 my-2">
-                Team
-              </NavLink>
             </ul>
           </nav>
         </div>

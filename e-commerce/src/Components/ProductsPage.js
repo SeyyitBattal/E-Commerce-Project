@@ -23,14 +23,14 @@ export const ProductsPage = () => {
 
       <div className="flex flex-wrap mx-auto justify-center ml-48 mr-48 ">
         {topFive.map((category, index) => (
-          <div className="relative mx-4 min-w-max mb-20" key={index}>
+          <a href="#" className="relative mx-4 min-w-max my-10" key={index}>
             <img className="rounded-lg max-h-56" src={category.img} alt="" />
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
               <div className="p-4 text-white text-center">
                 <p className="text-xl font-bold">{category.title}</p>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
 
