@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategories } from "../store/actions/globalActions";
 import { Pdata } from "../Datas/Pdata";
@@ -9,6 +9,7 @@ export const ProductsPage = () => {
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);
+  const topFive = categories.sort((a, b) => b.rating - a.rating).slice(0, 5);
   return (
     <div>
       <div className="flex flex-wrap justify-center md:justify-between mx-44 md:mx-56 mt-24 md:mt-12 mb-6">
@@ -19,28 +20,20 @@ export const ProductsPage = () => {
           <p className="text-stone-300 font-bold">Shop</p>
         </div>
       </div>
-      <div className="flex flex-wrap mt-12 md:mt-6 mx-44 justify-evenly">
-        <img
-          src={Pdata.headerArea.ProductTopImg}
-          className=" min-w-max mt-2 md:mt-0"
-        />
-        <img
-          src={Pdata.headerArea.ProductTopImg}
-          className="mx-3.5 min-w-max mt-2 md:mt-0"
-        />
-        <img
-          src={Pdata.headerArea.ProductTopImg}
-          className=" min-w-max mt-2 md:mt-0"
-        />
-        <img
-          src={Pdata.headerArea.ProductTopImg}
-          className="mx-3.5 min-w-max mt-2 md:mt-0"
-        />
-        <img
-          src={Pdata.headerArea.ProductTopImg}
-          className=" min-w-max mt-2 md:mt-0"
-        />
+
+      <div className="flex flex-wrap mx-auto justify-center ml-48 mr-48 ">
+        {topFive.map((category, index) => (
+          <div className="relative mx-4 min-w-max mb-20" key={index}>
+            <img className="rounded-lg max-h-56" src={category.img} alt="" />
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+              <div className="p-4 text-white text-center">
+                <p className="text-xl font-bold">{category.title}</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
+
       <div className="flex flex-wrap justify-between  ml-36 mr-24 md:ml-52 md:mr-64 my-20">
         <p className="text-neutral-500 content-end ml-4 md:ml-0 mt-3 font-bold ">
           Showing all 12 results
@@ -120,23 +113,6 @@ export const ProductsPage = () => {
 
           <img src={Pdata.headerArea.filterButton} className="ml-3.5" />
         </div>
-      </div>
-
-      <div className="flex flex-wrap mx-auto justify-center ml-48 mr-48 ">
-        {categories.map((category, index) => (
-          <div className="relative mx-4 min-w-max mb-20" key={index}>
-            <img
-              className="rounded-lg max-h-96 max-w-sm"
-              src={category.img}
-              alt=""
-            />
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
-              <div className="p-4 text-white text-center">
-                <p className="text-xl font-bold">{category.title}</p>
-              </div>
-            </div>
-          </div>
-        ))}
       </div>
 
       <div className="flex flex-wrap items-center justify-between border-t border-gray-200 bg-white px-4 py-3 md:mx-0 ">
