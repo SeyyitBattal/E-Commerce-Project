@@ -10,11 +10,11 @@ export const Header = () => {
   const user = useSelector((state) => state.user.user);
 
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("userData"));
+    const storedUser = JSON.parse(localStorage.getItem("token"));
     if (storedUser) {
       dispatch(changeUserActionCreator(storedUser));
     }
-  }, [dispatch]);
+  }, []);
 
   let gravatarUrl = "";
 
@@ -28,7 +28,7 @@ export const Header = () => {
         <div className="md:flex flex-wrap mx-auto justify-center">
           <div className="md:flex flex-wrap">
             <img src={Hdata.headerArea.phoneLogo} className="pr-1" />
-            <p>(225) 555-0118</p>
+            <p>(505) 135-6757</p>
           </div>
           <div className="md:flex flex-wrap pl-7">
             <img src={Hdata.headerArea.mailLogo} className="pr-1" />

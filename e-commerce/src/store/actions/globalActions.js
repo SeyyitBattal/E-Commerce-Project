@@ -24,6 +24,22 @@ export const fetchRoles = () => {
   };
 };
 
+export const fetchCategories = () => {
+  return async (dispatch) => {
+    dispatch({ type: FETCH_STATES.fetching });
+
+    try {
+      const response = await api.get("/categories");
+      const categories = response.data;
+
+      dispatch({ type: FETCH_STATES.fetched });
+      dispatch(changeCategoryActionCreator(categories));
+    } catch (error) {
+      dispatch({ type: FETCH_STATES.failed, payload: error.message });
+    }
+  };
+};
+
 export const changeThemeActionCreator = (theme) => ({
   type: globalActions.changeTheme,
   payload: theme === "light" ? "dark" : "light",

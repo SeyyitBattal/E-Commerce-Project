@@ -1,6 +1,14 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCategories } from "../store/actions/globalActions";
 import { Pdata } from "../Datas/Pdata";
 
 export const ProductsPage = () => {
+  const dispatch = useDispatch();
+  const categories = useSelector((state) => state.global.categories);
+  useEffect(() => {
+    dispatch(fetchCategories());
+  }, [dispatch]);
   return (
     <div>
       <div className="flex flex-wrap justify-center md:justify-between mx-44 md:mx-56 mt-24 md:mt-12 mb-6">
@@ -113,34 +121,24 @@ export const ProductsPage = () => {
           <img src={Pdata.headerArea.filterButton} className="ml-3.5" />
         </div>
       </div>
+
       <div className="flex flex-wrap mx-auto justify-center ml-48 mr-48 ">
-        {Pdata.bodyArea.productCarsdArray.map((productCard, index) => (
-          <div
-            className="flex flex-col shadow-xl text-center mx-4 min-w-max mb-20"
-            key={index}
-          >
-            <a href="#">
-              <img className="rounded-t-lg" src={productCard.img} alt="" />
-            </a>
-            <div className="mt-6 mb-9">
-              <p className="font-bold ">{productCard.tittle}</p>
-              <p className="text-neutral-500">{productCard.descripton}</p>
-              <div className="flex justify-center font-bold">
-                <p className="text-stone-300 font-bold mr-2">
-                  {productCard.price1}
-                </p>
-                <p className="text-teal-700 font-bold">{productCard.price2}</p>
-              </div>
-              <div className="flex justify-center">
-                <img src={productCard.color1} className="mx-1" />
-                <img src={productCard.color2} className="mx-1" />
-                <img src={productCard.color3} className="mx-1" />
-                <img src={productCard.color4} className="mx-1" />
+        {categories.map((category, index) => (
+          <div className="relative mx-4 min-w-max mb-20" key={index}>
+            <img
+              className="rounded-lg max-h-96 max-w-sm"
+              src={category.img}
+              alt=""
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+              <div className="p-4 text-white text-center">
+                <p className="text-xl font-bold">{category.title}</p>
               </div>
             </div>
           </div>
         ))}
       </div>
+
       <div className="flex flex-wrap items-center justify-between border-t border-gray-200 bg-white px-4 py-3 md:mx-0 ">
         <div className="flex mx-auto justify-center">
           <div className=" mt-12 ml-auto mr-auto">

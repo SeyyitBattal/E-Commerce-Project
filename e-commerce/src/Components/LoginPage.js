@@ -17,7 +17,7 @@ export const LoginPage = () => {
         .get("/verify")
         .then((response) => {
           const userData = response.data;
-          localStorage.setItem("userData", JSON.stringify(userData));
+          localStorage.setItem("token", JSON.stringify(userData));
           dispatch(changeUserActionCreator(userData));
           localStorage.setItem("token", response.headers.authorization);
           api.defaults.headers.common["Authorization"] =
@@ -76,9 +76,8 @@ export const LoginPage = () => {
           .post("/login", loginInfo)
           .then((response) => {
             const userData = response.data;
-            localStorage.setItem("userData", JSON.stringify(userData));
+            localStorage.setItem("token", JSON.stringify(userData));
             dispatch(changeUserActionCreator(userData));
-            localStorage.setItem("token", response.headers.authorization);
             api.defaults.headers.common["Authorization"] =
               response.headers.authorization;
             handleSuccess();

@@ -24,7 +24,7 @@ export const globalReducer = (state = globalInitialValue, action) => {
     case globalActions.setCategory:
       return {
         ...state,
-        categories: [...state.categories, action.payload],
+        categories: action.payload,
       };
 
     default:
