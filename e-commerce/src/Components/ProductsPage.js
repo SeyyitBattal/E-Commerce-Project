@@ -30,7 +30,11 @@ export const ProductsPage = () => {
       </div>
       <div className="flex flex-wrap mx-auto justify-center ml-48 mr-48 ">
         {topFive.map((category, index) => (
-          <a href="#" className="relative mx-4 min-w-max my-10" key={index}>
+          <a
+            href="#"
+            className="relative mx-4 min-w-max my-10 hover:shadow-md transform transition-transform duration-100 hover:scale-105"
+            key={index}
+          >
             <img className="rounded-lg max-h-56" src={category.img} alt="" />
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
               <div className="p-4 text-white text-center">
@@ -121,22 +125,24 @@ export const ProductsPage = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap mx-auto justify-center ml-48 mr-48">
+      <div className="flex flex-wrap mx-auto justify-center ">
         {Array.isArray(products) && products.length > 0 ? (
-          <div className="flex flex-wrap mx-auto justify-center ml-48 mr-48 ">
+          <div className="flex flex-wrap m-12 justify-center ml-48 mr-48 items-center">
             {products.map((product) => (
               <div
                 key={product.id}
-                className="flex flex-col items-center my-8 shadow-2xl"
+                className="flex flex-col items-center m-8 shadow-2xl text-center w-64 rounded-lg p-8 hover:shadow-md transform transition-transform duration-300 hover:scale-105"
               >
                 <img
                   className="rounded-lg max-h-56"
                   src={product.images[0].url}
                   alt=""
                 />
-                <p className="text-xl font-bold">{product.name}</p>
+                <p className="text-xl font-bold mt-6 text-zinc-600">
+                  {product.name}
+                </p>
                 <p className="text-sm">{product.description}</p>
-                <p className="text-lg font-bold">{`$${product.price.toFixed(
+                <p className="text-lg font-bold text-green-500">{`$${product.price.toFixed(
                   2
                 )}`}</p>
               </div>
