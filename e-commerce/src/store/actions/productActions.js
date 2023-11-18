@@ -46,3 +46,30 @@ export const deleteProductActionCreator = (productId) => (dispatch) => {
         toast.error(`Hata mesajı: ${err.message}`);
       });
 };
+
+export const fetchProductsActionCreator = () => async (dispatch) => {
+  dispatch({ type: productActions.setLoading, payload: true });
+  dispatch({
+    type: productActions.setFetchState,
+    payload: FETCH_STATES.fetching,
+  });
+
+  try {
+    const response = await api.get("/products");
+    const products = response.data.products;
+
+    dispatch({ type: productActions.set, payload: products });
+    dispatch({
+      type: productActions.setFetchState,
+      payload: FETCH_STATES.fetched,
+    });
+  } catch (error) {
+    dispatch({
+      type: productActions.setFetchState,
+      payload: FETCH_STATES.failed,
+    });
+    toast.error(`Error message: ${error.message}`);
+  } finally {
+    dispatch({ type: productActions.setLoading, payload: false });
+  }
+};

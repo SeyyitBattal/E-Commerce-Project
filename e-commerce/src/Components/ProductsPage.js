@@ -1,15 +1,22 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategories } from "../store/actions/globalActions";
+import { fetchProductsActionCreator } from "../store/actions/productActions";
 import { Pdata } from "../Datas/Pdata";
 
 export const ProductsPage = () => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.global.categories);
+  const loading = useSelector((state) => state.product.loading);
+  const products = useSelector((state) => state.product.productList);
   useEffect(() => {
     dispatch(fetchCategories());
+    dispatch(fetchProductsActionCreator());
   }, [dispatch]);
   const topFive = categories.sort((a, b) => b.rating - a.rating).slice(0, 5);
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div>
@@ -21,7 +28,6 @@ export const ProductsPage = () => {
           <p className="text-stone-300 font-bold">Shop</p>
         </div>
       </div>
-
       <div className="flex flex-wrap mx-auto justify-center ml-48 mr-48 ">
         {topFive.map((category, index) => (
           <a href="#" className="relative mx-4 min-w-max my-10" key={index}>
@@ -34,7 +40,6 @@ export const ProductsPage = () => {
           </a>
         ))}
       </div>
-
       <div className="flex flex-wrap justify-between  ml-36 mr-24 md:ml-52 md:mr-64 my-20">
         <p className="text-neutral-500 content-end ml-4 md:ml-0 mt-3 font-bold ">
           Showing all 12 results
@@ -114,6 +119,32 @@ export const ProductsPage = () => {
 
           <img src={Pdata.headerArea.filterButton} className="ml-3.5" />
         </div>
+      </div>
+
+      <div className="flex flex-wrap mx-auto justify-center ml-48 mr-48">
+        {Array.isArray(products) && products.length > 0 ? (
+          <div className="flex flex-wrap mx-auto justify-center ml-48 mr-48 ">
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className="flex flex-col items-center my-8 shadow-2xl"
+              >
+                <img
+                  className="rounded-lg max-h-56"
+                  src={product.images[0].url}
+                  alt=""
+                />
+                <p className="text-xl font-bold">{product.name}</p>
+                <p className="text-sm">{product.description}</p>
+                <p className="text-lg font-bold">{`$${product.price.toFixed(
+                  2
+                )}`}</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p>No products available.</p>
+        )}
       </div>
 
       <div className="flex flex-wrap items-center justify-between border-t border-gray-200 bg-white px-4 py-3 md:mx-0 ">
