@@ -1,14 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategories } from "../store/actions/globalActions";
 import { fetchProductsActionCreator } from "../store/actions/productActions";
 import { Pdata } from "../Datas/Pdata";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 export const ProductsPage = () => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.global.categories);
   const loading = useSelector((state) => state.product.loading);
   const products = useSelector((state) => state.product.productList);
+  const [hasMore, setHasMore] = useState(true);
+
   useEffect(() => {
     dispatch(fetchCategories());
     dispatch(fetchProductsActionCreator());
@@ -17,6 +20,11 @@ export const ProductsPage = () => {
   if (loading) {
     return <p>Loading...</p>;
   }
+
+  const fetchMoreData = () => {
+    const offset = products.length;
+    dispatch(fetchProductsActionCreator(offset));
+  };
 
   return (
     <div>
@@ -127,27 +135,35 @@ export const ProductsPage = () => {
 
       <div className="flex flex-wrap mx-auto justify-center ">
         {Array.isArray(products) && products.length > 0 ? (
-          <div className="flex flex-wrap m-12 justify-center ml-48 mr-48 items-center">
-            {products.map((product) => (
-              <div
-                key={product.id}
-                className="flex flex-col items-center m-8 shadow-2xl text-center w-64 rounded-lg p-8 hover:shadow-md transform transition-transform duration-300 hover:scale-105"
-              >
-                <img
-                  className="rounded-lg max-h-56"
-                  src={product.images[0].url}
-                  alt=""
-                />
-                <p className="text-xl font-bold mt-6 text-zinc-600">
-                  {product.name}
-                </p>
-                <p className="text-sm">{product.description}</p>
-                <p className="text-lg font-bold text-green-500">{`$${product.price.toFixed(
-                  2
-                )}`}</p>
-              </div>
-            ))}
-          </div>
+          <InfiniteScroll
+            dataLength={products.length}
+            next={fetchMoreData}
+            hasMore={hasMore}
+            loader={<h4>Loading...</h4>}
+            endMessage={<p>No more products to show</p>}
+          >
+            <div className="flex flex-wrap m-12 justify-center ml-48 mr-48 items-center">
+              {products.map((product) => (
+                <div
+                  key={product.id}
+                  className="flex flex-col items-center m-8 shadow-2xl text-center w-64 rounded-lg p-8 hover:shadow-md transform transition-transform duration-300 hover:scale-105"
+                >
+                  <img
+                    className="rounded-lg max-h-56"
+                    src={product.images[0].url}
+                    alt=""
+                  />
+                  <p className="text-xl font-bold mt-6 text-zinc-600">
+                    {product.name}
+                  </p>
+                  <p className="text-sm">{product.description}</p>
+                  <p className="text-lg font-bold text-green-500">{`$${product.price.toFixed(
+                    2
+                  )}`}</p>
+                </div>
+              ))}
+            </div>
+          </InfiniteScroll>
         ) : (
           <p>No products available.</p>
         )}
