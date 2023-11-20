@@ -9,8 +9,44 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { PricingPage } from "../Components/PricingPage";
 import { FormPage } from "../Components/FormPage";
 import { LoginPage } from "../Components/LoginPage";
+import { api } from "../api/api";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { changeUserActionCreator } from "../store/actions/userActions";
 
 export const PageBody = () => {
+  const dispatch = useDispatch();
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const storedToken = localStorage.getItem("token");
+      console.log("Stored Token:", storedToken);
+      if (token) {
+        api.defaults.headers.common["Authorization"] = token;
+
+        try {
+          const response = await api.get("/verify", {
+            headers: {
+              Authorization: token,
+              "Content-Type": "application/json",
+            },
+          });
+          const newToken = response.data.token;
+          localStorage.setItem("token", newToken);
+          api.defaults.headers.common["Authorization"] = newToken;
+          const { email, name, role_id } = response.data;
+          dispatch(changeUserActionCreator(email, name, role_id));
+        } catch (error) {
+          console.error("Error while verifying token: ", error);
+          localStorage.removeItem("token");
+          delete api.defaults.headers.common["Authorization"];
+        }
+      }
+    };
+    fetchData();
+  }, [dispatch, token]);
+
   return (
     <div>
       <Switch>

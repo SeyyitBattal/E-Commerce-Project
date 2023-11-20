@@ -44,7 +44,7 @@ export const ProductsPage = () => {
           </a>
         ))}
       </div>
-      <div className="flex flex-wrap justify-between  ml-36 mr-24 md:ml-52 md:mr-64 my-20">
+      <div className="flex flex-wrap justify-between  ml-36 mr-24 md:ml-52 md:mr-64 my-4">
         <p className="text-neutral-500 content-end ml-4 md:ml-0 mt-3 font-bold ">
           Showing all 12 results
         </p>
