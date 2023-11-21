@@ -12,31 +12,38 @@ import { LoginPage } from "../Components/LoginPage";
 import { api } from "../api/api";
 import { useDispatch } from "react-redux";
 import { changeUserActionCreator } from "../store/actions/userActions";
+import { useEffect } from "react";
 
 export const PageBody = () => {
   const dispatch = useDispatch();
-  const tokenKey = "token";
-  const storedToken = localStorage.getItem(tokenKey);
 
-  const fetchData = async () => {
-    console.log("Stored Token:", storedToken);
-    if (storedToken) {
-      api.defaults.headers.common["Authorization"] = storedToken;
+  useEffect(() => {
+    const tokenKey = "token";
+    const storedToken =
+      localStorage.getItem(tokenKey) || sessionStorage.getItem(tokenKey);
 
-      try {
-        const response = await api.get("/verify");
-        const newToken = response.data.token;
-        localStorage.setItem(tokenKey, newToken);
-        api.defaults.headers.common["Authorization"] = newToken;
-        dispatch(changeUserActionCreator({ token: newToken }));
-      } catch (error) {
-        console.error("Error while verifying token: ", error);
-        localStorage.removeItem(tokenKey);
-        api.defaults.headers.common = {};
+    const fetchData = async () => {
+      console.log("Stored Token:", storedToken);
+      if (storedToken) {
+        api.defaults.headers.common["Authorization"] = storedToken;
+
+        try {
+          const response = await api.get("/verify");
+          const newToken = response.data.token;
+          localStorage.setItem(tokenKey, newToken);
+          sessionStorage.setItem(tokenKey, newToken);
+          api.defaults.headers.common["Authorization"] = newToken;
+          dispatch(changeUserActionCreator({ token: newToken }));
+        } catch (error) {
+          console.error("Error while verifying token: ", error);
+          localStorage.removeItem(tokenKey);
+          sessionStorage.removeItem(tokenKey);
+          api.defaults.headers.common = {};
+        }
       }
-    }
-  };
-  fetchData();
+    };
+    fetchData();
+  }, [dispatch]);
 
   return (
     <div>

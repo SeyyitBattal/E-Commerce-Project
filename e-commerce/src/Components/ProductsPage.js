@@ -157,9 +157,9 @@ export const ProductsPage = () => {
                     {product.name}
                   </p>
                   <p className="text-sm">{product.description}</p>
-                  <p className="text-lg font-bold text-green-500">{`$${product.price.toFixed(
+                  <p className="text-lg font-bold text-green-500">{`${product.price.toFixed(
                     2
-                  )}`}</p>
+                  )} ₺`}</p>
                 </div>
               ))}
             </div>
