@@ -11,12 +11,12 @@ export const Header = () => {
   const categories = useSelector((state) => state.global.categories);
   const [showCategories, setShowCategories] = useState(false);
 
-  useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("token"));
-    if (storedUser) {
-      dispatch(changeUserActionCreator(storedUser));
-    }
-  }, [dispatch]);
+  // useEffect(() => {
+  //   const storedUser = JSON.parse(localStorage.getItem("token"));
+  //   if (storedUser) {
+  //     dispatch(changeUserActionCreator(storedUser));
+  //   }
+  // }, [dispatch]);
 
   let gravatarUrl = "";
 

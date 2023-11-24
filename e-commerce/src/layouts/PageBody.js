@@ -17,31 +17,31 @@ import { useEffect } from "react";
 export const PageBody = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  const fetchData = async () => {
     const tokenKey = "token";
-    const storedToken =
-      localStorage.getItem(tokenKey) || sessionStorage.getItem(tokenKey);
+    const storedToken = localStorage.getItem(tokenKey);
 
-    const fetchData = async () => {
-      console.log("Stored Token:", storedToken);
-      if (storedToken) {
-        api.defaults.headers.common["Authorization"] = storedToken;
+    if (storedToken) {
+      api.defaults.headers.common["Authorization"] = storedToken;
 
-        try {
-          const response = await api.get("/verify");
-          const newToken = response.data.token;
-          localStorage.setItem(tokenKey, newToken);
-          sessionStorage.setItem(tokenKey, newToken);
-          api.defaults.headers.common["Authorization"] = newToken;
-          dispatch(changeUserActionCreator({ token: newToken }));
-        } catch (error) {
-          console.error("Error while verifying token: ", error);
-          localStorage.removeItem(tokenKey);
-          sessionStorage.removeItem(tokenKey);
-          api.defaults.headers.common = {};
-        }
+      try {
+        const response = await api.get("/verify");
+        const newToken = response.data.token;
+
+        localStorage.setItem(tokenKey, newToken);
+        api.defaults.headers.common["Authorization"] = newToken;
+
+        dispatch(changeUserActionCreator(response.data));
+      } catch (error) {
+        console.error("Error while verifying token: ", error);
+
+        localStorage.removeItem(tokenKey);
+        api.defaults.headers.common = {};
       }
-    };
+    }
+  };
+
+  useEffect(() => {
     fetchData();
   }, [dispatch]);
 

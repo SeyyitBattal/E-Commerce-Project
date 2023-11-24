@@ -29,7 +29,7 @@ export const ProductsPage = () => {
     setOffset(newOffset);
     dispatch(fetchProductsActionCreator(newOffset));
   };
-  const initialProducts = products.slice(0, 8);
+  const initialProducts = products.slice(0, 6);
 
   return (
     <div>
@@ -148,7 +148,7 @@ export const ProductsPage = () => {
             endMessage={<p>No more products to show</p>}
           >
             <div className="flex flex-wrap m-12 justify-center ml-48 mr-48 items-center">
-              {products.slice(8).map((product) => (
+              {products.slice(6).map((product) => (
                 <div
                   key={product.id}
                   className="flex flex-col items-center m-8 shadow-2xl text-center w-64 rounded-lg p-8 hover:shadow-md transform transition-transform duration-300 hover:scale-105"

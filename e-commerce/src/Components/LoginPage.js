@@ -1,38 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { api } from "../api/api";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { changeUserActionCreator } from "../store/actions/userActions";
-import { ToastContainer, toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser } from "../store/actions/userActions";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FETCH_STATES } from "../store/reducers/productReducer";
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
-  const notifySuccess = () =>
-    toast.success("Login successful. You are directed to the home page.", {
-      position: "bottom-left",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-  const notifyError = () =>
-    toast.error("Login failed. Please try again", {
-      position: "bottom-left",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
 
-  const [loading, setLoading] = useState(false);
+  const loading = useSelector(
+    (s) => s.user.fetchState === FETCH_STATES.fetching
+  );
   const history = useHistory();
   const {
     register,
@@ -41,55 +21,12 @@ export const LoginPage = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    setLoading(true);
-
     const loginInfo = {
       email: data.email,
       password: data.password,
     };
 
-    const loginUser = (loginInfo) => {
-      return (dispatch) => {
-        api
-          .post("/login", loginInfo)
-          .then((response) => {
-            const userData = response.data;
-            localStorage.setItem("token", JSON.stringify(userData));
-            dispatch(changeUserActionCreator(userData));
-            api.defaults.headers.common["Authorization"] =
-              response.headers.authorization;
-            handleSuccess();
-          })
-          .catch((error) => {
-            handleError(error);
-          })
-          .finally(() => {
-            setLoading(false);
-          });
-      };
-    };
-
-    const successMessage =
-      "You successfully logged in! You are directed to the home page.";
-    const successState = { message: successMessage };
-
-    const handleSuccess = () => {
-      notifySuccess();
-
-      setTimeout(() => {
-        history.push({
-          pathname: "/",
-          state: successState,
-        });
-      }, 5000);
-    };
-
-    const handleError = (error) => {
-      setLoading(false);
-      console.error("Error to login: ", error);
-      notifyError();
-    };
-    dispatch(loginUser(loginInfo));
+    dispatch(loginUser(loginInfo, history));
   };
 
   return (
@@ -160,18 +97,6 @@ export const LoginPage = () => {
           {loading ? "Loading..." : "Submit"}
         </button>
       </form>
-      <ToastContainer
-        position="bottom-left"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
     </div>
   );
 };

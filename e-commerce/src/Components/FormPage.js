@@ -441,18 +441,6 @@ export const FormPage = () => {
           {loading ? "Loading..." : "Submit"}
         </button>
       </form>
-      <ToastContainer
-        position="bottom-left"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
     </div>
   );
 };
