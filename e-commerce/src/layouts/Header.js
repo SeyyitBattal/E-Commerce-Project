@@ -1,28 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { changeUserActionCreator } from "../store/actions/userActions";
+import { useSelector } from "react-redux";
 import { Hdata } from "../Datas/Hdata";
 import md5 from "md5";
 
 export const Header = () => {
-  const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
   const categories = useSelector((state) => state.global.categories);
   const [showCategories, setShowCategories] = useState(false);
-
-  // useEffect(() => {
-  //   const storedUser = JSON.parse(localStorage.getItem("token"));
-  //   if (storedUser) {
-  //     dispatch(changeUserActionCreator(storedUser));
-  //   }
-  // }, [dispatch]);
 
   let gravatarUrl = "";
 
   if (user && user.email) {
     gravatarUrl = `https://www.gravatar.com/avatar/${md5(user.email)}`;
   }
+
+  const groupedCategories = categories.reduce((acc, category) => {
+    acc[category.gender] = acc[category.gender] || [];
+    acc[category.gender].push(category);
+    return acc;
+  }, {});
 
   return (
     <div className="">
@@ -77,15 +74,34 @@ export const Header = () => {
 
                   {showCategories && (
                     <div className="absolute z-10 mt-1 bg-gray-200 rounded-md shadow-xl w-48">
-                      {categories.map((category) => (
-                        <NavLink
-                          to={`/products/${category.code}`}
-                          key={category.id}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        >
-                          {category.code}
-                        </NavLink>
-                      ))}
+                      <div className="py-2 border-2 rounded-lg border-sky-500">
+                        <p className="font-bold text-sky-500 ">KADIN</p>
+                        {groupedCategories["k"] &&
+                          groupedCategories["k"].map((category) => (
+                            <NavLink
+                              to={`/products/${category.title}`}
+                              key={category.id}
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                            >
+                              {category.title}
+                            </NavLink>
+                          ))}
+                      </div>
+                      <div className="mt-1">
+                        <div className="py-2 border-2 rounded-lg border-sky-500">
+                          <p className="font-bold text-sky-500">ERKEK</p>
+                          {groupedCategories["e"] &&
+                            groupedCategories["e"].map((category) => (
+                              <NavLink
+                                to={`/products/${category.title}`}
+                                key={category.id}
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                              >
+                                {category.title}
+                              </NavLink>
+                            ))}
+                        </div>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -93,19 +109,15 @@ export const Header = () => {
                 <NavLink to={"/about"} className="px-2 md:my-0 my-2">
                   About
                 </NavLink>
-
                 <NavLink to={"/blog"} className="px-2 md:my-0 my-2">
                   Blog
                 </NavLink>
-
                 <NavLink to={"/contact"} className="px-2 md:my-0 my-2">
                   Contact
                 </NavLink>
-
                 <NavLink to={"/furniture"} className="px-2 md:my-0 my-2">
                   Furniture
                 </NavLink>
-
                 <NavLink to={"/team"} className="px-2 md:my-0 my-2">
                   Team
                 </NavLink>
