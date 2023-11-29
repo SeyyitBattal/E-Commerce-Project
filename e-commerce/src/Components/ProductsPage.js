@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategories } from "../store/actions/globalActions";
+import { fetchProducts } from "../store/actions/productActions";
 import { fetchProductsActionCreator } from "../store/actions/productActions";
 import { Pdata } from "../Datas/Pdata";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export const ProductsPage = () => {
   const dispatch = useDispatch();
-  const categories = useSelector((state) => state.global.categories);
   const loading = useSelector((state) => state.product.loading);
+  const categories = useSelector((state) => state.global.categories);
   const products = useSelector((state) => state.product.productList);
   const [hasMore, setHasMore] = useState(true);
   const [offset, setOffset] = useState(0);
+  const [sortOption, setSortOption] = useState("");
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
   useEffect(() => {
     dispatch(fetchCategories());
+    dispatch(fetchProducts());
     dispatch(fetchProductsActionCreator());
   }, [dispatch]);
 
@@ -30,6 +34,15 @@ export const ProductsPage = () => {
     dispatch(fetchProductsActionCreator(newOffset));
   };
   const initialProducts = products.slice(0, 6);
+
+  const handleSort = (option) => {
+    setSortOption(option);
+    dispatch(fetchProductsActionCreator(null, option));
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownVisible(!isDropdownVisible);
+  };
 
   return (
     <div>
@@ -67,73 +80,56 @@ export const ProductsPage = () => {
           <img src={Pdata.headerArea.viewList} />
         </div>
         <div className="flex">
-          <button
-            id="dropdownDefaultButton"
-            data-dropdown-toggle="dropdown"
-            className="text-black bg-white hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-white border dark:hover:bg-blue-700 "
-            type="button"
-          >
-            Popularity
-            <svg
-              className="w-2.5 h-2.5 ml-2.5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 10 6"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m1 1 4 4 4-4"
-              />
-            </svg>
-          </button>
+          <div className="relative">
+            <div className="cursor-pointer" onClick={toggleDropdown}>
+              <div className="flex mt-3 mr-10">
+                <p className="text-sky-500 font-bold ml-3">Sırala</p>
 
-          <div
-            id="dropdown"
-            className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-          >
-            <ul
-              className="py-2 text-sm text-gray-700 dark:text-gray-200"
-              aria-labelledby="dropdownDefaultButton"
-            >
-              <li>
-                <a
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                <svg
+                  className="w-2.5 h-2.5 ml-2.5 mt-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
                 >
-                  111
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                  222
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                  333
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                  444
-                </a>
-              </li>
-            </ul>
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            {isDropdownVisible && (
+              <div className="absolute z-10 mt-1 bg-white rounded-md shadow-xl w-48">
+                <div className="py-2 border-2 rounded-lg border-sky-500">
+                  <p
+                    className={`block px-4 py-2 cursor-pointer ${
+                      sortOption === "asc" ? "bg-white" : ""
+                    } hover:bg-white dark:hover:bg-gray-600 dark:hover:text-white`}
+                    onClick={() => handleSort("asc")}
+                  >
+                    En Düşük Fiyat
+                  </p>
+                </div>
+                <div className="mt-1">
+                  <div className="py-2 border-2 rounded-lg border-sky-500">
+                    <p
+                      className={`block px-4 py-2 cursor-pointer ${
+                        sortOption === "desc" ? "bg-gray-100" : ""
+                      } hover:bg-white dark:hover:bg-gray-600 dark:hover:text-white`}
+                      onClick={() => handleSort("desc")}
+                    >
+                      En Yüksek Fiyat
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
-
           <img src={Pdata.headerArea.filterButton} className="ml-3.5" />
         </div>
       </div>
@@ -148,7 +144,7 @@ export const ProductsPage = () => {
             endMessage={<p>No more products to show</p>}
           >
             <div className="flex flex-wrap m-12 justify-center ml-48 mr-48 items-center">
-              {products.slice(6).map((product) => (
+              {products.map((product) => (
                 <div
                   key={product.id}
                   className="flex flex-col items-center m-8 shadow-2xl text-center w-64 rounded-lg p-8 hover:shadow-md transform transition-transform duration-300 hover:scale-105"

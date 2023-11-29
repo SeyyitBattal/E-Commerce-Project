@@ -47,15 +47,48 @@ export const deleteProductActionCreator = (productId) => (dispatch) => {
       });
 };
 
-export const fetchProductsActionCreator = () => async (dispatch) => {
+export const fetchProductsActionCreator =
+  (offset, sort) => async (dispatch) => {
+    dispatch({ type: productActions.setLoading, payload: true });
+    dispatch({
+      type: productActions.setFetchState,
+      payload: FETCH_STATES.fetching,
+    });
+
+    try {
+      const response = await api.get("/products", {
+        params: { offset, sort },
+      });
+
+      const products = response.data.products;
+
+      dispatch({ type: productActions.set, payload: products });
+      dispatch({
+        type: productActions.setFetchState,
+        payload: FETCH_STATES.fetched,
+      });
+    } catch (error) {
+      dispatch({
+        type: productActions.setFetchState,
+        payload: FETCH_STATES.failed,
+      });
+      toast.error(`Error message: ${error.message}`);
+    } finally {
+      dispatch({ type: productActions.setLoading, payload: false });
+    }
+  };
+
+export const fetchProducts = (category, filter, sort) => async (dispatch) => {
   dispatch({ type: productActions.setLoading, payload: true });
-  dispatch({
-    type: productActions.setFetchState,
-    payload: FETCH_STATES.fetching,
-  });
 
   try {
-    const response = await api.get("/products");
+    const response = await api.get("/products", {
+      params: {
+        category,
+        filter,
+        sort,
+      },
+    });
     const products = response.data.products;
 
     dispatch({ type: productActions.set, payload: products });
