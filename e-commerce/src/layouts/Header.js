@@ -79,7 +79,7 @@ export const Header = () => {
                         {groupedCategories["k"] &&
                           groupedCategories["k"].map((category) => (
                             <NavLink
-                              to={`/products/${category.title}`}
+                              to={`/products/kadin/${category.title}`}
                               key={category.id}
                               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                             >
@@ -93,7 +93,7 @@ export const Header = () => {
                           {groupedCategories["e"] &&
                             groupedCategories["e"].map((category) => (
                               <NavLink
-                                to={`/products/${category.title}`}
+                                to={`/products/erkek/${category.title}`}
                                 key={category.id}
                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                               >
