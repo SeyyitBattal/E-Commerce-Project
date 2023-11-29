@@ -37,7 +37,16 @@ export const ProductsPage = () => {
 
   const handleSort = (option) => {
     setSortOption(option);
-    dispatch(fetchProductsActionCreator(null, option));
+    toggleDropdown();
+    const sortedProducts = [...products].sort((a, b) => {
+      if (option === "asc") {
+        return a.price - b.price;
+      } else if (option === "desc") {
+        return b.price - a.price;
+      }
+      return 0;
+    });
+    dispatch(fetchProductsActionCreator(null, option, sortedProducts));
   };
 
   const toggleDropdown = () => {
