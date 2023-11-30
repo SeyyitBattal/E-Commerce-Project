@@ -17,6 +17,7 @@ export const ProductsPage = () => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filterType, setFilterType] = useState("");
 
   useEffect(() => {
     dispatch(fetchCategories());
@@ -40,6 +41,13 @@ export const ProductsPage = () => {
   const handleSort = (option) => {
     setSortOption(option);
     toggleDropdown();
+    let filterText = "";
+    if (option === "asc") {
+      filterText = "Filtre: Düşükten Yükseğe";
+    } else if (option === "desc") {
+      filterText = "Filtre: Yüksekten Düşüğe";
+    }
+    setFilterType(filterText);
     const sortedProducts = [...products].sort((a, b) => {
       if (option === "asc") {
         return a.price - b.price;
@@ -65,6 +73,9 @@ export const ProductsPage = () => {
   const handleFilter = () => {
     const filtered = products.filter(filterProducts);
     setFilteredProducts(filtered);
+    if (searchTerm) {
+      setFilterType(`Filtre: "${searchTerm}"`);
+    }
   };
 
   return (
@@ -93,15 +104,11 @@ export const ProductsPage = () => {
           </a>
         ))}
       </div>
-      <div className="flex flex-wrap justify-between  ml-36 mr-24 md:ml-52 md:mr-64 my-4">
-        <p className="text-neutral-500 content-end ml-4 md:ml-0 mt-3 font-bold ">
-          Showing all 12 results
+      <div className="flex flex-wrap justify-between  ml-10 mr-24 md:ml-72 md:mr-64 my-4">
+        <p className="text-neutral-500 content-end  md:ml-0  font-bold flex border border-gray-300 rounded-md p-3 bg-white shadow-xl">
+          {filterType || "Tüm ürünler"}
         </p>
-        <div className="flex my-6 md:my-0 ml-4 md:ml-0">
-          <p className="text-neutral-500 content-end  mt-3 font-bold">Views:</p>
-          <img src={Pdata.headerArea.viewBox} className="mx-3.5" />
-          <img src={Pdata.headerArea.viewList} />
-        </div>
+
         <div className="flex">
           <div className="relative">
             <div className="cursor-pointer" onClick={toggleDropdown}>
