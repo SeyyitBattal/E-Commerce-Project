@@ -15,6 +15,8 @@ export const ProductsPage = () => {
   const [offset, setOffset] = useState(0);
   const [sortOption, setSortOption] = useState("");
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     dispatch(fetchCategories());
@@ -51,6 +53,18 @@ export const ProductsPage = () => {
 
   const toggleDropdown = () => {
     setIsDropdownVisible(!isDropdownVisible);
+  };
+
+  const filterProducts = (product) => {
+    const searchRegex = new RegExp(searchTerm, "i");
+    return (
+      searchRegex.test(product.name) || searchRegex.test(product.description)
+    );
+  };
+
+  const handleFilter = () => {
+    const filtered = products.filter(filterProducts);
+    setFilteredProducts(filtered);
   };
 
   return (
@@ -91,8 +105,8 @@ export const ProductsPage = () => {
         <div className="flex">
           <div className="relative">
             <div className="cursor-pointer" onClick={toggleDropdown}>
-              <div className="flex mt-3 mr-10">
-                <p className="text-sky-500 font-bold ml-3">Sırala</p>
+              <div className="flex mr-10 border border-gray-300 rounded-md p-3 bg-white shadow-xl">
+                <p className="text-sky-500 font-bold ">Sırala</p>
 
                 <svg
                   className="w-2.5 h-2.5 ml-2.5 mt-2"
@@ -139,7 +153,19 @@ export const ProductsPage = () => {
               </div>
             )}
           </div>
-          <img src={Pdata.headerArea.filterButton} className="ml-3.5" />
+          <input
+            type="text"
+            placeholder="Ürün Ara"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="border border-gray-300 rounded-md p-2 mr-2 bg-white shadow-xl"
+          />
+          <button
+            onClick={handleFilter}
+            className="border border-gray-300 rounded-md p-2 bg-sky-500 text-white shadow-xl transition-transform duration-300 hover:shadow-none hover:scale-105"
+          >
+            Filtrele
+          </button>
         </div>
       </div>
 
@@ -153,7 +179,10 @@ export const ProductsPage = () => {
             endMessage={<p>No more products to show</p>}
           >
             <div className="flex flex-wrap m-12 justify-center ml-48 mr-48 items-center">
-              {products.map((product) => (
+              {(filteredProducts.length > 0
+                ? filteredProducts
+                : initialProducts
+              ).map((product) => (
                 <div
                   key={product.id}
                   className="flex flex-col items-center m-8 shadow-2xl text-center w-64 rounded-lg p-8 hover:shadow-md transform transition-transform duration-300 hover:scale-105"
