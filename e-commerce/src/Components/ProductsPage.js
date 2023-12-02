@@ -28,7 +28,13 @@ export const ProductsPage = () => {
   const topFive = categories.sort((a, b) => b.rating - a.rating).slice(0, 5);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <p style={{ textAlign: "center" }}>
+        Ürünler hazırlanırken lütfen bekleyiniz. Bu biraz zaman alabilir.
+        <br></br>
+        Anlayışınız için teşekkürler... 😊
+      </p>
+    );
   }
 
   const fetchMoreData = () => {
