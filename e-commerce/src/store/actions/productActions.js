@@ -48,7 +48,7 @@ export const deleteProductActionCreator = (productId) => (dispatch) => {
 };
 
 export const fetchProductsActionCreator =
-  (offset = 0, sortOption = "", sortedProducts = []) =>
+  (offset = 0, sortOption = "", existingProducts = []) =>
   async (dispatch) => {
     dispatch({ type: productActions.setLoading, payload: true });
     dispatch({
@@ -57,17 +57,20 @@ export const fetchProductsActionCreator =
     });
 
     try {
-      const products =
-        sortedProducts.length > 0
-          ? sortedProducts
-          : (await api.get("/products", { params: { offset, sortOption } }))
-              .data.products;
+      const response = await api.get("/products", {
+        params: { offset, sortOption },
+      });
+      const newProducts = response.data.products;
 
-      dispatch({ type: productActions.set, payload: products });
+      const updatedProducts =
+        offset === 0 ? newProducts : [...existingProducts, ...newProducts];
+
+      dispatch({ type: productActions.set, payload: updatedProducts });
       dispatch({
         type: productActions.setFetchState,
         payload: FETCH_STATES.fetched,
       });
+      return newProducts; // Return new products for additional handling if needed
     } catch (error) {
       dispatch({
         type: productActions.setFetchState,

@@ -19,7 +19,10 @@ const productStateInitial = {
 export const productReducer = (state = productStateInitial, action) => {
   switch (action.type) {
     case productActions.set:
-      return { ...state, productList: action.payload };
+      return {
+        ...state,
+        productList: action.payload,
+      };
 
     case productActions.clear:
       return productStateInitial;
@@ -27,13 +30,13 @@ export const productReducer = (state = productStateInitial, action) => {
     case productActions.add:
       return {
         ...state,
-        productsList: [...state.productList, action.payload],
+        productList: [...state.productList, action.payload],
       };
 
     case productActions.delete:
       return {
         ...state,
-        productsList: state.productList.filter(
+        productList: state.productList.filter(
           (pro) => pro.id !== action.payload
         ),
       };

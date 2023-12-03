@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategories } from "../store/actions/globalActions";
 import { fetchProducts } from "../store/actions/productActions";
@@ -11,13 +11,13 @@ export const ProductsPage = () => {
   const loading = useSelector((state) => state.product.loading);
   const categories = useSelector((state) => state.global.categories);
   const products = useSelector((state) => state.product.productList);
-  const [hasMore, setHasMore] = useState(true);
   const [offset, setOffset] = useState(0);
   const [sortOption, setSortOption] = useState("");
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [filterType, setFilterType] = useState("");
+  const scrollContainerRef = useRef(null);
 
   useEffect(() => {
     dispatch(fetchCategories());
@@ -39,10 +39,22 @@ export const ProductsPage = () => {
 
   const fetchMoreData = () => {
     const newOffset = offset + products.length;
-    setOffset(newOffset);
-    dispatch(fetchProductsActionCreator(newOffset));
+    const currentScrollPosition = scrollContainerRef.current.scrollTop;
+
+    dispatch(fetchProductsActionCreator(newOffset, sortOption, products)).then(
+      (newProducts) => {
+        setOffset((prevOffset) => prevOffset + products.length);
+
+        if (scrollContainerRef.current) {
+          scrollContainerRef.current.scrollTop = currentScrollPosition;
+        }
+
+        if (!Array.isArray(newProducts)) {
+          console.error("New products is not an array:", newProducts);
+        }
+      }
+    );
   };
-  const initialProducts = products.slice(0, 6);
 
   const handleSort = (option) => {
     setSortOption(option);
@@ -78,7 +90,10 @@ export const ProductsPage = () => {
 
   const handleFilter = () => {
     const filtered = products.filter(filterProducts);
-    setFilteredProducts(filtered);
+    setFilteredProducts((prevFilteredProducts) => [
+      ...prevFilteredProducts,
+      ...filtered,
+    ]);
     if (searchTerm) {
       setFilterType(`Filtre: "${searchTerm}"`);
     }
@@ -182,38 +197,43 @@ export const ProductsPage = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap mx-auto justify-center ">
-        {Array.isArray(initialProducts) && initialProducts.length > 0 ? (
+      <div
+        ref={scrollContainerRef}
+        className="flex flex-wrap mx-auto justify-center "
+      >
+        {products.length > 0 ? (
           <InfiniteScroll
             dataLength={products.length}
             next={fetchMoreData}
-            hasMore={hasMore}
+            hasMore={true}
             loader={<h4>Loading...</h4>}
             endMessage={<p>No more products to show</p>}
+            scrollThreshold={0.9}
+            scrollableTarget={scrollContainerRef.current}
+            scrollToTop={false}
           >
             <div className="flex flex-wrap m-12 justify-center ml-48 mr-48 items-center">
-              {(filteredProducts.length > 0
-                ? filteredProducts
-                : initialProducts
-              ).map((product) => (
-                <div
-                  key={product.id}
-                  className="flex flex-col items-center m-8 shadow-2xl text-center w-64 rounded-lg p-8 hover:shadow-md transform transition-transform duration-300 hover:scale-105"
-                >
-                  <img
-                    className="rounded-lg max-h-56"
-                    src={product.images[0].url}
-                    alt=""
-                  />
-                  <p className="text-xl font-bold mt-6 text-zinc-600">
-                    {product.name}
-                  </p>
-                  <p className="text-sm">{product.description}</p>
-                  <p className="text-lg font-bold text-green-500">{`${product.price.toFixed(
-                    2
-                  )} ₺`}</p>
-                </div>
-              ))}
+              {(filteredProducts.length > 0 ? filteredProducts : products).map(
+                (product) => (
+                  <div
+                    key={product.id}
+                    className="flex flex-col items-center m-8 shadow-2xl text-center w-64 rounded-lg p-8 hover:shadow-md transform transition-transform duration-300 hover:scale-105"
+                  >
+                    <img
+                      className="rounded-lg max-h-56"
+                      src={product.images[0].url}
+                      alt=""
+                    />
+                    <p className="text-xl font-bold mt-6 text-zinc-600">
+                      {product.name}
+                    </p>
+                    <p className="text-sm">{product.description}</p>
+                    <p className="text-lg font-bold text-green-500">{`${product.price.toFixed(
+                      2
+                    )} ₺`}</p>
+                  </div>
+                )
+              )}
             </div>
           </InfiniteScroll>
         ) : (
