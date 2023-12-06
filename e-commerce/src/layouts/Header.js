@@ -115,8 +115,8 @@ export const Header = () => {
                 <NavLink to={"/contact"} className="px-2 md:my-0 my-2">
                   Contact
                 </NavLink>
-                <NavLink to={"/furniture"} className="px-2 md:my-0 my-2">
-                  Furniture
+                <NavLink to={"/detail"} className="px-2 md:my-0 my-2">
+                  Detail
                 </NavLink>
                 <NavLink to={"/team"} className="px-2 md:my-0 my-2">
                   Team

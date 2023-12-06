@@ -3,7 +3,7 @@ import { ProductsPage } from "../Components/ProductsPage";
 import { AboutPage } from "../Components/AboutPage";
 import { BlogPage } from "../Components/BlogPage";
 import { ContactPage } from "../Components/ContactPage";
-import { PagesPage } from "../Components/PagesPage";
+import { ProductDetailPage } from "../Components/ProductDetailPage";
 import { TeamPage } from "../Components/TeamPage";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { PricingPage } from "../Components/PricingPage";
@@ -68,8 +68,8 @@ export const PageBody = () => {
           <ContactPage />
         </Route>
 
-        <Route path="/furniture">
-          <PagesPage />
+        <Route path="/:category/:productId/:productNameSlug">
+          <ProductDetailPage />
         </Route>
 
         <Route path="/pricing">

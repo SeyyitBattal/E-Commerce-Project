@@ -1,62 +1,87 @@
+import React, { useEffect, useRef } from "react";
+import { useParams, useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { PagesData } from "../Datas/PagesData";
+import { Link } from "react-router-dom";
 
-export const PagesPage = () => {
+export const ProductDetailPage = () => {
+  const { productId } = useParams();
+  const history = useHistory();
+  const products = useSelector((state) => state.product.productList);
+  const productRef = useRef(null);
+
+  useEffect(() => {
+    if (productRef.current) {
+      productRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [productId]);
+
+  const selectedProduct = products.find(
+    (product) => product.id === parseInt(productId)
+  );
+  if (!selectedProduct) {
+    return <p>Product not found</p>;
+  }
+
+  const handleBack = () => {
+    history.goBack();
+  };
   return (
     <div>
-      <div className="flex my-20 md:my-9 ml-48">
-        <p className="font-bold text-slate-800">Home</p>
-        <img src={PagesData.headerArea.HomeToShop} className="mx-3.5" />
-        <p className="text-stone-300 font-bold">Shop</p>
-      </div>
-
-      <div className="flex  md:flex-none flex-wrap justify-center ">
-        <div className="mr-14">
-          <img
-            src={PagesData.headerArea.yellowSeatSlider}
-            className=" min-h-[20rem] min-w-[20rem] md:ml-0 ml-6 flex justify-center"
-          />
-        </div>
-        <div className="w-[40rem] md:mx-0 mx-12">
-          <p className="my-3 text-xl ">Floating Phone </p>
-          <div className="flex">
-            <img src={PagesData.headerArea.fullStar} />
-            <img src={PagesData.headerArea.fullStar} className="mx-1.5" />
-            <img src={PagesData.headerArea.fullStar} />
-            <img src={PagesData.headerArea.fullStar} className="mx-1.5" />
-            <img src={PagesData.headerArea.emptyStar} className="mr-3" />
-            <label className="text-neutral-500 font-bold">10 Reviews</label>
-          </div>
-          <p className="mt-5 mb-1.5 text-2xl font-bold text-slate-800 ">
-            $1,139.33
-          </p>
-          <div className="flex">
-            <label className="text-neutral-500 font-bold">Availability :</label>
-            <p className="ml-1.5 text-sky-500 font-bold">In Stock</p>
-          </div>
-          <p className="mt-8 text-neutral-500">
-            {PagesData.bodyArea.bigParagraph}
-          </p>
-          <hr className="my-7" />
-          <div className="flex">
-            <img src={PagesData.headerArea.blueCircle} />
-            <img src={PagesData.headerArea.greenCircle} className="mx-3" />
-            <img src={PagesData.headerArea.orangeCircle} />
-            <img src={PagesData.headerArea.blackCircle} className="mx-3" />
-          </div>
-          <div className="flex mt-16">
+      <div ref={productRef}>
+        <button
+          className="my-20 md:my-9 ml-72 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 shadow-xl"
+          onClick={handleBack}
+        >
+          Back
+        </button>
+        <div className="flex mx-auto flex-wrap justify-center ">
+          <div className="mr-14">
             <img
-              src={PagesData.headerArea.selectOptionsButton}
-              className="mr-3"
+              src={selectedProduct.images[0].url}
+              className=" max-h-[30rem] max-w-[30rem] md:ml-0 ml-6 flex justify-center"
             />
-            <img src={PagesData.headerArea.heartButton} />
-            <img src={PagesData.headerArea.basketButton} className="mx-3" />
-            <img src={PagesData.headerArea.reviewButton} />
+          </div>
+          <div className="w-[20rem] md:mx-0 mx-12">
+            <p className="my-3 text-xl ">{selectedProduct.name}</p>
+            <div className="flex">
+              <img src={PagesData.headerArea.fullStar} />
+              <img src={PagesData.headerArea.fullStar} className="mx-1.5" />
+              <img src={PagesData.headerArea.fullStar} />
+              <img src={PagesData.headerArea.fullStar} className="mx-1.5" />
+              <img src={PagesData.headerArea.emptyStar} className="mr-3" />
+              <label className="text-neutral-500 font-bold">10 Reviews</label>
+            </div>
+            <p className="mt-5 mb-1.5 text-2xl font-bold text-slate-800 ">
+              {selectedProduct.price.toFixed(2)} ₺
+            </p>
+            <div className="flex">
+              <label className="text-neutral-500 font-bold">
+                Availability :
+              </label>
+              <p className="ml-1.5 text-sky-500 font-bold">In Stock</p>
+            </div>
+            <p className="mt-8 text-neutral-500">
+              {selectedProduct.description}
+            </p>
+            <hr className="my-7" />
+            <div className="flex">
+              <img src={PagesData.headerArea.blueCircle} />
+              <img src={PagesData.headerArea.greenCircle} className="mx-3" />
+              <img src={PagesData.headerArea.orangeCircle} />
+              <img src={PagesData.headerArea.blackCircle} className="mx-3" />
+            </div>
+            <div className="flex mt-16">
+              <img
+                src={PagesData.headerArea.selectOptionsButton}
+                className="mr-3"
+              />
+              <img src={PagesData.headerArea.heartButton} />
+              <img src={PagesData.headerArea.basketButton} className="mx-3" />
+              <img src={PagesData.headerArea.reviewButton} />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex mt-6 ml-48 desktop-only">
-        <img src={PagesData.headerArea.chairPicture} className="mr-5" />
-        <img src={PagesData.headerArea.yellowSmallPicture} />
       </div>
 
       <div className="flex mt-48 md:mt-20 mb-6 mx-auto justify-center ">

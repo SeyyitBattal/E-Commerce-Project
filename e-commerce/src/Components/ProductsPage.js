@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { fetchCategories } from "../store/actions/globalActions";
 import { fetchProducts } from "../store/actions/productActions";
 import { fetchProductsActionCreator } from "../store/actions/productActions";
@@ -215,7 +216,10 @@ export const ProductsPage = () => {
             <div className="flex flex-wrap m-12 justify-center ml-48 mr-48 items-center">
               {(filteredProducts.length > 0 ? filteredProducts : products).map(
                 (product) => (
-                  <div
+                  <Link
+                    to={`/${product.category}/${
+                      product.id
+                    }/${encodeURIComponent(product.name)}`}
                     key={product.id}
                     className="flex flex-col items-center m-8 shadow-2xl text-center w-64 rounded-lg p-8 hover:shadow-md transform transition-transform duration-300 hover:scale-105"
                   >
@@ -231,7 +235,7 @@ export const ProductsPage = () => {
                     <p className="text-lg font-bold text-green-500">{`${product.price.toFixed(
                       2
                     )} ₺`}</p>
-                  </div>
+                  </Link>
                 )
               )}
             </div>
