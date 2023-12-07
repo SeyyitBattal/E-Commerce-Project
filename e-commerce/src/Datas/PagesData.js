@@ -1,7 +1,5 @@
 import HomeToShop from "../IconsAndPhotos/PagesPage/HomeToShop.svg";
 import yellowSeatSlider from "../IconsAndPhotos/PagesPage/yellowSeatSlider.jpg";
-import fullStar from "../IconsAndPhotos/PagesPage/fullStar.svg";
-import emptyStar from "../IconsAndPhotos/PagesPage/emptyStar.svg";
 import blueCircle from "../IconsAndPhotos/PagesPage/blueCircle.svg";
 import greenCircle from "../IconsAndPhotos/PagesPage/yellowCircle.svg";
 import orangeCircle from "../IconsAndPhotos/PagesPage/orangeCircle.svg";
@@ -24,6 +22,9 @@ import brands3 from "../IconsAndPhotos/PagesPage/fa-brands-3.png";
 import brands4 from "../IconsAndPhotos/PagesPage/fa-brands-4.png";
 import brands5 from "../IconsAndPhotos/PagesPage/fa-brands-5.png";
 import brands6 from "../IconsAndPhotos/PagesPage/fa-brands-6.svg";
+import emptyStar from "../IconsAndPhotos/PagesPage/empty-star.svg";
+import halfStar from "../IconsAndPhotos/PagesPage/half-star.svg";
+import fullStar from "../IconsAndPhotos/PagesPage/full-star.svg";
 
 export const PagesData = {
   headerArea: {
@@ -31,6 +32,7 @@ export const PagesData = {
     yellowSeatSlider,
     fullStar,
     emptyStar,
+    halfStar,
     blueCircle,
     greenCircle,
     orangeCircle,

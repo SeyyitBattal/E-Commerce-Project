@@ -26,6 +26,34 @@ export const ProductDetailPage = () => {
   const handleBack = () => {
     history.goBack();
   };
+
+  const renderStars = (rating) => {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+
+    const stars = [];
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(<img key={i} src={PagesData.headerArea.fullStar} />);
+    }
+
+    if (hasHalfStar) {
+      stars.push(<img key="half" src={PagesData.headerArea.halfStar} />);
+    }
+
+    const remainingEmptyStars = 5 - stars.length;
+    for (let i = 0; i < remainingEmptyStars; i++) {
+      stars.push(
+        <img key={`empty-${i}`} src={PagesData.headerArea.emptyStar} />
+      );
+    }
+
+    return stars;
+  };
+
+  const isInStock = selectedProduct.stock > 0;
+  const stockStatus = isInStock ? "In Stock" : "Out of Stock";
+  const stockColor = isInStock ? "text-blue-500" : "text-red-500";
+
   return (
     <div>
       <div ref={productRef}>
@@ -45,12 +73,10 @@ export const ProductDetailPage = () => {
           <div className="w-[20rem] md:mx-0 mx-12">
             <p className="my-3 text-xl ">{selectedProduct.name}</p>
             <div className="flex">
-              <img src={PagesData.headerArea.fullStar} />
-              <img src={PagesData.headerArea.fullStar} className="mx-1.5" />
-              <img src={PagesData.headerArea.fullStar} />
-              <img src={PagesData.headerArea.fullStar} className="mx-1.5" />
-              <img src={PagesData.headerArea.emptyStar} className="mr-3" />
-              <label className="text-neutral-500 font-bold">10 Reviews</label>
+              {renderStars(selectedProduct.rating)}
+              <label className="text-neutral-500 font-bold ml-3">
+                ({selectedProduct.rating})
+              </label>
             </div>
             <p className="mt-5 mb-1.5 text-2xl font-bold text-slate-800 ">
               {selectedProduct.price.toFixed(2)} ₺
@@ -59,7 +85,13 @@ export const ProductDetailPage = () => {
               <label className="text-neutral-500 font-bold">
                 Availability :
               </label>
-              <p className="ml-1.5 text-sky-500 font-bold">In Stock</p>
+              <p
+                className={`ml-1.5 font-bold ${
+                  isInStock ? "text-blue-500" : "text-red-500"
+                }`}
+              >
+                {stockStatus}
+              </p>
             </div>
             <p className="mt-8 text-neutral-500">
               {selectedProduct.description}
