@@ -73,23 +73,25 @@ export const Header = () => {
                   </NavLink>
 
                   {showCategories && (
-                    <div className="absolute z-10 mt-1 bg-gray-200 rounded-md shadow-xl w-48">
-                      <div className="py-2 border-2 rounded-lg border-sky-500">
-                        <p className="font-bold text-sky-500 ">KADIN</p>
-                        {groupedCategories["k"] &&
-                          groupedCategories["k"].map((category) => (
-                            <NavLink
-                              to={`/shopping/kadin/${category.title}`}
-                              key={category.id}
-                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                            >
-                              {category.title}
-                            </NavLink>
-                          ))}
+                    <div className="absolute z-10 mt-1 bg-gray-200 border border-sky-500 rounded-md shadow-xl w-96 flex">
+                      <div className="w-1/2 border-r border-gray-300">
+                        <div className="py-2 px-4 ">
+                          <p className="font-bold text-sky-500 ">KADIN</p>
+                          {groupedCategories["k"] &&
+                            groupedCategories["k"].map((category) => (
+                              <NavLink
+                                to={`/shopping/kadin/${category.title}`}
+                                key={category.id}
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                              >
+                                {category.title}
+                              </NavLink>
+                            ))}
+                        </div>
                       </div>
-                      <div className="mt-1">
-                        <div className="py-2 border-2 rounded-lg border-sky-500">
-                          <p className="font-bold text-sky-500">ERKEK</p>
+                      <div className="w-1/2">
+                        <div className="py-2 px-4">
+                          <p className="font-bold text-sky-500 ">ERKEK</p>
                           {groupedCategories["e"] &&
                             groupedCategories["e"].map((category) => (
                               <NavLink
@@ -165,11 +167,11 @@ export const Header = () => {
           <img src={Hdata.headerArea.searchLogo} />
           <div className="flex px-4">
             <img src={Hdata.headerArea.basketLogo} />
-            <p className="text-sky-500">1</p>
+            <p className="text-sky-500 ml-1">0</p>
           </div>
           <div className="flex px-2">
             <img src={Hdata.headerArea.heartLogo} />
-            <p className="text-sky-500 mr-48">1</p>
+            <p className="text-sky-500 mr-48 ml-1">0</p>
           </div>
         </div>
       </div>

@@ -104,13 +104,9 @@ export const ProductDetailPage = () => {
               <img src={PagesData.headerArea.blackCircle} className="mx-3" />
             </div>
             <div className="flex mt-16">
-              <img
-                src={PagesData.headerArea.selectOptionsButton}
-                className="mr-3"
-              />
-              <img src={PagesData.headerArea.heartButton} />
-              <img src={PagesData.headerArea.basketButton} className="mx-3" />
-              <img src={PagesData.headerArea.reviewButton} />
+              <button className="px-16 py-4 bg-blue-500 text-white rounded hover:bg-blue-700 shadow-xl">
+                Sepete Ekle
+              </button>
             </div>
           </div>
         </div>
