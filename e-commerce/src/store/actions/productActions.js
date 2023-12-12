@@ -70,7 +70,7 @@ export const fetchProductsActionCreator =
         type: productActions.setFetchState,
         payload: FETCH_STATES.fetched,
       });
-      return newProducts; // Return new products for additional handling if needed
+      return newProducts;
     } catch (error) {
       dispatch({
         type: productActions.setFetchState,

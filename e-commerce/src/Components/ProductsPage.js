@@ -44,7 +44,7 @@ export const ProductsPage = () => {
 
     dispatch(fetchProductsActionCreator(newOffset, sortOption, products)).then(
       (newProducts) => {
-        setOffset((prevOffset) => prevOffset + products.length);
+        setOffset((prevOffset) => prevOffset + newProducts.length);
 
         if (scrollContainerRef.current) {
           scrollContainerRef.current.scrollTop = currentScrollPosition;
