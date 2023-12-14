@@ -112,8 +112,8 @@ export const ProductsPage = () => {
       </div>
       <div className="flex flex-wrap mx-auto justify-center ml-48 mr-48 ">
         {topFive.map((category, index) => (
-          <a
-            href="#"
+          <Link
+            to={`/shopping/${category.gender}/${category.code}`}
             className="relative mx-4 min-w-max my-10 hover:shadow-md transform transition-transform duration-100 hover:scale-105"
             key={index}
           >
@@ -123,7 +123,7 @@ export const ProductsPage = () => {
                 <p className="text-xl font-bold">{category.title}</p>
               </div>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
       <div className="flex flex-wrap justify-between  ml-10 mr-24 md:ml-72 md:mr-64 my-4">
