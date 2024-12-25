@@ -148,7 +148,7 @@ export const Header = () => {
               ) : (
                 <div className="flex">
                   <img src={Hdata.headerArea.userLogo} className="pr-1" />
-                  <p className="text-sky-500 font-bold">Login</p>
+                  <p className="text-sky-500 font-bold mr-4">Login</p>
                 </div>
               )}
             </div>
